@@ -1,0 +1,72 @@
+baseURL = "https://www.truenas.com/docs/"
+title = "TrueNAS Documentation Hub"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+contentDir = "content/en"
+
+enableRobotsTXT = true
+enableGitInfo = true
+timeout = "30s"
+
+# Markup settings
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.parser.attribute]
+      block = true
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "tango"
+    noClasses = false
+
+# Site params
+[params]
+  version = "1.0.0"
+  featured_image = "/images/tn-openstorage-logo.png"
+
+  [params.search]
+    siteName = "TrueNAS Docs Hub"
+    siteKey = "docs"
+    siteIcon = "/images/truenas-logo-mark.png"
+    sitePriority = 1
+
+  [params.ui]
+    breadcrumb_disable = true
+    navbar_logo = true
+    sidebar_menu_compact = false
+    sidebar_search_disable = true
+    showLightDarkModeMenu = true
+
+# Hugo modules
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.146.0"
+
+  [[module.imports]]
+    path = "github.com/truenas/docs-shared"
+    # For local dev: replace = "../docs-shared"
+
+  [[module.imports]]
+    path = "github.com/google/docsy"
+    disable = false
+
+  [[module.imports]]
+    path = "github.com/KKKZOZ/hugo-admonitions"
+    disable = false
+
+# Navbar menu
+[[menu.main]]
+  name = "Community Edition"
+  url = "https://www.truenas.com/docs/core/"
+  weight = 10
+
+[[menu.main]]
+  name = "Enterprise"
+  url = "https://www.truenas.com/docs/enterprise/"
+  weight = 20
+
+[[menu.main]]
+  name = "Connect"
+  url = "https://connect.truenas.com/"
+  weight = 30
