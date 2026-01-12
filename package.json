@@ -1,0 +1,30 @@
+{
+  "name": "truenas-docs-hub",
+  "version": "1.0.0",
+  "description": "TrueNAS Documentation Hub - Central landing page for all TrueNAS documentation",
+  "scripts": {
+    "build": "hugo --gc --minify --cleanDestinationDir",
+    "serve": "hugo serve",
+    "serve-with-search": "hugo && npx pagefind --site public && npx serve public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/truenas/docs.git"
+  },
+  "keywords": [
+    "truenas",
+    "documentation",
+    "hugo",
+    "docsy"
+  ],
+  "author": "TrueNAS Documentation Team",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.5",
+    "postcss-cli": "^11.0.1"
+  },
+  "devDependencies": {
+    "pagefind": "^1.1.1"
+  }
+}
