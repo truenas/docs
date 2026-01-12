@@ -12,59 +12,42 @@ description: "Comprehensive documentation for TrueNAS Community Edition, TrueNAS
 
 {{% blocks/section color="light" type="row" %}}
 
-## Software & Products
+Software & Products
 {.h2 .text-center .mb-5}
 
-<div class="row justify-content-center g-4">
+<div class="row justify-content-center">
 
-{{< doc-card
-  link="https://www.truenas.com/docs/core/"
-  title="TrueNAS Community Edition"
-  image="/images/card-community-edition.png"
-  descr="Documentation for TrueNAS SCALE and legacy TrueNAS CORE systems"
->}}
+{{% blocks/feature icon="material:groups" title="TrueNAS Community Edition" url="https://www.truenas.com/docs/core/" %}}
+Documentation for TrueNAS SCALE and legacy TrueNAS CORE systems
+{{% /blocks/feature %}}
 
-{{< doc-card
-  link="https://www.truenas.com/docs/enterprise/"
-  title="TrueNAS Enterprise"
-  image="/images/card-enterprise.png"
-  descr="Enterprise-grade storage documentation, support resources, and best practices"
->}}
+{{% blocks/feature icon="material:business" title="TrueNAS Enterprise" url="https://www.truenas.com/docs/enterprise/" %}}
+Enterprise-grade storage documentation, support resources, and best practices
+{{% /blocks/feature %}}
 
-{{< doc-card
-  link="https://connect.truenas.com/"
-  title="TrueNAS Connect"
-  image="/images/card-connect.png"
-  descr="Setup, manage, and monitor multiple TrueNAS systems from one interface"
->}}
+{{% blocks/feature icon="material:hub" title="TrueNAS Connect" url="https://connect.truenas.com/" %}}
+Setup, manage, and monitor multiple TrueNAS systems from one interface
+{{% /blocks/feature %}}
 
-{{< doc-card
-  link="https://www.truenas.com/docs/hardware/"
-  title="Products"
-  image="/images/card-hardware.png"
-  descr="Hardware specifications, datasheets, and product documentation"
->}}
+</div>
 
-{{< doc-card
-  link="https://api.truenas.com/"
-  title="API Documentation"
-  image="/images/card-api.png"
-  descr="Complete REST API reference for programmatic access to TrueNAS systems"
->}}
+<div class="row justify-content-center">
 
-{{< doc-card
-  link="https://apps.truenas.com/"
-  title="Apps Marketplace"
-  image="/images/card-apps.png"
-  descr="Browse and learn about applications available for TrueNAS systems"
->}}
+{{% blocks/feature icon="material:dns" title="Products" url="https://www.truenas.com/docs/hardware/" %}}
+Hardware specifications, datasheets, and product documentation
+{{% /blocks/feature %}}
 
-{{< doc-card
-  link="https://security.truenas.com/"
-  title="Security Reports"
-  image="/images/card-security.png"
-  descr="Security advisories, CVE information, and vulnerability reports"
->}}
+{{% blocks/feature icon="material:api" title="API Documentation" url="https://api.truenas.com/" %}}
+Complete REST API reference for programmatic access to TrueNAS systems
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="material:apps" title="Apps Marketplace" url="https://apps.truenas.com/" %}}
+Browse and learn about applications available for TrueNAS systems
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="material:security" title="Security Reports" url="https://security.truenas.com/" %}}
+Security advisories, CVE information, and vulnerability reports
+{{% /blocks/feature %}}
 
 </div>
 
