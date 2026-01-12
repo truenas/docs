@@ -1,32 +1,34 @@
 ---
-title: TrueNAS Documentation
+title: TrueNAS Documentation Hub
 description: "Comprehensive documentation for TrueNAS Community Edition, TrueNAS Enterprise, TrueNAS Connect, and more."
 ---
 
 {{< blocks/cover color="primary" height="min" >}}
-<div class="mx-auto text-center">
-  <h1 class="display-3 fw-bold mb-4">TrueNAS Documentation</h1>
-  <p class="lead mb-4">Everything you need to build, deploy, and manage your storage systems</p>
+<div class="row align-items-center">
+  <div class="col-lg-6 text-start pe-lg-5">
+    <h1 class="cover-heading fw-bold mb-4">Documentation <span class="heading-gradient">Hub</span></h1>
+    <p class="lead mt-3">The comprehensive repository for all TrueNAS software and hardware documentation. Find guides, references, and resources for TrueNAS Community Edition, Enterprise, Connect, and all TrueNAS products.</p>
+  </div>
+  <div class="col-lg-6 d-none d-lg-block text-end">
+    <img src="/images/truenas-logo-mark.png" alt="TrueNAS Logo" class="img-fluid" style="max-width: 400px;">
+  </div>
 </div>
 {{< /blocks/cover >}}
 
 {{% blocks/section color="light" type="row" %}}
 
-Software & Products
-{.h2 .text-center .mb-5}
-
 <div class="row justify-content-center">
 
-{{% blocks/feature icon="material:groups" title="TrueNAS Community Edition" url="https://www.truenas.com/docs/core/" %}}
-Documentation for TrueNAS SCALE and legacy TrueNAS CORE systems
+{{% blocks/feature icon="image:icons/tn-icon-blue.png" title="TrueNAS Enterprise" url="https://www.truenas.com/docs/" %}}
+Documentation and support resources for enterprise storage deployments
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="material:business" title="TrueNAS Enterprise" url="https://www.truenas.com/docs/enterprise/" %}}
-Enterprise-grade storage documentation, support resources, and best practices
+{{% blocks/feature icon="image:icons/tn-icon-blue.png" title="TrueNAS Community Edition" url="https://www.truenas.com/docs/" %}}
+Complete guides, tutorials, and references for community deployments
 {{% /blocks/feature %}}
 
 {{% blocks/feature icon="material:hub" title="TrueNAS Connect" url="https://connect.truenas.com/" %}}
-Setup, manage, and monitor multiple TrueNAS systems from one interface
+Centralized management for multiple TrueNAS systems with health monitoring and remote installation
 {{% /blocks/feature %}}
 
 </div>
@@ -34,19 +36,19 @@ Setup, manage, and monitor multiple TrueNAS systems from one interface
 <div class="row justify-content-center">
 
 {{% blocks/feature icon="material:dns" title="Products" url="https://www.truenas.com/docs/hardware/" %}}
-Hardware specifications, datasheets, and product documentation
+TrueNAS hardware specifications, datasheets, and product family documentation
 {{% /blocks/feature %}}
 
 {{% blocks/feature icon="material:api" title="API Documentation" url="https://api.truenas.com/" %}}
-Complete REST API reference for programmatic access to TrueNAS systems
+REST API reference for automation and programmatic control of TrueNAS systems
 {{% /blocks/feature %}}
 
 {{% blocks/feature icon="material:apps" title="Apps Marketplace" url="https://apps.truenas.com/" %}}
-Browse and learn about applications available for TrueNAS systems
+Extend TrueNAS functionality with containerized applications and services
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="material:security" title="Security Reports" url="https://security.truenas.com/" %}}
-Security advisories, CVE information, and vulnerability reports
+{{% blocks/feature icon="material:shield" title="Security Reports" url="https://security.truenas.com/" %}}
+Current security advisories, CVE reports, and vulnerability information
 {{% /blocks/feature %}}
 
 </div>
@@ -55,25 +57,25 @@ Security advisories, CVE information, and vulnerability reports
 
 {{% blocks/section color="white" type="row" %}}
 
-## Documentation Resources
-{.h2 .text-center .mb-5}
+## Additional Resources
+{.h2 .text-center }
 
 <div class="row justify-content-center g-4">
 
 {{% blocks/feature icon="material:assessment" title="Software Status" url="https://www.truenas.com/docs/softwarestatus/" %}}
-Release information, version support lifecycle, and update status
+Version recommendations, release schedules, upgrade paths, and download links
 {{% /blocks/feature %}}
 
 {{% blocks/feature icon="material:lightbulb" title="Solutions" url="https://www.truenas.com/docs/solutions/" %}}
-Implementation guides and best practices for common use cases
+Implementation guides and best practices for common deployment scenarios
 {{% /blocks/feature %}}
 
 {{% blocks/feature icon="material:handshake" title="Contributing" url="https://www.truenas.com/docs/contributing/" %}}
-Contribute to TrueNAS documentation and open source projects
+Join the community and contribute to TrueNAS documentation and open source projects
 {{% /blocks/feature %}}
 
 {{% blocks/feature icon="material:library_books" title="References" url="https://www.truenas.com/docs/references/" %}}
-Technical references, glossaries, and additional resources
+Technical specifications, glossaries, and supplementary documentation resources
 {{% /blocks/feature %}}
 
 </div>
