@@ -127,7 +127,7 @@ Description text here
 
 ## Deployment
 
-This site is deployed via Jenkins pipeline to `https://www.truenas.com/docs/`
+This site is deployed via Jenkins pipeline to `https://docs.truenas.com/`
 
 Build steps:
 1. `npm install`
