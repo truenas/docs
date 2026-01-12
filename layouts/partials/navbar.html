@@ -1,0 +1,189 @@
+{{/* Modified Docsy navbar template with custom docs hub dropdown */}}
+{{- $cover := and (.HasShortcode "blocks/cover") (not .Site.Params.ui.navbar_translucent_over_cover_disable) -}}
+<nav class="td-navbar js-navbar-scroll {{ if $cover }} td-navbar-cover {{ end }}" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
+    <span class="navbar-brand__logo navbar-logo-container">
+        {{ if fileExists "static/images/site-logo-color.svg" }}
+        <span class="navbar-logo navbar-logo-color">
+            {{ $colorLogo := readFile "static/images/site-logo-color.svg" }}
+            {{ $colorLogo | safeHTML }}
+        </span>
+        {{ end }}
+        <span class="navbar-logo navbar-logo-white">
+            {{ with resources.Get "icons/logo.svg" }}
+                {{ ( . | minify).Content | safeHTML }}
+            {{ end }}
+        </span>
+        <span class="navbar-logo navbar-logo-black">
+            {{ with resources.Get "icons/logo.svg" }}
+                {{ ( . | minify).Content | safeHTML }}
+            {{ end }}
+        </span>
+    </span>
+    <span class="navbar-brand__name">
+        {{- .Site.Title -}}
+    </span>
+  </a>
+
+
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      {{- $url := urls.Parse .Site.BaseURL -}}
+      {{- range .Site.Menus.main -}}
+        {{- $href := .URL | relLangURL -}}
+        {{- $isExternal := and (strings.HasPrefix .URL "http") (ne $url.Host (urls.Parse .URL).Host) -}}
+        {{- $active := or (eq .URL $.RelPermalink) (eq .URL $.Permalink) -}}
+        {{ if or (eq .Identifier "essentials") (eq .Name "Essentials") }}
+        {{/* Special handling for essentials menu */}}
+        {{/* Desktop dropdown */}}
+        <li class="nav-item dropdown d-none d-lg-block">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown{{ .Identifier }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ .Pre }}{{ .Name }}{{ .Post }}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown{{ .Identifier }}">
+            {{ range .Children }}
+            <a class="dropdown-item" href="{{ .URL | relLangURL }}"{{ if strings.HasPrefix .URL "http" }} target="_blank" rel="noopener"{{ end }}>{{ .Name }}</a>
+            {{ end }}
+            {{ if .Children }}
+            <div class="dropdown-divider"></div>
+            {{ end }}
+            <a class="dropdown-item" href="/docs/">All Docs</a>
+          </div>
+        </li>
+        {{/* Mobile dropdown for essentials */}}
+        <li class="nav-item dropdown d-lg-none">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMobile{{ .Identifier }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ .Pre }}{{ .Name }}{{ .Post }}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMobile{{ .Identifier }}">
+            {{ range .Children }}
+            <a class="dropdown-item" href="{{ .URL | relLangURL }}"{{ if strings.HasPrefix .URL "http" }} target="_blank" rel="noopener"{{ end }}>{{ .Name }}</a>
+            {{ end }}
+            {{ if .Children }}
+            <div class="dropdown-divider"></div>
+            {{ end }}
+            <a class="dropdown-item" href="/docs/">All Docs</a>
+          </div>
+        </li>
+        {{ else if ne .Name "Docs" }}
+        {{/* Regular menu items - hide default Docs link */}}
+        <li class="nav-item{{ if .HasChildren }} dropdown{{ end }}">
+          {{ if .HasChildren }}
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown{{ .Identifier }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ .Pre }}{{ .Name }}{{ .Post }}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown{{ .Identifier }}">
+            {{ range .Children }}
+            <a class="dropdown-item" href="{{ .URL | relLangURL }}"{{ if strings.HasPrefix .URL "http" }} target="_blank" rel="noopener"{{ end }}>{{ .Name }}</a>
+            {{ end }}
+          </div>
+          {{ else }}
+          <a class="nav-link{{ if $active }} active{{ end }}"
+            {{ with .URL }} href="{{ . | relLangURL }}"{{ end }}
+            {{ if $isExternal }} target="_blank" rel="noopener"{{ end }}>
+            {{ .Pre }}<span class="d-lg-inline d-none">{{ .Name }}</span><span class="d-lg-none">{{ if or (eq .Identifier "recent-changes") (strings.Contains .Name "Recent Changes") }}Changes{{ else if or (eq .Identifier "truenas-docs") (strings.Contains .Name "TrueNAS Docs") }}Hub{{ else }}{{ .Name }}{{ end }}</span>{{ .Post }}
+          </a>
+          {{ end }}
+        </li>
+        {{ end }}
+      {{ end }}
+
+      {{/* Mobile-only simple docs hub link */}}
+      <li class="nav-item d-lg-none">
+        <a class="nav-link" href="https://www.truenas.com/docs/" target="_blank" rel="noopener">
+          <span>Hub</span>
+        </a>
+      </li>
+
+      {{/* Desktop docs hub dropdown with image */}}
+      <li class="nav-item dropdown navbar-docs-hub d-none d-lg-block">
+        <a class="nav-link dropdown-toggle d-flex align-items-center"
+           href="#"
+           id="docs-hub-dropdown"
+           role="button"
+           data-bs-toggle="dropdown"
+           aria-haspopup="true"
+           aria-expanded="false"
+           aria-label="TrueNAS Documentation Hub">
+          <img src="{{ "/images/docs-hub-wordmark.png" | relURL }}"
+               alt="TrueNAS Docs Hub"
+               class="docs-hub-wordmark docs-hub-wordmark-white">
+          <img src="{{ "/images/docs-hub-wordmark-black.png" | relURL }}"
+               alt="TrueNAS Docs Hub"
+               class="docs-hub-wordmark docs-hub-wordmark-black">
+        </a>
+        <div class="dropdown-menu" aria-labelledby="docs-hub-dropdown">
+          <a class="dropdown-item d-flex align-items-center" href="https://www.truenas.com/docs/" target="_blank" rel="noopener">
+            {{ with resources.Get "icons/tn-icon.png" }}
+              <img src="{{ .RelPermalink }}" alt="" class="me-2" style="width: 20px; height: 20px;">
+            {{ end }}
+            TrueNAS Docs
+          </a>
+          <a class="dropdown-item d-flex align-items-center" href="https://api.truenas.com/" target="_blank" rel="noopener">
+            {{ with resources.Get "icons/api-Icon.svg" }}
+              <div class="me-2 d-flex align-items-center justify-content-center" style="width: 20px; height: 20px; fill: white;">{{ ( . | minify).Content | safeHTML }}</div>
+            {{ end }}
+            API Docs
+          </a>
+          <a class="dropdown-item d-flex align-items-center" href="https://apps.truenas.com/" target="_blank" rel="noopener">
+            <svg class="me-2" style="width: 20px; height: 20px; fill: white;" viewBox="0 0 24 24">
+              <circle cx="5" cy="5" r="2"/>
+              <circle cx="12" cy="5" r="2"/>
+              <circle cx="19" cy="5" r="2"/>
+              <circle cx="5" cy="12" r="2"/>
+              <circle cx="12" cy="12" r="2"/>
+              <circle cx="19" cy="12" r="2"/>
+              <circle cx="5" cy="19" r="2"/>
+              <circle cx="12" cy="19" r="2"/>
+              <circle cx="19" cy="19" r="2"/>
+            </svg>
+            Apps Marketplace
+          </a>
+          <a class="dropdown-item d-flex align-items-center" href="https://security.truenas.com/" target="_blank" rel="noopener">
+            <svg class="me-2" style="width: 20px; height: 20px; fill: white; stroke: white; stroke-width: 0.5;" viewBox="0 0 24 24">
+              <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,21C7.59,21 4,17.41 4,13V6.31L12,3.11L20,6.31V13C20,17.41 16.41,21 12,21Z"/>
+            </svg>
+            Security Reports
+          </a>
+        </div>
+      </li>
+
+      {{ if hugo.IsMultilingual }}
+      <li class="nav-item dropdown td-language-select">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-language fa-fw"></i>
+          <span class="d-lg-none d-md-block">{{ i18n "select_language" }}</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          {{ range .Site.Languages }}
+          <a class="dropdown-item" href="{{ .BaseURL }}">{{ .LanguageName }}</a>
+          {{ end }}
+        </div>
+      </li>
+      {{ end }}
+
+      {{ if (.Site.Params.ui.showLightDarkModeMenu | default false) }}
+      <li class="td-light-dark-menu nav-item dropdown">
+        {{ partial "navbar-theme-toggle" . }}
+      </li>
+      {{ end }}
+
+      {{ partial "search-simple" . }}
+      
+      {{/* Sign In button */}}
+      <li class="nav-item ms-3">
+        <a class="btn btn-secondary rounded-pill fw-bold" href="https://web.truenasconnect.net/" style="color: white;">
+          Sign In
+        </a>
+      </li>
+      </ul>
+  </div>
+  {{/* Only show version selector if versions are configured */}}
+  {{ if .Site.Params.versions }}
+  <div class="d-none d-lg-block">
+    {{ partial "navbar-version-selector" . }}
+  </div>
+  {{ end }}
+</div>
+</nav>
