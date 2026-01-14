@@ -1,0 +1,54 @@
+---
+# This file is pulled by the API Docs Jenkins pipeline to match SCALE versions with API versions
+id: "scale-schedule"
+img: "/images/tn-openstorage-logo.png"
+product: "TrueNAS"
+title: '<img src="/images/Enterprise.png" class="edition-logo" alt="TrueNAS Enterprise"> | <img src="/images/Community_Edition.png" class="edition-logo" alt="TrueNAS Community Edition">'
+majorVersions:
+  - lifecycle: "24.10"
+    name: "TrueNAS 24.10 - Electric Eel"
+    releaseName: "Electric Eel"
+    releases:
+      - name: "24.10.2.4"
+        type: "Maintenance"
+        link: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/#241024"
+        releaseDate: "2025-08-07"
+        latest: true
+  - lifecycle: "25.04"
+    name: "TrueNAS 25.04 - Fangtooth"
+    releaseName: "Fangtooth"
+    releases:
+      - name: "25.04.2.6"
+        type: "Maintenance"
+        link: "https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#250426"
+        releaseDate: "2025-10-30"
+        latest: true
+  - lifecycle: "25.10"
+    name: "TrueNAS 25.10 - Goldeye"
+    releaseName: "Goldeye"
+    releases:
+      - name: "25.10.1"
+        type: "Maintenance"
+        link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.1"
+        releaseDate: "2025-12-18"
+        latest: true
+      - name: "25.10.2"
+        type: "Maintenance"
+        link: ""
+        releaseDate: "TBD"
+        latest: false
+  - lifecycle: "26.04"
+    name: "TrueNAS 26.04 - Halfmoon"
+    releaseName: "Halfmoon"
+    releases:
+      - name: "26.04 Nightlies"
+        type: "Experimental"
+        link: "https://www.truenas.com/docs/scale/26.04/gettingstarted/versionnotes/"
+        releaseDate: "2025-08-11"
+        latest: true
+      - name: "26.04-BETA.1"
+        type: "Experimental"
+        link: ""
+        releaseDate: "TBD"
+        latest: false
+
