@@ -3,7 +3,7 @@ title: TrueNAS Documentation Hub
 description: "Comprehensive documentation for TrueNAS Community Edition, TrueNAS Enterprise, TrueNAS Connect, and more."
 ---
 
-{{< blocks/cover color="primary" height="min" >}}
+{{< blocks/cover color="primary" height="micro" >}}
 <div class="row align-items-center">
   <div class="col-lg-6 text-start pe-lg-5">
     <h1 class="cover-heading fw-bold mb-4">Documentation <span class="heading-gradient">Hub</span></h1>
@@ -16,34 +16,32 @@ description: "Comprehensive documentation for TrueNAS Community Edition, TrueNAS
 {{< /blocks/cover >}}
 
 {{% blocks/section color="light" type="row" %}}
+<div class="row justify-content-center g-4">
 
-<div class="row justify-content-center">
-
-{{% blocks/feature icon="image:icons/tn-icon-blue.png" title="TrueNAS Enterprise" url="https://www.truenas.com/docs/" %}}
+{{% blocks/feature icon="image:icons/tn-icon-black.png" title="TrueNAS Enterprise" url="https://www.truenas.com/docs/" %}}
 Documentation and support resources for enterprise storage deployments
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="image:icons/tn-icon-blue.png" title="TrueNAS Community Edition" url="https://www.truenas.com/docs/" %}}
+{{% blocks/feature icon="image:icons/tn-icon-black.png" title="TrueNAS Community Edition" url="https://www.truenas.com/docs/" %}}
 Complete guides, tutorials, and references for community deployments
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="material:hub" title="TrueNAS Connect" url="https://connect.truenas.com/" %}}
+{{% blocks/feature icon="image:icons/tnc-icon-black.svg" title="TrueNAS Connect" url="https://connect.truenas.com/" %}}
 Centralized management for multiple TrueNAS systems with health monitoring and remote installation
 {{% /blocks/feature %}}
 
 </div>
+<div class="row justify-content-center g-4">
 
-<div class="row justify-content-center">
-
-{{% blocks/feature icon="material:dns" title="Products" url="https://www.truenas.com/docs/hardware/" %}}
+{{% blocks/feature icon="material:storage" title="Products" url="https://www.truenas.com/docs/hardware/" %}}
 TrueNAS hardware specifications, datasheets, and product family documentation
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="material:api" title="API Documentation" url="https://api.truenas.com/" %}}
-REST API reference for automation and programmatic control of TrueNAS systems
+{{% blocks/feature icon="material:api" title="TrueNAS API" url="https://api.truenas.com/" %}}
+TrueNAS Websocket API reference for automation and programmatic control of TrueNAS systems
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="material:apps" title="Apps Marketplace" url="https://apps.truenas.com/" %}}
+{{% blocks/feature icon="material:apps" title="TrueNAS Apps Market" url="https://apps.truenas.com/" %}}
 Extend TrueNAS functionality with containerized applications and services
 {{% /blocks/feature %}}
 
@@ -56,9 +54,8 @@ Current security advisories, CVE reports, and vulnerability information
 {{% /blocks/section %}}
 
 {{% blocks/section color="white" type="row" %}}
-
 ## Additional Resources
-{.h2 .text-center }
+{.h2 .text-center .mb-4 }
 
 <div class="row justify-content-center g-4">
 
