@@ -29,6 +29,8 @@ timeout = "30s"
     siteKey = "docs"
     siteIcon = "/images/truenas-logo-mark.png"
     sitePriority = 1
+    showVersionFilter = true
+    # defaultVersion is dynamically read from software_status_config.yaml in search-enhanced.html
 
   [params.ui]
     breadcrumb_disable = true

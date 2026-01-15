@@ -8,6 +8,11 @@ description: "Comprehensive documentation for TrueNAS Community Edition, TrueNAS
   <div class="col-lg-6 text-start pe-lg-5">
     <h1 class="cover-heading fw-bold mb-4">Documentation <span class="heading-gradient">Hub</span></h1>
     <p class="lead mt-3">The comprehensive repository for all TrueNAS software and hardware documentation. Find guides, references, and resources for TrueNAS Community Edition, Enterprise, Connect, and all TrueNAS products.</p>
+    <div class="mt-4">
+      <button class="btn btn-lg btn-primary me-3 mb-4" onclick="window.location.href='/softwarestatus/'">Software Status</button>
+      <button class="btn btn-lg btn-primary me-3 mb-4" onclick="openEnhancedSearch()">Keyword Search</button>
+      <button class="btn btn-lg btn-secondary me-3 mb-4" onclick="document.getElementById('ai-search-trigger').click()">AI Search</button>
+    </div>
   </div>
   <div class="col-lg-6 d-none d-lg-block text-end">
     <img src="/images/truenas-logo-mark.png" alt="TrueNAS Logo" class="img-fluid" style="max-width: 400px;">
@@ -59,7 +64,7 @@ Current security advisories, CVE reports, and vulnerability information
 
 <div class="row justify-content-center g-4">
 
-{{% blocks/feature icon="material:assessment" title="Software Status" url="https://www.truenas.com/docs/softwarestatus/" %}}
+{{% blocks/feature icon="material:assessment" title="Software Status" url="/softwarestatus/" %}}
 Version recommendations, release schedules, upgrade paths, and download links
 {{% /blocks/feature %}}
 
