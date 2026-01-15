@@ -38,7 +38,7 @@ jump_to_buttons:
       <span class="material-icons-outlined me-3" style="color: #0095D5; font-size: 3rem;">assessment</span>
       <h1 class="cover-heading fw-bold mb-0">Software <span class="heading-gradient">Status</span></h1>
     </div>
-    <p class="lead mt-3">Find the right TrueNAS version for your use case with current deployment recommendations, release schedules, and upgrade paths.</p>
+    <p class="lead mt-3">Choose the right TrueNAS version by balancing your need for new features against operational risk tolerance. These recommendations are regularly updated after extensive testing across diverse deployments.</p>
   </div>
   <div class="col-lg-5 d-none d-lg-block text-end ps-lg-4">
     <img src="/images/truenas-logo-mark.png" alt="Software Status" class="img-fluid" style="max-width: 300px;">
@@ -48,9 +48,7 @@ jump_to_buttons:
 
 {{< blocks/section color="light" type="container" >}}
 
-<h2>Which TrueNAS Version is Recommended?</h2>
-
-<p>Choose the right TrueNAS version by balancing your need for new features against operational risk tolerance. These recommendations are regularly updated after extensive testing across diverse deployments.</p>
+<div id="which-truenas-version-is-recommended"></div>
 
 {{< software-status-table >}}
 
