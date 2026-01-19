@@ -93,7 +93,7 @@ jump_to_buttons:
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
 
   </div>
-  <div data-tab-id="releases" data-tab-label="Downloads">
+  <div data-tab-id="downloads" data-tab-label="Downloads">
 
 {{< tabbox name=truenas-downloads defaultTab=4 >}}
 
