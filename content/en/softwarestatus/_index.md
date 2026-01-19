@@ -24,7 +24,7 @@ jump_to_buttons:
     anchor: "upgrade-paths"
     icon: "conversion-path"
   - text: "Downloads"
-    anchor: "releases"
+    anchor: "downloads"
     icon: "download"
   - text: "Documentation Lifecycle"
     anchor: "documentation-lifecycle"
@@ -53,7 +53,7 @@ jump_to_buttons:
 {{< software-status-table >}}
 
 <div style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
-  <div style="display: flex; align-items: center; gap: 2rem; padding: 1rem; border: 1px solid var(--accent-color); border-radius: 8px; background-color: var(--accent-color-lite);">
+  <div class="enterprise-support-notice" style="display: flex; align-items: center; gap: 2rem; padding: 1rem; border: 1px solid var(--accent-color); border-radius: 8px; background-color: var(--accent-color-lite);">
     <div style="flex-shrink: 0;">
       <img src="/images/open-enterprise-storage--logo-full-color-rgb-large.png" alt="TrueNAS Enterprise" style="max-width: 150px; height: auto;">
     </div>
