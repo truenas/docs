@@ -29,7 +29,7 @@ Pages that have been removed from `/documentation` and moved to `/docs` will nee
 
 | Source Path | Destination Path | Status | Notes |
 |------------|------------------|--------|-------|
-| `/SoftwareStatus/` (in documentation) | `https://www.truenas.com/docs/softwarestatus/` | Pending | Software Status page migrated to /docs on 2026-01-15 |
+| `/SoftwareStatus/` (in documentation) | `https://www.truenas.com/docs/software-status/` | Pending | Software Status page migrated to /docs on 2026-01-15 |
 
 ---
 
@@ -65,7 +65,7 @@ Pages that have been removed from `/documentation` and moved to `/docs` will nee
 - **Total:** 4 files
 
 **From `/documentation` to `/docs`:**
-- ✅ 1 content page → `/content/en/softwarestatus/_index.md`
+- ✅ 1 content page → `/content/en/software-status/_index.md`
 - ✅ 1 favicon → `/static/favicon/software-status.png`
 - ✅ 1 script modification → `update-software-status.py` (Fixed data file path to use /data/properties/)
 - **Total:** 2 files + 1 script fix
@@ -81,7 +81,7 @@ Pages that have been removed from `/documentation` and moved to `/docs` will nee
 
 | Page | Source | Destination | Date | Status | Notes |
 |------|--------|-------------|------|--------|-------|
-| Software Status | `/documentation/content/SoftwareStatus/_index.md` | `/docs/content/en/softwarestatus/_index.md` | 2026-01-15 | ✅ Complete | Includes all dependencies (shortcodes, JS, CSS, data files). Automation scripts verified. Landing page updated to link to local path. |
+| Software Status | `/documentation/content/SoftwareStatus/_index.md` | `/docs/content/en/software-status/_index.md` | 2026-01-15 | ✅ Complete | Includes all dependencies (shortcodes, JS, CSS, data files). Automation scripts verified. Landing page updated to link to local path. |
 
 ---
 
@@ -106,8 +106,8 @@ Pages that have been removed from `/documentation` and moved to `/docs` will nee
   - `create-software-status-pr.sh` already configured to target `main` branch
   - Scripts continue to work via GitHub Actions/Jenkins for automated version updates
 - **Content Structure**:
-  - Page uses lowercase directory name (`/softwarestatus/`) for consistency with `/docs` conventions
-  - Landing page (`_index.md`) updated to link to Software Status with local path (`/softwarestatus/`)
+  - Page uses lowercase directory name (`/software-status/`) for consistency with `/docs` conventions
+  - Landing page (`_index.md`) updated to link to Software Status with local path (`/software-status/`)
   - All shortcode references verified and working
 - **Data Flow**: TrueNAS Update API → Python script → YAML file → Hugo build → Static page
 - **Migration Strategy**: Shortcodes and data files were already migrated previously, only needed to add page-specific JavaScript, CSS, content, and fix script path

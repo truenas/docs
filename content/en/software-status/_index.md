@@ -6,7 +6,7 @@ related: false
 use_jump_to_buttons: true
 default_jump_button: "which-truenas-version-is-recommended"
 aliases:
- - /scale/gettingstarted/upgrades/
+ - /softwarestatus/
  - /truenasupgrades/
  - /softwarereleases/
  - /releasenotes/releaseschedule/
@@ -90,7 +90,7 @@ jump_to_buttons:
   </div>
   <div data-tab-id="upgrade-paths" data-tab-label="Upgrade Paths">
 
-{{< include file="/static/includes/SCALEUpgradePaths.md" >}}
+{{< include file="/static/includes/scale-upgrade-paths.md" >}}
 
   </div>
   <div data-tab-id="downloads" data-tab-label="Downloads">
