@@ -90,7 +90,7 @@ jump_to_buttons:
   </div>
   <div data-tab-id="upgrade-paths" data-tab-label="Upgrade Paths">
 
-{{< include file="/static/includes/scale-upgrade-paths.md" >}}
+{{< include file="/static/includes/upgrade-paths.md" >}}
 
   </div>
   <div data-tab-id="downloads" data-tab-label="Downloads">
