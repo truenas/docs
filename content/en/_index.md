@@ -9,9 +9,9 @@ description: "Comprehensive documentation for TrueNAS Community Edition, TrueNAS
     <h1 class="cover-heading fw-bold mb-4">Documentation <span class="heading-gradient">Hub</span></h1>
     <p class="lead mt-3">The comprehensive repository for all TrueNAS software and hardware documentation. Find guides, references, and resources for TrueNAS Community Edition, Enterprise, Connect, and all TrueNAS products.</p>
     <div class="mt-4">
-      <button class="btn btn-lg btn-primary me-3 mb-4" onclick="window.location.href='/softwarestatus/'">Software Status</button>
-      <button class="btn btn-lg btn-primary me-3 mb-4" onclick="openEnhancedSearch()">Keyword Search</button>
-      <button class="btn btn-lg btn-secondary me-3 mb-4" onclick="document.getElementById('ai-search-trigger').click()">AI Search</button>
+      <button class="btn btn-lg btn-primary me-3 mb-4" onclick="window.location.href='/softwarestatus/'" style="color: white !important;">Software Status</button>
+      <button class="btn btn-lg btn-primary me-3 mb-4" onclick="openEnhancedSearch()" style="color: white !important;">Keyword Search</button>
+      <button class="btn btn-lg btn-secondary me-3 mb-4" onclick="document.getElementById('ai-search-trigger').click()" style="color: #0095d5 !important;">AI Search</button>
     </div>
   </div>
   <div class="col-lg-6 d-none d-lg-block text-end">
