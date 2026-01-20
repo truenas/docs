@@ -73,7 +73,7 @@ jump_to_buttons:
   </div>
   <div data-tab-id="release-schedule" data-tab-label="Release Schedule">
 
-{{< releaselist name=scale-releases defaultTab=3 >}}
+{{< releaselist name=tn-releases defaultTab=3 >}}
 
 {{< expand "Individual releases within a major version are labeled as Early, Stable, or Maintenance (expand for details)." "v" >}}
 

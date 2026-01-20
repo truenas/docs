@@ -1,6 +1,6 @@
 ---
-# This file is pulled by the API Docs Jenkins pipeline to match SCALE versions with API versions
-id: "scale-schedule"
+# This file is pulled by the API Docs Jenkins pipeline to match TrueNAS versions with API versions
+id: "tn-schedule"
 img: "/images/tn-openstorage-logo.png"
 product: "TrueNAS"
 title: '<img src="/images/Enterprise.png" class="edition-logo" alt="TrueNAS Enterprise"> | <img src="/images/Community_Edition.png" class="edition-logo" alt="TrueNAS Community Edition">'
