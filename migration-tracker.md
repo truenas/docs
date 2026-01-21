@@ -87,6 +87,28 @@ Pages that have been removed from `/documentation` and moved to `/docs` will nee
 
 ## Notes
 
+### Hugo Module Configuration for Production
+
+**IMPORTANT:** Before deploying to production, remove local module replace directives:
+
+1. **In `go.mod` (line 14):** Comment out or remove:
+   ```
+   replace github.com/truenas/docs-shared => ../docs-shared
+   ```
+
+2. **In `hugo.toml` (line 50):** Remove the replace line:
+   ```
+   replace = "../docs-shared"
+   ```
+
+3. **Update module to remote branch:**
+   ```bash
+   hugo mod get -u github.com/truenas/docs-shared@<branch-name>
+   hugo mod tidy
+   ```
+
+These local replace directives are used for development only. Production builds must fetch the module from GitHub.
+
 ### Initial Migration (2026-01-14)
 - Data files were copied to both `/docs-shared` (for module sharing) and `/docs` (for software status page)
 - Scripts in `/docs` were modified for the new repository structure:
