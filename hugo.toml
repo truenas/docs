@@ -35,6 +35,7 @@ timeout = "30s"
   [params.ui]
     breadcrumb_disable = true
     navbar_logo = true
+    navbar_logo_404 = "images/docs-hub-wordmark-color.svg"
     sidebar_menu_compact = false
     sidebar_search_disable = true
     showLightDarkModeMenu = true
