@@ -10,22 +10,23 @@
 
 ### Current Problem Statement
 
-The TrueNAS documentation currently serves nightly/development content at the root URL (`truenas.com/docs/`), creating confusion for users who cannot determine which version they're viewing or access documentation for specific stable releases. With no clear version navigation and complex Jenkins symlink configurations, both users and maintainers face significant pain points.
+The TrueNAS documentation currently has versioned URLs (`/docs/scale/25.10/`, `/docs/scale/25.04/`, etc.) but the unversioned path `/docs/scale/` serves nightly/development content by default. This creates confusion when users access clean URLs like `/docs/scale/scaletutorials/dashboard/` expecting current stable documentation but receiving nightly content instead. Without a `/current/` symlink pointing to the latest stable version, the most discoverable path leads users to the wrong content.
 
 **Key Issues:**
-- Users viewing nightly docs by default without realizing it
-- No version navigation or discoverability
-- Complex Jenkins builds with hard-to-maintain symlink configurations
-- Difficult to determine which docs match deployed TrueNAS versions
+- Unversioned URLs like `/docs/scale/` default to nightly instead of current stable
+- No `/current/` symlink to point clean URLs to latest stable release
+- Users expect `/docs/scale/scaletutorials/dashboard/` to show current info, not nightly
+- Complex Jenkins listener builds with fragile inter-job dependencies
 
 ### Proposed Solution Overview
 
-Implement a **branch-per-version architecture** starting with TrueNAS 26, with versioned URLs under the `/tn/` namespace:
-- Stable versions at `docs.truenas.com/tn/26/`, `/tn/27/`, etc.
-- Nightly builds at `docs.truenas.com/tn/nightly/`
-- Symlink at `/tn/current/` pointing to latest stable
+Refine the existing **branch-per-version architecture** starting with TrueNAS 26, reorganizing under the `/tn/` namespace with improved version navigation:
+- Stable versions at `docs.truenas.com/tn/26/`, `/tn/27/`, etc. (currently `/scale/25.10/`, `/scale/25.04/`)
+- Nightly builds at `docs.truenas.com/tn/nightly/` (currently `/scale/`)
+- **NEW:** Symlink at `/tn/current/` pointing to latest stable (solves clean URL problem)
 - Root redirect (`/docs/`) → `/docs/tn/current/` for discoverability
-- Branch-per-version preserves existing backport automation
+- Enhanced version dropdown and awareness banners
+- Simplified deployment: direct builds replace complex listener build dependencies
 
 ### Key Benefits
 
@@ -38,6 +39,142 @@ Implement a **branch-per-version architecture** starting with TrueNAS 26, with v
 
 ---
 
+## Architecture Overview and Rationale
+
+### Why Multi-Branch Version Management
+
+The `/documentation` repository currently uses a branch-per-major-version strategy (e.g., `25.10`, `25.04` branches). This approach has served us well for version isolation and independent updates but has also had some drawbacks. This proposal **refines and modernizes** our existing branching strategy rather than replacing it with a fundamentally different approach.
+
+**What Works, What Doesn't:**
+
+| Current Setup | What Works ✅ | What Doesn't ❌ | Refined Approach |
+|---------------|---------------|-----------------|------------------|
+| Branches: `master`, `25.10`, `25.04` | Version isolation, independent updates | Master at `/scale/` serves nightly by default | `main` (non-versioned), `tn-nightly` at `/tn/nightly/` |
+| Versioned URLs: `/scale/25.10/`, `/scale/25.04/` | Users can access specific versions | No `/current/` symlink for stable | Add `/tn/current/` pointing to latest stable |
+| Jenkins listener builds | Automated deployment | Fragile, inter-job dependencies, hard to debug | Direct deployment + manual `/current/` symlink |
+| Branch-per-major-version | Standard Git workflows | Clean URLs go to nightly, not stable | Clean URLs → `/current/` → latest stable |
+
+**Why Refine Rather Than Replace?**
+
+The branch-per-version approach itself works—version isolation is good, backporting is straightforward, versioned URLs exist, and the team understands the workflow. The problems are in the implementation details: clean URLs defaulting to nightly instead of stable, complex listener build symlink automation, and the need for better version navigation UI. Refining the existing structure addresses these issues without requiring fundamental changes to our Git workflow or retraining the team.
+
+### Branch Strategy at a Glance
+
+**Current Branch Structure (What We Have Today):**
+```
+/documentation repository:
+├── master              → Builds to truenas.com/docs/scale/ (nightly/development)
+├── 25.10              → Builds to truenas.com/docs/scale/25.10/ (covers 25.10.x releases)
+├── 25.04              → Builds to truenas.com/docs/scale/25.04/ (covers 25.04.x releases)
+└── Older branches     → Various states, some archived
+
+URL Structure:
+├── /docs/scale/                    → Nightly (problem: should point to current stable)
+├── /docs/scale/25.10/             → TrueNAS 25.10 docs ✅
+├── /docs/scale/25.04/             → TrueNAS 25.04 docs ✅
+└── /docs/scale/current/           → Doesn't exist (needed!)
+```
+
+**Refined Branch Structure (Proposed):**
+```
+/docs repository:
+├── main                → Non-versioned content ONLY → docs.truenas.com/
+├── tn-nightly          → TrueNAS development docs → docs.truenas.com/tn/nightly/
+├── tn-26               → TrueNAS 26 stable → docs.truenas.com/tn/26/
+├── tn-27               → TrueNAS 27 stable → docs.truenas.com/tn/27/
+└── tn-28               → TrueNAS 28 stable → docs.truenas.com/tn/28/
+
+URL Structure:
+├── /docs/tn/                       → Non-versioned landing/content
+├── /docs/tn/nightly/              → Nightly/development
+├── /docs/tn/26/                   → TrueNAS 26 docs
+├── /docs/tn/27/                   → TrueNAS 27 docs
+└── /docs/tn/current/ → 27         → Symlink to latest stable ✅ NEW!
+```
+
+**Migration Path:**
+- Reorganize from `/scale/` namespace to `/tn/` namespace
+- Rename `master` → `tn-nightly`, builds to `/tn/nightly/` (currently `/scale/`)
+- Rename version branches: `25.10` → `tn-26`, build to `/tn/26/` (currently `/scale/25.10/`)
+- Create new `main` branch for non-versioned content (hardware, solutions, references)
+- **Add `/tn/current/` symlink** pointing to latest stable (solves clean URL problem)
+
+**Branch Lifecycle (Same as Today):**
+1. Develop TN26 features in `tn-nightly`
+2. At TN26 release → Create `tn-26` branch from `tn-nightly`
+3. Continue TN27 development in `tn-nightly`
+4. Bug fixes → Commit to stable branches (`tn-26`), cherry-pick to `tn-nightly`
+
+**Key Distinction:** The `main` branch serves ONLY non-versioned content (software status pages, landing pages). All TrueNAS documentation lives in `/content/tn/` within versioned branches (`tn-nightly`, `tn-26`, etc.).
+
+### Deployment Model
+
+Each Jenkins job builds Hugo sites **DIRECTLY to their final web-accessible location**:
+
+```
+Branch          →  Jenkins Job               →  Deploys To
+main            →  TN-Docs-Build-Main        →  docs.truenas.com/
+tn-nightly      →  TN-Docs-Build-Nightly     →  docs.truenas.com/tn/nightly/
+tn-26           →  TN-Docs-Build-TN26        →  docs.truenas.com/tn/26/
+tn-27           →  TN-Docs-Build-TN27        →  docs.truenas.com/tn/27/
+```
+
+**No intermediate steps. No listener builds. No automated symlink management.**
+
+The ONLY symlink needed is `/tn/current/` which is updated manually at releases:
+```bash
+cd /var/www/docs.truenas.com/tn/
+ln -sfn 27 current  # Update when TN27 becomes current stable
+```
+
+### Why Not Switch to Alternative Approaches?
+
+We evaluated whether to fundamentally restructure to a different versioning approach but determined that refining our existing branch-per-version model is the better path forward.
+
+**Comparison with Alternative Approaches:**
+
+| Aspect | Single Branch with Tags | Monorepo with Version Folders | Multi-Branch (Refined) |
+|--------|-------------------------|-------------------------------|------------------------|
+| **Version Isolation** | Tags don't prevent accidental edits to old versions | Complex content paths, potential conflicts | Each version in separate branch - prevents cross-contamination ✅ |
+| **Backporting** | Cherry-pick between tags (non-standard, complex) | Manual file copying between folders | Cherry-pick between branches (standard Git workflow) ✅ |
+| **Build Complexity** | Need to checkout tags for each build | Need conditional builds per folder | Simple: build from branch HEAD ✅ |
+| **Team Familiarity** | Different from our current workflow | Complete retraining required | Refinement of current workflow ✅ |
+| **Existing Automation** | Would break our backport scripts | Would require complete rewrite | Continues to work with minor updates ✅ |
+| **Migration Effort** | High - restructure all existing branches | Very High - restructure repository entirely | Low - rename and reorganize existing branches ✅ |
+
+**Key Advantages of Staying with Branch-Per-Version:**
+- **We already do this** - team is familiar with the workflow
+- **Our backport automation already works** with branches
+- **Standard practice** for documentation (Kubernetes, Django, Python all use branches)
+- **Lower migration risk** - we're organizing better, not rebuilding from scratch
+
+### Why This Scales
+
+The `/documentation` repository already manages 3-4 active branches simultaneously. The refined approach maintains this scalability while addressing current pain points:
+
+**What Stays the Same:**
+- Each version branch builds independently
+- Bug fixes backported to specific versions
+- Standard Git workflows (cherry-pick, merge)
+- Branch-per-major-version granularity
+
+**What Changes:**
+- **Current:** Clean URLs at `/scale/` serve nightly content → **Refined:** `/tn/` serves non-versioned content, clean doc URLs via `/tn/current/` symlink
+- **Current:** No `/current/` symlink → **Refined:** `/tn/current/` points to latest stable (e.g., `/tn/26/`)
+- **Current:** Versions at `/scale/25.10/`, `/scale/25.04/` → **Refined:** Versions at `/tn/26/`, `/tn/27/` (cleaner naming)
+- **Current:** Complex listener builds manage symlinks → **Refined:** Direct deployment, single manual `/current/` symlink
+- **Current:** Version dropdown exists but needs improvement → **Refined:** Enhanced version navigation with banners and indicators
+
+**Industry Alignment:**
+This approach mirrors how major projects handle documentation versioning:
+- **Kubernetes:** `release-1.26`, `release-1.27`, `release-1.28` branches
+- **Django:** `stable/4.2.x`, `stable/5.0.x` branches
+- **Python:** `3.11`, `3.12`, `3.13` branches
+
+These projects have proven this model scales effectively for 5+ simultaneous versions.
+
+---
+
 ## Current State Analysis
 
 ### How `/documentation` Repo Handles Versions
@@ -45,17 +182,27 @@ Implement a **branch-per-version architecture** starting with TrueNAS 26, with v
 **Current Architecture:**
 ```
 /documentation/
-├── master branch → builds to docs.truenas.com/docs/ (nightly)
-├── 24.10.1 branch → builds to enterprise.truenas.com/docs/ (via symlink)
-├── 24.10 branch → (maintenance)
-├── 24.04.2 branch → builds to core.truenas.com/docs/ (via symlink)
-└── jenkins/ → complex build configurations
+├── master branch → builds to truenas.com/docs/scale/ (nightly/development)
+├── 25.10 branch → builds to truenas.com/docs/scale/25.10/ (stable, covers 25.10.x releases)
+├── 25.04 branch → builds to truenas.com/docs/scale/25.04/ (stable, covers 25.04.x releases)
+└── jenkins/ → complex build configurations with listener builds
 ```
 
 **Current URL Structure:**
-- `truenas.com/docs/*` → nightly/development content
-- `enterprise.truenas.com/docs/*` → TrueNAS 24.10.1 (Enterprise)
-- `core.truenas.com/docs/*` → TrueNAS 24.04.2 (Community Edition)
+- `truenas.com/docs/scale/` → **Nightly/development** (problem: users expect current stable)
+  - `/scale/scaletutorials/dashboard/` → Nightly content (confusing!)
+- `truenas.com/docs/scale/25.10/` → **TrueNAS 25.10** (works correctly) ✅
+  - `/scale/25.10/scaletutorials/dashboard/` → 25.10 content
+- `truenas.com/docs/scale/25.04/` → **TrueNAS 25.04** (works correctly) ✅
+  - `/scale/25.04/scaletutorials/dashboard/` → 25.04 content
+- `truenas.com/docs/hardware/` → Hardware documentation (non-versioned)
+- `truenas.com/docs/solutions/` → Solutions and integrations (non-versioned)
+
+**Key Problems:**
+1. Clean URLs like `/docs/scale/scaletutorials/dashboard/` serve **nightly content** instead of current stable
+2. No `/docs/scale/current/` symlink to point to latest stable version
+3. Users expect the most discoverable path (no version number) to show current stable, not nightly
+4. Complex Jenkins listener builds manage symlinks between jobs (fragile, hard to debug)
 
 **Current Jenkins Approach:**
 - Multiple Jenkins jobs per branch
@@ -67,26 +214,26 @@ Implement a **branch-per-version architecture** starting with TrueNAS 26, with v
 
 | Issue | Impact | Severity |
 |-------|--------|----------|
-| Root URL serves nightly docs | Users on stable releases read incorrect documentation | ⚠️ **High** |
-| No version selector | Users cannot navigate between versions | ⚠️ **High** |
-| No version indicators | Users don't know what version they're viewing | ⚠️ **High** |
-| Domain-based versioning (core vs enterprise) | Confusing naming as products converge | ⚠️ **Medium** |
-| Complex symlink configurations | Maintenance burden, error-prone | ⚠️ **Medium** |
-| Multiple Jenkins builds per branch | Resource intensive, slow iteration | ⚠️ **Medium** |
+| Clean URLs serve nightly instead of current stable | Users expect `/scale/` to show current stable, get nightly instead | ⚠️ **High** |
+| No `/current/` symlink | Most discoverable path leads to wrong content | ⚠️ **High** |
+| Version dropdown needs improvement | Existing dropdown could be more prominent/user-friendly | ⚠️ **Medium** |
+| No version banners | Users on old versions don't know they're viewing outdated content | ⚠️ **Medium** |
+| Complex listener build configurations | Fragile inter-job dependencies, hard to debug | ⚠️ **Medium** |
+| Jenkins symlink automation brittle | Maintenance burden, error-prone | ⚠️ **Medium** |
 
 ### Maintenance Burdens
 
 **For Documentation Team:**
-- Must remember which branch builds to which domain
-- Backporting requires awareness of branch-to-URL mappings
+- Cannot serve multiple versions simultaneously (all deploy to `/scale/`)
+- Users cannot access docs for specific TrueNAS versions
 - No clear process for archiving old versions
-- Difficult to test version-specific content
+- Difficult to test version-specific content without affecting live site
 
 **For IT/DevOps:**
 - Jenkins configuration changes require deep system knowledge
-- Symlink management across domains prone to errors
-- Nginx configurations scattered across multiple files
-- Difficult to add new versions without breaking existing builds
+- Complex listener build dependencies between jobs
+- Symlink management between builds fragile and hard to debug
+- Difficult to add versioned documentation without restructuring entire deployment
 
 ---
 
@@ -94,19 +241,56 @@ Implement a **branch-per-version architecture** starting with TrueNAS 26, with v
 
 ### Branch-Per-Version Structure
 
-Starting with TrueNAS 26, each major version gets its own branch:
+Starting with TrueNAS 26, the repository uses a multi-branch strategy with clear separation between development and stable versions:
 
+```
+Git Branches:
+├── main              → Non-versioned content only (landing, software-status)
+├── tn-nightly        → TrueNAS development docs (permanent branch)
+├── tn-26             → TrueNAS 26 stable (cut from tn-nightly)
+├── tn-27             → TrueNAS 27 stable (cut from tn-nightly)
+└── tn-28             → TrueNAS 28 stable (cut from tn-nightly)
+```
+
+**Branch Content Structure:**
+
+**`main` branch:**
 ```
 /docs/
-├── main branch → /tn/nightly/ (development)
-├── tn-26 branch → /tn/26/ (stable)
-├── tn-27 branch → /tn/27/ (when released)
-├── tn-28 branch → /tn/28/ (when released)
-└── archived branches (no longer build)
+├── content/
+│   ├── software-status/    ← Non-versioned
+│   ├── _index.md          ← Landing page
+│   └── other-content/     ← Misc non-versioned
+└── hugo.toml
 ```
+Builds to: `docs.truenas.com/` (root level)
+
+**`tn-nightly` branch:**
+```
+/docs/
+├── content/
+│   └── tn/                ← TrueNAS docs (replaces /SCALE/)
+│       ├── GettingStarted/
+│       ├── Installation/
+│       └── Administration/
+└── hugo.toml
+```
+Builds to: `docs.truenas.com/tn/nightly/`
+
+**`tn-26` and other stable branches:**
+- Same structure as `tn-nightly` (only `/content/tn/`)
+- Non-versioned content REMOVED from these branches
+- Builds to: `docs.truenas.com/tn/26/`, `/tn/27/`, etc.
+
+**Branch Lifecycle:**
+1. Develop TN26 features in `tn-nightly`
+2. At TN26 release: Create `tn-26` branch from `tn-nightly`
+3. Continue TN27 development in `tn-nightly`
+4. Bug fixes: Commit to stable branches (`tn-26`), cherry-pick to `tn-nightly`
 
 **Branch Naming Convention:**
-- `main` → nightly/development builds
+- `main` → non-versioned content builds
+- `tn-nightly` → development/nightly builds
 - `tn-26`, `tn-27`, `tn-28` → stable version branches
 - Format: `tn-<major-version>` (not `tn-26.04`, just `tn-26`)
 
@@ -164,24 +348,42 @@ location /tn/ {
 - Zero downtime updates
 - Same approach works for all environments (dev, staging, prod)
 
+**Contrast with Listener Builds:**
+
+Traditional documentation setups often use "listener builds" where the main branch watches for version branch builds and creates symlinks dynamically. This approach eliminates that complexity:
+
+- ❌ **Old Way:** Version builds to intermediate location → Main branch listener → Creates symlink → Serves content
+- ✅ **New Way:** Version builds directly to final location → Manual symlink update at releases → Serves content
+
+The ONLY symlink needed is `/tn/current/` updated manually when releasing new versions. No automated symlink management, no listener builds, no inter-job dependencies.
+
 ### Root Redirect Configuration
 
-Solve the discoverability problem by redirecting root docs URL to current stable version:
+**Purpose:** These redirects handle two scenarios:
+1. Users landing on old unversioned URLs (legacy bookmarks)
+2. Users accessing root `/docs/` without knowing about `/tn/current/`
+
+**Note:** `main` branch content (software-status, landing page) is served from root WITHOUT these redirects. These patterns ONLY apply when users request paths that look like documentation URLs.
 
 ```nginx
-# Redirect root to current stable version
+# Redirect root /docs/ to current stable version
 location = /docs/ {
     return 302 /docs/tn/current/;
 }
 
-# Redirect common unversioned paths to current version
-location ~ ^/docs/(getting-started|installation|administration|troubleshooting)(/.*)?$ {
+# Redirect legacy unversioned paths that look like documentation
+location ~ ^/docs/(getting-started|installation|administration|troubleshooting|references)(/.*)?$ {
     return 302 /docs/tn/current/$1$2;
 }
 
-# Versioned paths work as-is
+# Non-versioned content (software-status, landing) served directly from main branch
+location /docs/software-status/ {
+    try_files $uri $uri/ $uri/index.html =404;
+}
+
+# Versioned documentation (symlinks work transparently)
 location /docs/tn/ {
-    try_files $uri $uri/ =404;
+    try_files $uri $uri/ $uri/index.html =404;
 }
 ```
 
@@ -201,13 +403,20 @@ location /docs/tn/ {
 
 ### Jenkins Build Configuration Per Branch
 
+> **Direct Deployment Model**
+>
+> Unlike traditional setups with intermediate staging and symlink management, this approach
+> builds Hugo sites DIRECTLY to their final web-accessible location. Each Jenkins job is
+> independent—no listener builds or inter-job dependencies required.
+
 Each branch gets a dedicated Jenkins build job:
 
 **Jenkins Job Structure:**
 ```
+TrueNAS-Docs-Build-Main      → main branch (non-versioned content)
+TrueNAS-Docs-Build-Nightly   → tn-nightly branch
 TrueNAS-Docs-Build-TN26      → tn-26 branch
 TrueNAS-Docs-Build-TN27      → tn-27 branch
-TrueNAS-Docs-Build-Nightly   → main branch
 ```
 
 **Build Command (Example for TN26):**
@@ -227,6 +436,26 @@ hugo --gc --minify --cleanDestinationDir \
 # Optional: Clear CDN cache for this version
 curl -X POST "https://cdn.example.com/purge/docs/tn/26/"
 ```
+
+**Build for Main Branch (Non-Versioned Content):**
+```bash
+#!/bin/bash
+set -e
+
+# Main branch: Non-versioned content only
+hugo --gc --minify --cleanDestinationDir \
+     --baseURL="https://docs.truenas.com/" \
+     --destination="/var/www/docs.truenas.com/"
+
+# Search indexing
+npx pagefind --site "/var/www/docs.truenas.com/" \
+     --glob "{software-status,other-content}/**/*.html"
+```
+
+**Creates:**
+- `docs.truenas.com/software-status/` ✅
+- `docs.truenas.com/` (landing page) ✅
+- NO versioned content in this build
 
 **Environment Variables Per Job:**
 ```bash
@@ -381,7 +610,11 @@ echo "Current version is now TrueNAS ${VERSION}"
 
 ### Version Dropdown Configuration
 
-**Hugo Configuration (hugo.toml):**
+**Note:** Version dropdown configuration differs between `main` branch and versioned branches:
+- `main` branch: NO version dropdown (serves non-versioned content)
+- Versioned branches (`tn-nightly`, `tn-26`, etc.): Include version dropdown
+
+**Hugo Configuration for Versioned Branches (hugo.toml):**
 ```toml
 [params]
   # Current version of these docs
@@ -407,6 +640,19 @@ echo "Current version is now TrueNAS ${VERSION}"
     version = "25 (Archived)"
     url = "/tn/25/"
     lifecycle = "archived"
+```
+
+**Main Branch Configuration (No Versioning):**
+```toml
+# hugo.toml for main branch
+[params]
+  # No version parameter
+  # No versions array
+
+  [params.search]
+    siteName = "TrueNAS Docs Hub"
+    siteKey = "docs"
+    sitePriority = 1
 ```
 
 **Version Selector Shortcode (layouts/shortcodes/version-selector.html):**
@@ -788,13 +1034,15 @@ const searchConfig = {
 
 ### Releasing New Versions (Make it "Current")
 
+**Note:** This workflow applies to versioned branches only. The `main` branch continues to be updated independently with non-versioned content changes.
+
 **Timeline: TrueNAS 27 Release**
 
 **Week Before Release:**
-1. **Create release branch** from `main`:
+1. **Create release branch** from `tn-nightly`:
    ```bash
-   git checkout main
-   git pull origin main
+   git checkout tn-nightly
+   git pull origin tn-nightly
    git checkout -b tn-27
    git push origin tn-27
    ```
@@ -844,6 +1092,7 @@ const searchConfig = {
 1. **Monitor** 404 errors and user feedback
 2. **Update** search indexes if using separate indexes per version
 3. **Review** old version (tn-26) for archival eligibility
+4. **Update** `tn-nightly` branch config to reflect TN28 as development version
 
 ### Archiving EOL Versions
 
@@ -923,7 +1172,7 @@ const searchConfig = {
 **Current backporting automation continues to work unchanged.**
 
 **Workflow:**
-1. Make change in `main` (nightly)
+1. Make change in `tn-nightly` (development)
 2. Backport script identifies eligible changes
 3. Create backport PR to `tn-27`, `tn-26`, etc.
 4. Review and merge backport PRs
@@ -931,11 +1180,11 @@ const searchConfig = {
 
 **Example: Fixing a typo in installation docs**
 ```bash
-# Fix made in main branch
-git checkout main
-# Edit content/en/getting-started/install/_index.md
+# Fix made in tn-nightly branch
+git checkout tn-nightly
+# Edit content/tn/GettingStarted/Install/_index.md
 git commit -m "Fix typo in installation instructions"
-git push origin main
+git push origin tn-nightly
 
 # Automated backport (or manual)
 git checkout tn-27
@@ -956,12 +1205,12 @@ git push origin tn-27
 
 **Process:**
 
-1. **Update `hugo.toml`** in ALL active branches:
+1. **Update `hugo.toml`** in ALL active versioned branches:
    ```bash
    # Script: update-all-version-configs.sh
    #!/bin/bash
 
-   BRANCHES=("main" "tn-26" "tn-27" "tn-28")
+   BRANCHES=("tn-nightly" "tn-26" "tn-27" "tn-28")
 
    for branch in "${BRANCHES[@]}"; do
        git checkout "$branch"
@@ -975,6 +1224,8 @@ git push origin tn-27
        git push origin "$branch"
    done
    ```
+
+   **Note:** The `main` branch does not have version dropdown configuration.
 
 2. **Verify dropdown** appears correctly on all versions:
    - Visit `/tn/26/` - should show correct versions
@@ -1177,7 +1428,8 @@ docs-archive/
 - [ ] Nginx configuration changes (provide config blocks)
 - [ ] Filesystem structure setup (`/var/www/docs.truenas.com/tn/`)
 - [ ] Jenkins job creation and configuration
-- [ ] Symlink management scripts and permissions
+- [ ] ~~Symlink management scripts~~ **ONLY ONE symlink needed: `/tn/current/`**
+- [ ] ~~Per-version symlink automation~~ **NOT NEEDED - Direct deployment**
 - [ ] Archive server setup (if using separate server)
 
 **Deployment:**
@@ -1783,7 +2035,7 @@ echo "4. Test archived URL: https://docs-archive.truenas.com/tn/${VERSION}/"
 set -euo pipefail
 
 REPO_DIR="/path/to/docs"
-BRANCHES=("main" "tn-26" "tn-27")
+BRANCHES=("tn-nightly" "tn-26" "tn-27")
 
 # Version configuration to apply
 # Edit this section when releasing new versions
@@ -1829,7 +2081,7 @@ for branch in "${BRANCHES[@]}"; do
     echo "  ✅ ${branch} updated"
 done
 
-git checkout main
+git checkout tn-nightly
 echo ""
 echo "✅ All branches updated!"
 echo "Next: Verify version dropdowns on all docs sites"
