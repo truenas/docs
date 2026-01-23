@@ -1,85 +1,35 @@
 ---
-title: TrueNAS Documentation Hub
-description: "Comprehensive documentation for TrueNAS Community Edition, TrueNAS Enterprise, TrueNAS Connect, and more."
+title: "TrueNAS Development Documentation"
+linkTitle: "TrueNAS Nightly"
+description: "Development documentation for the next release of TrueNAS"
+type: docs
+layout: "docs"
+simple_list: true
+no_list: false
+weight: 10
+cascade:
+- _target:
+    path: "/**"
+    kind: "page"
+  type: "docs"
+- _target:
+    path: "/**"
+    kind: "section"
+  type: "docs"
 ---
 
-{{< blocks/cover color="primary" height="micro" >}}
-<div class="row align-items-center">
-  <div class="col-lg-6 text-start pe-lg-5">
-    <h1 class="cover-heading fw-bold mb-4">Documentation <span class="heading-gradient">Hub</span></h1>
-    <p class="lead mt-3">The comprehensive repository for all TrueNAS software and hardware documentation. Find guides, references, and resources for TrueNAS Community Edition, Enterprise, Connect, and all TrueNAS products.</p>
-    <div class="mt-4">
-      <button class="btn btn-lg btn-primary me-3 mb-4" onclick="window.location.href='/software-status/'">Software Status</button>
-      <button class="btn btn-lg btn-primary me-3 mb-4" onclick="openEnhancedSearch()">Keyword Search</button>
-      <button class="btn btn-lg btn-secondary me-3 mb-4" onclick="document.getElementById('ai-search-trigger').click()">AI Search</button>
-    </div>
-  </div>
-  <div class="col-lg-6 d-none d-lg-block text-end">
-    <img src="/images/truenas-logo-mark.png" alt="TrueNAS Logo" class="img-fluid" style="max-width: 400px;">
-  </div>
-</div>
-{{< /blocks/cover >}}
+# TrueNAS Development Documentation
 
-{{% blocks/section color="light" type="row" %}}
-<div class="row justify-content-center g-4">
+This documentation reflects the **in-development version** of TrueNAS. Features and interfaces may change before the next stable release.
 
-{{% blocks/feature icon="image:icons/tn-icon-black.png" title="TrueNAS Enterprise" url="https://www.truenas.com/docs/" %}}
-Documentation and support resources for enterprise storage deployments
-{{% /blocks/feature %}}
+{{< alert title="Development Version" color="warning" >}}
+You are viewing documentation for unreleased software. For stable release documentation, visit [TrueNAS Current](/tn/current/).
+{{< /alert >}}
 
-{{% blocks/feature icon="image:icons/tn-icon-black.png" title="TrueNAS Community Edition" url="https://www.truenas.com/docs/" %}}
-Complete guides, tutorials, and references for community deployments
-{{% /blocks/feature %}}
+## Getting Started
 
-{{% blocks/feature icon="image:icons/tnc-icon-black.svg" title="TrueNAS Connect" url="https://connect.truenas.com/" %}}
-Centralized management for multiple TrueNAS systems with health monitoring and remote installation
-{{% /blocks/feature %}}
+New to TrueNAS? Start here to install and configure your system.
 
-</div>
-<div class="row justify-content-center g-4">
+## Documentation Sections
 
-{{% blocks/feature icon="material:storage" title="Products" url="https://www.truenas.com/docs/hardware/" %}}
-TrueNAS hardware specifications, datasheets, and product family documentation
-{{% /blocks/feature %}}
-
-{{% blocks/feature icon="material:api" title="TrueNAS API" url="https://api.truenas.com/" %}}
-TrueNAS Websocket API reference for automation and programmatic control of TrueNAS systems
-{{% /blocks/feature %}}
-
-{{% blocks/feature icon="material:apps" title="TrueNAS Apps Market" url="https://apps.truenas.com/" %}}
-Extend TrueNAS functionality with containerized applications and services
-{{% /blocks/feature %}}
-
-{{% blocks/feature icon="material:shield" title="Security Reports" url="https://security.truenas.com/" %}}
-Current security advisories, CVE reports, and vulnerability information
-{{% /blocks/feature %}}
-
-</div>
-
-{{% /blocks/section %}}
-
-{{% blocks/section color="white" type="row" %}}
-## Additional Resources
-{.h2 .text-center .mb-4 }
-
-<div class="row justify-content-center g-4">
-
-{{% blocks/feature icon="material:assessment" title="Software Status" url="/software-status/" %}}
-Version recommendations, release schedules, upgrade paths, and download links
-{{% /blocks/feature %}}
-
-{{% blocks/feature icon="material:lightbulb" title="Solutions" url="https://www.truenas.com/docs/solutions/" %}}
-Implementation guides and best practices for common deployment scenarios
-{{% /blocks/feature %}}
-
-{{% blocks/feature icon="material:handshake" title="Contributing" url="https://www.truenas.com/docs/contributing/" %}}
-Join the community and contribute to TrueNAS documentation and open source projects
-{{% /blocks/feature %}}
-
-{{% blocks/feature icon="material:library_books" title="References" url="https://www.truenas.com/docs/references/" %}}
-Technical specifications, glossaries, and supplementary documentation resources
-{{% /blocks/feature %}}
-
-</div>
-
-{{% /blocks/section %}}
+Browse the complete documentation organized by feature area.

@@ -1,5 +1,5 @@
-baseURL = "https://docs.truenas.com/"
-title = "TrueNAS Documentation Hub"
+baseURL = "/"
+title = "TrueNAS Development Documentation"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 contentDir = "content/en"
@@ -21,12 +21,14 @@ timeout = "30s"
 
 # Site params
 [params]
-  version = "1.0.0"
+  version = "nightly"
+  versionLabel = "Development"
   featured_image = "/images/tn-openstorage-logo.png"
 
   [params.search]
     siteName = "TrueNAS Docs Hub"
-    siteKey = "docs"
+    siteKey = "docs-tn"
+    siteVersion = "nightly"
     siteIcon = "/images/truenas-logo-mark.png"
     sitePriority = 1
     showVersionFilter = true
