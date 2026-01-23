@@ -1,8 +1,8 @@
 ---
 title: "System Settings"
-description: "System management and configuration"
+description: "Tutorials for configuring the system management options in the System Settings area of the TrueNAS web interface."
 type: docs
-weight: 14
+weight: 50
 ---
 
 

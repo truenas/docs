@@ -1,8 +1,8 @@
 ---
 title: "Data Protection"
-description: "Data backup and protection features"
+description: "Tutorials related to configuring data backup features in TrueNAS."
 type: docs
-weight: 8
+weight: 35
 ---
 
 

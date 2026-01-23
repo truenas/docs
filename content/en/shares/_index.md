@@ -1,8 +1,8 @@
 ---
 title: "Shares"
-description: "Configuring data sharing features"
+description: "Tutorials for configuring the various data sharing features in TrueNAS."
 type: docs
-weight: 7
+weight: 30
 ---
 
 

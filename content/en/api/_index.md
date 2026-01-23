@@ -1,8 +1,8 @@
 ---
 title: "API"
-description: "TrueNAS API documentation and access"
+description: "Instructions to access built-in TrueNAS API documentation and links to static copies of the API documentation."
 type: docs
-weight: 50
+weight: 70
 ---
 
 

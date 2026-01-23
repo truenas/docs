@@ -1,8 +1,8 @@
 ---
 title: "Containers"
-description: "Configuring and managing Linux containers"
+description: "Tutorials for configuring the TrueNAS Containers feature, creating, and managing containers."
 type: docs
-weight: 11
+weight: 55
 ---
 
 

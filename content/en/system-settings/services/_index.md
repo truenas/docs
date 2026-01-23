@@ -1,6 +1,6 @@
 ---
 title: "Services"
-description: "TrueNAS service configuration"
+description: "Tutorials for TrueNAS services."
 type: docs
 weight: 50
 ---

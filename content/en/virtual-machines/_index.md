@@ -1,8 +1,8 @@
 ---
 title: "Virtual Machines"
-description: "Configuring virtualization and managing VMs"
+description: "Tutorials for configuring TrueNAS SCALE virtualization features and creating virtual machines."
 type: docs
-weight: 12
+weight: 60
 ---
 
 

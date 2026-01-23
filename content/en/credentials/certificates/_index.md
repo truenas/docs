@@ -1,6 +1,6 @@
 ---
 title: "Certificates"
-description: "Managing certificates, CSRs, and CAs"
+description: "Information about adding and managing certificates, CSRs, CAs, and ACME DNS-Authenticators in TrueNAS."
 type: docs
 weight: 50
 ---

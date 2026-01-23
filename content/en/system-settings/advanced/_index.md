@@ -1,6 +1,6 @@
 ---
 title: "Advanced Settings"
-description: "Configuring advanced system settings"
+description: "Tutorials for configuring advanced system settings in TrueNAS."
 type: docs
 weight: 30
 ---

@@ -1,8 +1,8 @@
 ---
 title: "Datasets"
-description: "Creating and managing datasets"
+description: "Tutorials for creating and managing datasets in TrueNAS."
 type: docs
-weight: 6
+weight: 25
 ---
 
 

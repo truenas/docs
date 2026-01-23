@@ -1,8 +1,8 @@
 ---
 title: "Credentials"
-description: "User accounts, groups, and authentication"
+description: "Tutorials for configuring the different credentials needed for TrueNAS features."
 type: docs
-weight: 10
+weight: 45
 ---
 
 

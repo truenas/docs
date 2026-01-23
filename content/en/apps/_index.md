@@ -1,8 +1,8 @@
 ---
 title: "Apps"
-description: "TrueNAS Apps screens and application management"
+description: "Articles describing the TrueNAS Apps screens and fields."
 type: docs
-weight: 100
+weight: 65
 ---
 
 

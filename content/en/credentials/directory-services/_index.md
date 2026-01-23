@@ -1,6 +1,6 @@
 ---
 title: "Directory Services"
-description: "Configuring directory service credentials"
+description: "Tutorials for configuring the various directory service credentials."
 type: docs
 weight: 30
 ---

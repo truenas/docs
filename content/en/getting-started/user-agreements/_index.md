@@ -1,7 +1,8 @@
 ---
 title: "User Agreements"
-description: "Legal statements and software notices"
+description: "Legal statements about using TrueNAS and other general software notices."
 type: docs
+doctype: reference
 weight: 110
 ---
 

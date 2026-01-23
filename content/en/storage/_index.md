@@ -1,8 +1,8 @@
 ---
 title: "Storage"
-description: "Storage pools, disks, and disk management"
+description: "Tutorials for configuring the various features contained within the Storage area of the TrueNAS web interface."
 type: docs
-weight: 5
+weight: 20
 ---
 
 

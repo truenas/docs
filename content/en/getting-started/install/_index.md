@@ -1,7 +1,8 @@
 ---
 title: "Installation Instructions"
-description: "Installing TrueNAS for the first time"
+description: "Guides users (including Enterprise customers) with first-time TrueNAS installations."
 type: docs
+doctype: tutorial
 weight: 30
 ---
 

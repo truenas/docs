@@ -1,8 +1,8 @@
 ---
 title: "Security Reports"
-description: "TrueNAS security advisories and notices"
+description: "Links to the TrueNAS Security Hub and additional security notices about TrueNAS."
 type: docs
-weight: 60
+weight: 75
 ---
 
 
