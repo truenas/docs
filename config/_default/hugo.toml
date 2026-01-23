@@ -37,7 +37,7 @@ timeout = "30s"
   [params.ui]
     breadcrumb_disable = true
     navbar_logo = true
-    navbar_logo_404 = "images/docs-hub-wordmark-color.svg"
+    navbar_logo_404 = "images/truenas-wordmark-color.svg"
     sidebar_menu_compact = true
     sidebar_search_disable = true
     showLightDarkModeMenu = true
