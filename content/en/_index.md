@@ -19,7 +19,7 @@ cascade:
 ---
 
 {{< hint type=warning title="Development Documentation" >}}
-You are viewing development documentation for the future TrueNAS major version 26.04 (Halfmoon).
+You are viewing development documentation for the future TrueNAS major version 26 (Halfmoon).
 Features and interfaces can change before the next stable release.
 
 For current stable release documentation, [click here](/tn/current/) or choose your version above.

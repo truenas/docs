@@ -8,6 +8,17 @@ enableRobotsTXT = true
 enableGitInfo = true
 timeout = "30s"
 
+# Output formats
+[outputs]
+  section = ["HTML", "print", "RSS"]
+
+[outputFormats.print]
+  baseName = "index"
+  isHTML = true
+  mediaType = "text/html"
+  path = "printview"
+  permalinkable = false
+
 # Markup settings
 [markup]
   [markup.goldmark]
@@ -35,13 +46,16 @@ timeout = "30s"
     # defaultVersion is dynamically read from software_status_config.yaml in search-enhanced.html
 
   [params.ui]
-    breadcrumb_disable = true
+    breadcrumb_disable = false
     navbar_logo = true
     navbar_logo_404 = "images/truenas-wordmark-color.svg"
     sidebar_menu_compact = true
     sidebar_search_disable = true
     showLightDarkModeMenu = true
     ul_show = 1
+
+    [params.ui.readingtime]
+      enable = true
 
 # Hugo modules
 [module]

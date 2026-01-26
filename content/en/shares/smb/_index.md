@@ -99,12 +99,12 @@ Using a guest account increases the likelihood of unauthorized users gaining acc
 Major SMB client vendors are deprecating guest users, partly because signing and encryption are impossible for guest sessions.
 {{< /expand >}}
 
-{{% expand "What about LDAP users?" "v" %}}
-{{% hint type=important %}}
+{{< expand "What about LDAP users?" "v" >}}
+{{< hint type=important >}}
 Support for LDAP **Samba Schema** is deprecated in TrueNAS 22.02 (Angelfish) and removed in 24.10 (Electric Eel).
 Migrate legacy Samba domains to Active Directory before upgrading to 24.10 or later.
-{{% /hint %}}
-{{% /expand %}}
+{{< /hint >}}
+{{< /expand >}}
 
 ## Adding an SMB Share and Dataset
 
@@ -193,10 +193,10 @@ A basic SMB share does not need to use the **Advanced Options** settings. Click 
 
 See [SMB Shares Screens](# <!-- TODO-REF: SMBSharesScreens -->) for all settings and other possible use cases.
 
-{{% expand "Guest Access" "v" %}}
-{{% hint type=warning %}}
+{{< expand "Guest Access" "v" >}}
+{{< hint type=warning >}}
 Guest access adds security vulnerabilities and should be avoided.
-{{% /hint %}}
+{{< /hint >}}
 
 Guest access allows users to connect to an SMB share without providing credentials.
 In TrueNAS SCALE 25.10 and later, this feature is only available for shares with the **Legacy Share** preset (shares that used **No Preset** in releases before 25.10).
@@ -210,13 +210,12 @@ To enable guest access on a **Legacy Share**:
 
 The privileges granted are the same as those for a guest account.
 
-{{% hint type=warning %}}
+{{< hint type=warning >}}
 Windows 10 version 1709 and later--and Windows Server 2019 and later--disable guest access by default as a security measure.
 Windows clients require additional configuration to connect to shares with guest access enabled.
-
 To enable guest access on Windows clients, modify Windows registry settings or Group Policy to allow insecure guest logons.
 See Microsoft documentation for configuration details.
-{{% /hint %}}
+{{< /hint >}}
 
 For new shares:
 
@@ -242,7 +241,7 @@ Instead of guest access, consider these secure alternatives:
 * Use share ACL to restrict the guest user to read-only access
 
 If the share is nested under parent datasets, see [Using the Traverse Permission](#using-the-traverse-permission).
-{{% /expand %}}
+{{< /expand >}}
 {{< expand "Read or Write Access" "v" >}}
 To prohibit writes to the share, select **Export Read-Only**.
 
@@ -252,19 +251,19 @@ For datasets with NFSv4 ACL type, access-based enumeration is automatically enab
 See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page.
 {{< /expand >}}
 
-{{% expand "Host Allow and Host Deny" "v" %}}
-{{% hint type=note %}}
+{{< expand "Host Allow and Host Deny" "v" >}}
+{{< hint type=note >}}
 Hosts Allow and Hosts Deny settings are available for all share presets except **External Share**.
-{{% /hint %}}
+{{< /hint >}}
 
 Use the **Host Allow** and **Host Deny** options to allow or deny specific host names and IP addresses.
 
 Use the **Hosts Allow** field to enter a list of allowed IP addresses.
 Separate entries by pressing <kbd>Enter</kbd>.
-{{% hint type="Warning" title="Setting Host Allow" %}}
+{{< hint type="Warning" title="Setting Host Allow" >}}
 Entering values in the **Host Allow** restricts access to only the addresses entered into this list!
 This list can break UI access for all other IP or host name entries.
-{{% /hint %}}
+{{< /hint >}}
 You can find a more detailed description with examples [here](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW).
 Use the **Hosts Deny** field to enter a list of denied host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>.
 
@@ -274,7 +273,7 @@ Use the **Hosts Deny** field to enter a list of denied host names or IP addresse
 * Adding entries to the **Hosts Allow** list but not the **Hosts Deny** list allows only the hosts on the **Hosts Allow** list to access the share.
 * Adding entries to the **Hosts Deny** list but not the **Hosts Allow** list allows all hosts not on the **Hosts Deny** list to access the share.
 * Adding entries to both a **Hosts Allow** and **Hosts Deny** list allows all hosts on the **Hosts Allow** list to access the share and allows hosts not on the **Hosts Allow** or **Hosts Deny** list to access the share.
-{{% /expand %}}
+{{< /expand >}}
 
 {{< expand "Legacy Share Preset (Upgraded Shares Only)" "v" >}}
 
