@@ -31,10 +31,10 @@ For current stable release documentation, [click here](/tn/current/) or choose y
 
 New to TrueNAS? Start here to install and configure your system.
 
-{{< include file="/static/includes/blocks/getting-started-block.md" >}}
+{{< include file="/static/includes/blocks/landing-page/getting-started-block.md" >}}
 
 ## Documentation Sections
 
 Browse the complete documentation organized by feature area.
 
-{{< include file="/static/includes/blocks/docs-sections-block.md" >}}
+{{< include file="/static/includes/blocks/landing-page/docs-sections-block.md" >}}

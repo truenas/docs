@@ -2,6 +2,7 @@
 title: "Using an iSCSI Share"
 description: "Provides information on setting up a Linux or Windows system to use a TrueNAS-configured iSCSI block share."
 weight: 40
+doctype: tutorial
 tags:
 - iscsi
 - shares

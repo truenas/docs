@@ -1,6 +1,7 @@
 ---
 title: "Increasing iSCSI Available Storage"
 description: "Provides information on increasing available storage in zvols and file LUNs for iSCSI block shares."
+doctype: how-to
 weight: 50
 tags:
 - iscsi
@@ -41,4 +42,4 @@ Enter a new size in **Filesize**.
 Enter the new value as an integer that is one or more multiples of the logical block size (default 512) larger than the current file size.
 Click **Save**.
 
-{{<include file="/static/includes/addcolumnorganizer.md">}}
+{{<include file="/static/includes/add-column-organizer.md">}}

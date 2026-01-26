@@ -1,6 +1,7 @@
 ---
 title: "Setting Up Fibre Channel"
 description: "Provides instructions on setting up Fibre Channel on TrueNAS."
+doctype: how-to
 weight: 40
 tags:
 - fibre channel
@@ -17,7 +18,7 @@ Any Enterprise system, equipped with the required fibre channel hardware can imp
 
 This article provides instructions for VMware VCenter ESXi.
 If you are using a different platform for your block share backups, use the documentation for that platform for alternative instructions for the ESXi process documented in this tutorial.
-.
+
 ## Before You Begin
 
 When setting up iSCSI fibre channel for the first time:
@@ -52,7 +53,7 @@ Next and for all systems, go to **Shares** and click **Wizard** on the iSCSI wid
      Navigate through the pool and datasets to select the zvol and populate the **/mnt** field with the path.
 
    {{< trueimage src="/images/shares/iscsi-wizard-extent-screen-fc-add-new.png" alt="iSCSI Extents Screen - Fibre Channel" id="iSCSI Extents Screen - Fibre Channel" >}}
-    
+
      Clicking **Create Dataset** allows you to add a dataset where the **/mnt** path indicates. TrueNAS creates the dataset for organizational purposes and a zvol of the same name for block storage.
 
    c. Enter a value in **Size**.
@@ -63,7 +64,7 @@ Next and for all systems, go to **Shares** and click **Wizard** on the iSCSI wid
    e. Click **Next** to show the **Protocol Options** screen.
 
 3. Select the protocol option for your use case. 
-   When installing iSCSI fibre channel ports the first time, select **Create new virtual port**. 
+   When installing iSCSI fibre channel ports the first time, select **Create new virtual port**.
 
    {{< trueimage src="/images/shares/iscsi-wizard-protocol-options-screen-create-new-virtual-port.png" alt="iSCSI Wizard Protocol Options Create New Virtual Port" id="iSCSI Wizard Protocol Options Create New Virtual Port" >}}
 

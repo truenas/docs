@@ -226,7 +226,7 @@ See [Permissions](# <!-- TODO-REF: PermissionsScale -->) for more information on
 
 After setting the dataset permission, connect to the share.
 
-{{<include file="/static/includes/addcolumnorganizer.md">}}
+{{<include file="/static/includes/add-column-organizer.md">}}
 
 ### Connecting to a Multi-Protocol Share
 

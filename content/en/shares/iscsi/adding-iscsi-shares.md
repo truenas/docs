@@ -1,6 +1,7 @@
 ---
 title: "Adding iSCSI Block Shares"
 description: "Provides instructions on setting up iSCSI block shares manually or using the wizard and starting the service."
+doctype: tutorial
 weight: 30
 tags:
 - iscsi
@@ -257,4 +258,4 @@ After adding a share with the iSCSI wizard or manual entry screens, the system s
 You can also start the service by clicking on the <span class="material-icons">more_vert</span> on the **Block (iSCSI) Shares Targets** widget and selecting **Turn On Service**.
 You can go to **System > Services**, locate **iSCSI** on the service list, and click the <span class="iconify" data-icon="mdi:play-circle" title="Start Service">Start Service</span> button to start the service.
 
-{{<include file="/static/includes/addcolumnorganizer.md">}}
+{{<include file="/static/includes/add-column-organizer.md">}}
