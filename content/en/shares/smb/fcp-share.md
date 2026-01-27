@@ -2,6 +2,7 @@
 title: "Setting Up Final Cut Pro SMB Shares"
 description: "Provides instructions for adding an SMB share optimized for Final Cut Pro workflows."
 weight: 27
+doctype: how-to
   - /scale/scaletutorials/shares/smb/apple-m-e
 tags:
 - smb

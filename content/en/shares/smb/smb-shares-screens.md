@@ -2,7 +2,7 @@
 title: "SMB Shares Screens"
 description: "Provides information on SMB share screens and settings."
 doctype: reference
-weight: 20
+weight: 90
 tags:
 - smb
 - afp
