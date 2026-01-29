@@ -292,10 +292,10 @@ Builds to: `docs.truenas.com/tn/nightly/`
 - `main` → non-versioned content builds
 - `tn-nightly` → development/nightly builds
 - `tn-26`, `tn-27`, `tn-28` → stable version branches
-- Format: `tn-<major-version>` (not `tn-26.04`, just `tn-26`)
+- Format: `tn-<major-version>` (e.g., `tn-26`, `tn-27`)
 
 **Version Release Cadence:**
-- Yearly major versions: 26, 27, 28 (not 26.04, 26.10)
+- Yearly major versions: 26, 27, 28 (annual format adopted)
 - Point releases (26.1, 26.2) update the `tn-26` branch
 - Documentation versioned by major version only
 
