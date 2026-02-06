@@ -23,24 +23,20 @@ description: "Comprehensive documentation for TrueNAS Community Edition, TrueNAS
 {{% blocks/section color="light" type="row" %}}
 <div class="row justify-content-center g-4">
 
-{{% blocks/feature icon="image:icons/tn-icon-black.png" title="TrueNAS Enterprise" url="https://www.truenas.com/docs/" %}}
-Documentation and support resources for enterprise storage deployments
-{{% /blocks/feature %}}
-
-{{% blocks/feature icon="image:icons/tn-icon-black.png" title="TrueNAS Community Edition" url="https://www.truenas.com/docs/" %}}
-Complete guides, tutorials, and references for community deployments
+{{% blocks/feature icon="image:icons/tn-icon-black.png" title="TrueNAS" url="https://www.truenas.com/docs/" %}}
+Complete guides, tutorials, and references for TrueNAS Community Edition and Enterprise deployments
 {{% /blocks/feature %}}
 
 {{% blocks/feature icon="image:icons/tnc-icon-black.svg" title="TrueNAS Connect" url="https://connect.truenas.com/" %}}
 Centralized management for multiple TrueNAS systems with health monitoring and remote installation
 {{% /blocks/feature %}}
 
-</div>
-<div class="row justify-content-center g-4">
-
 {{% blocks/feature icon="material:storage" title="Products" url="https://www.truenas.com/docs/hardware/" %}}
 TrueNAS hardware specifications, datasheets, and product family documentation
 {{% /blocks/feature %}}
+
+</div>
+<div class="row justify-content-center g-4">
 
 {{% blocks/feature icon="material:api" title="TrueNAS API" url="https://api.truenas.com/" %}}
 TrueNAS Websocket API reference for automation and programmatic control of TrueNAS systems
