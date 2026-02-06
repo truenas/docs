@@ -4,5 +4,15 @@ github.com/KKKZOZ/hugo-admonitions v0.11.3 h1:Q780Pg/H/NWpV3MUVxsHFYSTf5x9Q6wNBc
 github.com/KKKZOZ/hugo-admonitions v0.11.3/go.mod h1:4PsJAsqo3mS3VzAtDLa8k0ds+CJQUWZhAo9kLi1NRlM=
 github.com/google/docsy v0.13.0 h1:Y1oy5SmQ0ikJJsvkuefEVZMj0MTXLmVfpXbt7Ytc7rc=
 github.com/google/docsy v0.13.0/go.mod h1:1Fj1W1O3esZh7IBQ8XAYtxtg10udBXuGI89+LUQc1AU=
+github.com/truenas/docs-shared v0.0.0-20260129174852-0f9215a9e84a h1:gumwndAK1/I/OKXMVarsurZtDXM5MPD/fvVUwIZhGXk=
+github.com/truenas/docs-shared v0.0.0-20260129174852-0f9215a9e84a/go.mod h1:cjem24yWz0+0jkXyrOe+f2rs9bpkpNIfwNo0DilvgUs=
+github.com/truenas/docs-shared v0.0.0-20260206145516-92b963591f03 h1:SE0ey1PnqiDvHCzNLyEgRHt5mhx8ppAakSmq7pUeIH4=
+github.com/truenas/docs-shared v0.0.0-20260206145516-92b963591f03/go.mod h1:cjem24yWz0+0jkXyrOe+f2rs9bpkpNIfwNo0DilvgUs=
+github.com/truenas/docs-shared v0.0.0-20260206150332-7b56b8a11014 h1:KhEl5MblaemIisJnMZUCcwKxUAlc0K06o/gADZEJXa4=
+github.com/truenas/docs-shared v0.0.0-20260206150332-7b56b8a11014/go.mod h1:cjem24yWz0+0jkXyrOe+f2rs9bpkpNIfwNo0DilvgUs=
+github.com/truenas/docs-shared v0.0.0-20260206151158-a45d6c8c2af2 h1:HJ69TNms8XqVOAyFvglQc0/extjHYVUxEEMK1vIuflw=
+github.com/truenas/docs-shared v0.0.0-20260206151158-a45d6c8c2af2/go.mod h1:cjem24yWz0+0jkXyrOe+f2rs9bpkpNIfwNo0DilvgUs=
+github.com/truenas/docs-shared v0.0.0-20260206170902-9c46329a3efd h1:6Vx3V0t0ZzNzSyPCCWpu0169EZ/lrUQD6hDbJhXZEsI=
+github.com/truenas/docs-shared v0.0.0-20260206170902-9c46329a3efd/go.mod h1:cjem24yWz0+0jkXyrOe+f2rs9bpkpNIfwNo0DilvgUs=
 github.com/twbs/bootstrap v5.3.8+incompatible h1:eK1fsXP7R/FWFt+sSNmmvUH9usPocf240nWVw7Dh02o=
 github.com/twbs/bootstrap v5.3.8+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
