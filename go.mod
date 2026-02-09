@@ -6,7 +6,7 @@ require (
 	github.com/FortAwesome/Font-Awesome v0.0.0-20241216213156-af620534bfc3 // indirect
 	github.com/KKKZOZ/hugo-admonitions v0.11.3 // indirect
 	github.com/google/docsy v0.13.0 // indirect
-	github.com/truenas/docs-shared v0.0.0-20260206170902-9c46329a3efd // indirect
+	github.com/truenas/docs-shared v0.0.0-20260206173327-6db1f75da913 // indirect
 	github.com/twbs/bootstrap v5.3.8+incompatible // indirect
 )
 

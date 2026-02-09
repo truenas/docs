@@ -14,5 +14,7 @@ github.com/truenas/docs-shared v0.0.0-20260206151158-a45d6c8c2af2 h1:HJ69TNms8Xq
 github.com/truenas/docs-shared v0.0.0-20260206151158-a45d6c8c2af2/go.mod h1:cjem24yWz0+0jkXyrOe+f2rs9bpkpNIfwNo0DilvgUs=
 github.com/truenas/docs-shared v0.0.0-20260206170902-9c46329a3efd h1:6Vx3V0t0ZzNzSyPCCWpu0169EZ/lrUQD6hDbJhXZEsI=
 github.com/truenas/docs-shared v0.0.0-20260206170902-9c46329a3efd/go.mod h1:cjem24yWz0+0jkXyrOe+f2rs9bpkpNIfwNo0DilvgUs=
+github.com/truenas/docs-shared v0.0.0-20260206173327-6db1f75da913 h1:NTilUIy177ADLJqEmPoLOzVFpIjwLfOoEH+XtywQy3I=
+github.com/truenas/docs-shared v0.0.0-20260206173327-6db1f75da913/go.mod h1:cjem24yWz0+0jkXyrOe+f2rs9bpkpNIfwNo0DilvgUs=
 github.com/twbs/bootstrap v5.3.8+incompatible h1:eK1fsXP7R/FWFt+sSNmmvUH9usPocf240nWVw7Dh02o=
 github.com/twbs/bootstrap v5.3.8+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
