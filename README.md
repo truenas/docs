@@ -15,7 +15,7 @@ This site provides a unified entry point for TrueNAS documentation, with a clean
 
 ## Technology Stack
 
-- **Hugo Extended** v0.146.0+
+- **Hugo Extended** v0.157.0
 - **Docsy Theme** v0.13.0
 - **TrueNAS Docs-Shared Module** (TrueShared2026 branch)
 - **Bootstrap** v5.3.8
@@ -23,9 +23,28 @@ This site provides a unified entry point for TrueNAS documentation, with a clean
 
 ## Prerequisites
 
-- Hugo Extended v0.146.0 or higher
+- Hugo Extended v0.157.0 (see install instructions below)
 - Node.js v20.x or higher
 - npm or yarn
+
+## Install Hugo
+
+**Windows (Chocolatey — recommended, run PowerShell as Administrator):**
+
+    choco install hugo-extended --version=0.157.0
+
+**Windows (winget):**
+
+    winget install Hugo.Hugo.Extended --version 0.157.0
+
+**WSL/Linux:** Download `hugo_extended_0.157.0_linux-amd64.tar.gz` from
+https://github.com/gohugoio/hugo/releases/tag/v0.157.0 and install to your PATH.
+
+> Hugo Extended (not standard Hugo) is required. This site has been tested against v0.157.0.
+> Later versions may work but have not been officially tested.
+>
+> This site uses Hugo modules (Docsy theme). On WSL/Linux with a direct binary install,
+> Go must be available in your PATH for Hugo to resolve modules on first use.
 
 ## Local Development
 
