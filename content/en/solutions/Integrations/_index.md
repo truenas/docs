@@ -1,7 +1,6 @@
 ---
 title: "Integrations"
 description: "Articles about using TrueNAS with various 3rd party applications."
-geekdocCollapseSection: true
 weight: 20
 aliases:
   - /core/solutions/integrations/

@@ -34,6 +34,9 @@ timeout = "30s"
 [params]
   version = "1.0.0"
   featured_image = "/images/tn-openstorage-logo.png"
+  github_repo = "https://github.com/truenas/docs"
+  github_branch = "main"
+  github_subdir = "content/en"
 
   [params.search]
     siteName = "TrueNAS Docs Hub"
@@ -47,7 +50,7 @@ timeout = "30s"
     breadcrumb_disable = true
     navbar_logo = true
     navbar_logo_404 = "images/docs-hub-wordmark-color.svg"
-    sidebar_menu_compact = false
+    sidebar_menu_compact = true
     sidebar_search_disable = true
     showLightDarkModeMenu = true
     ul_show = 1

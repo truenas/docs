@@ -8,20 +8,20 @@ tags:
 - storage
 ---
 
-Use this calculator to plan your TrueNAS storage configuration before [creating pools]({{< relref "/SCALE/Storage/Pools/CreatingPools" >}}). Enter your total disk count and compare different RAID types to see usable capacity after accounting for redundancy and ZFS overhead.
+Use this calculator to plan your TrueNAS storage configuration before [creating pools](https://www.truenas.com/docs/scale/storage/pools/creatingpools/). Enter your total disk count and compare different RAID types to see usable capacity after accounting for redundancy and ZFS overhead.
 
 ## Quick Configuration Guide
 
 - RAIDZ1: Good capacity efficiency, single-disk fault tolerance.
 - RAIDZ2: Balanced capacity and redundancy, double-disk fault tolerance.
 - Mirror: Best performance, 50% capacity efficiency.
-- [dRAID]({{< relref "/References/dRAIDprimer.md" >}}): For storage arrays with numerous attached disks (>100) where greatly reduced resilver time is needed.
+- [dRAID]({{< relref "/references/draid-primer.md" >}}): For storage arrays with numerous attached disks (>100) where greatly reduced resilver time is needed.
 
 The calculator also shows TrueNAS Enterprise hardware requirements and expansion shelf planning.
 
 Click the help icons (?) for detailed explanations of each setting.
 
-For more background on ZFS concepts, see the [ZFS Primer]({{< relref "/References/ZFSPrimer.md" >}}).
+For more background on ZFS concepts, see the [ZFS Primer]({{< relref "/references/zfs-primer.md" >}}).
 
 {{< capacity_calculator >}}
 

@@ -13,7 +13,7 @@ Follow these best practices for a stable and performant network.
 {{< hint type=tip >}}
 The TrueNAS team welcomes contributions from members of the TrueNAS community!
 
-Use the **Feedback** button on the right side or click <svg class="gdoc-icon gdoc_code"><use xlink:href="#gdoc_code"></svg>**Edit Page** at the top right of this page to suggest your own networking tips and tricks.
+Use the **Feedback** button on the right side or click **Edit this Page** at the top right of this page to suggest your own networking tips and tricks.
 {{< /hint >}}
 
 ## Static IP Address
@@ -30,7 +30,7 @@ Configure link aggregation (LAGG) to combine multiple physical interfaces into a
 
 {{< include file="/static/includes/MultipleInterfacesOnNetwork.md" >}}
 
-See also [Setting Up a Link Aggregation](https://www.truenas.com/docs/scale/network/).
+See also [Setting Up a Link Aggregation](https://www.truenas.com/docs/scale/network/interfaces/settinguplinkaggregation/).
 
 ### LACP
 

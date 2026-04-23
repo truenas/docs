@@ -1,19 +1,18 @@
 ---
 title: "Solutions"
 description: "Best practices and guides for using TrueNAS with other software solutions."
-geekdocCollapseSection: true
 weight: 27
 aliases:
   - /core/solutions/
 cascade:
-  - _target:
-    book: "Solutions"
-  - _target:
-    volume: "Appendices"
-  - _target:
-    volume: "CORE"
-  - _target:
-    volume: "SCALE"
+- _target:
+    path: "/**"
+    kind: "page"
+  type: "docs"
+- _target:
+    path: "/**"
+    kind: "section"
+  type: "docs"
 related: false
 ---
 

@@ -1,16 +1,15 @@
 ---
 title: "Contributing"
-geekdocCollapseSection: true
 weight: 50
 cascade:
-  - _target:
-    book: "Contributing"
-  - _target:
-    volume: "Appendices"
-  - _target:
-    volume: "CORE"
-  - _target:
-    volume: "SCALE"
+- _target:
+    path: "/**"
+    kind: "page"
+  type: "docs"
+- _target:
+    path: "/**"
+    kind: "section"
+  type: "docs"
 aliases:
   - /contributing/applications/apparticletemplate/
   - /contributing/documentation/apparticletemplate/

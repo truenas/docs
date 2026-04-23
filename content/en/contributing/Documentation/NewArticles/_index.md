@@ -63,7 +63,7 @@ GitHub shows all the files to upload.
 ## Opening a Pull Request
 
 {{< hint type=note >}}
-[Forking the repository]({{< ref "/contributing/documentation/contentupdate#forking-the-repo" >}}) might be needed as part of opening a Pull Request.
+[Forking the repository]({{< ref "/contributing/Documentation/content-update#forking-the-repo" >}}) might be needed as part of opening a Pull Request.
 {{< /hint >}}
 
 Make sure all your files have been uploaded then scroll down to the **Commit changes** section and write a summary and description of your changes.

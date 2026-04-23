@@ -54,7 +54,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * **Self-Encrypting Drive (SED)**: A SED (or Self-Encrypting Drive) is a hard drive that automatically and continuously encrypts the data on the drive without any user action.
 
-* [**Zettabyte File System (ZFS)**]({{< ref "/references/zfsprimer" >}}): ZFS is a next-generation file system designed by Sun Microsystems that eliminates most, if not all of the shortcomings found in legacy file systems and hardware RAID devices.
+* [**Zettabyte File System (ZFS)**]({{< ref "/references/zfs-primer" >}}): ZFS is a next-generation file system designed by Sun Microsystems that eliminates most, if not all of the shortcomings found in legacy file systems and hardware RAID devices.
 
 * **iSCSI**: iSCSI stands for Internet Small Computer Systems Interface.
   iSCSI is a transport layer protocol that works on top of the Transport Control Protocol (TCP).
@@ -74,7 +74,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * [**ZFS Pools**](https://www.truenas.com/docs/scale/storage/): filesystem container that is composed of one or more vdevs.
 
-* [**ZFS vdev**]({{< ref "/references/zfsprimer" >}}): ZFS virtual device.
+* [**ZFS vdev**]({{< ref "/references/zfs-primer" >}}): ZFS virtual device.
   A ZFS pool is made up by one or more vdevs.
   A vdev can be created using a single disk or many.
   A vdev has many configurations: single disk, stripe, RAIDz1, RAIDz2, RAIDz3, or mirror.
@@ -88,10 +88,10 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
   This special vdev can store meta data such as file locations and allocation tables.
   Using a special vdev drastically speeds up random I/O and can cut the average number of spinning-disk I/Os needed to find and access a file by up to half.
 
-* [**Checksum**]({{< ref "/references/zfsprimer" >}}): As ZFS writes data, it creates a checksum for each disk block it writes.
+* [**Checksum**]({{< ref "/references/zfs-primer" >}}): As ZFS writes data, it creates a checksum for each disk block it writes.
   As ZFS reads data, it validates the checksum for each disk block it reads.
 
-* [**Self-healing**]({{< ref "/references/zfsprimer" >}}): Media errors or bit rot can cause data to change.
+* [**Self-healing**]({{< ref "/references/zfs-primer" >}}): Media errors or bit rot can cause data to change.
   As a result, the checksum no longer matches.
   When ZFS identifies a disk block checksum error on a pool that is mirrored or uses RAIDZ, it replaces the corrupted data with the correct data.
 

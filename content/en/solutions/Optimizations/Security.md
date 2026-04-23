@@ -122,7 +122,7 @@ When Debian Linux-based system DNS look-ups to https://updates.ixystems.com *(st
 
 Restrict new [TrueNAS user accounts](https://www.truenas.com/docs/scale/credentials/users/manageusers/) to the most minimal set of storage ACL permissions and access possible.
 
-On TrueNAS 22.12 or newer, [create the administrator account](https://www.truenas.com/docs/scale/credentials/users/manageusers/#creating-an-admin-user-account) on install and disable root NAS administrative access.
+On TrueNAS 22.12 or newer, [create the administrator account](https://www.truenas.com/docs/scale/credentials/users/manageusers/#creating-an-administrator-user-account) on install and disable root NAS administrative access.
 
 In TrueNAS 24.04 (Dragonfish) or later, use the **Credentials > Groups > Privileges** screen to define limited access administrative roles, such as read-only or share administrators.
 Assign users to those groups to grant partial NAS administrative access.
@@ -171,7 +171,7 @@ For example, when selecting **Private SMB Datasets and Shares** from the list, T
 To fully customize the share settings, select **No presets** as the **Purpose**.
 Unless you require a specific purpose for the share, we recommend selecting **Default share parameters** as the **Purpose**.
 
-[Do not use SMB1.](https://www.truenas.com/docs/core/13.0/coresecurityreports/smb1advisory/)
+[Do not use SMB1](https://www.truenas.com/docs/core/13.0/coresecurityreports/smb1advisory/).
 
 SMB service settings are in **Services** after clicking the <span class="iconify" data-icon="mdi:pencil"></span> (pencil).
 

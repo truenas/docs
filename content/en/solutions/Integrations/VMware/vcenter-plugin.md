@@ -1,7 +1,6 @@
 ---
 title: "TrueNAS vCenter Plugin"
 description: "Tutorial to deploy and use the TrueNAS vCenter Plugin with TrueNAS CORE."
-geekdocCollapseSection: true
 weight: 10
 aliases:
   - /solutions/integrations/vmware/truenasvcenterplugin/

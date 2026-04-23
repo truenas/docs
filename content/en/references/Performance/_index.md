@@ -1,6 +1,5 @@
 ---
 title: "Performance"
-geekdocCollapseSection: true
 weight: 31
 related: false
 ---
