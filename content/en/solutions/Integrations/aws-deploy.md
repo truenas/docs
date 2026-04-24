@@ -167,11 +167,11 @@ When successful, the upload simply finishes.
 With the Amazon Machine Image (AMI) created and uploaded to AWS, an EC2 instance needs to be activated before the TrueNAS interface is accessible.
 Log in to your Amazon Web Services account and click the `EC2` Compute service.
 
-![AWSManagementConsole](/images/CORE/AWSManagementConsole.png "AWS Management Console")
+{{< trueimage src="/images/CORE/AWSManagementConsole.png" alt="AWS Management Console" id="AWS Management Console" >}}
 
 Find the **Launch instance** section, open the *Launch instance* drop down, and click *Launch instance*.
 
-![AWSEC2LaunchInstance](/images/CORE/AWSEC2LaunchInstance.png "Launching the instance")
+{{< trueimage src="/images/CORE/AWSEC2LaunchInstance.png" alt="Launching the instance" id="Launching the instance" >}}
 
 The instance launcher follows several steps:
 

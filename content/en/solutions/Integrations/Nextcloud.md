@@ -32,7 +32,7 @@ To see the plugin catalog, go to the **Plugins** screen.
 {{< include file="/static/includes/JailsPluginsFirstTime.md" >}}
 {{< /expand >}}
 
-![PluginsList](/images/CORE/Plugins/PluginsList.png "Plugins Catalog")
+{{< trueimage src="/images/CORE/Plugins/PluginsList.png" alt="Plugins Catalog" id="Plugins Catalog" >}}
 {{< expand "I do not see anything!" "v" >}}
 If the catalog does not load:
 * Go to **Network > Global Configuration** and confirm the **Default Gateway** and **DNS Servers** addresses are correct.
@@ -53,35 +53,35 @@ You have two plugin installation options:
 {{< expand "Basic Install" "v" >}}
 Go to **Plugins** and select **Nextcloud**, then click **INSTALL**.
 
-![NextcloudInstall](/images/Solutions/SolutionsIntegrationsNextcloudInstall.png "Nextcloud Install")
+{{< trueimage src="/images/Solutions/SolutionsIntegrationsNextcloudInstall.png" alt="Nextcloud Install" id="Nextcloud Install" >}}
 
 Enter a name in **Jail Name** and click **SAVE**.
 
-![NextcloudJailName](/images/Solutions/SolutionsIntegrationsNextcloudJailName.png "Nextcloud Jail Name")
+{{< trueimage src="/images/Solutions/SolutionsIntegrationsNextcloudJailName.png" alt="Nextcloud Jail Name" id="Nextcloud Jail Name" >}}
 
 After Nextcloud installs successfully, you can manage your plugin instance.  
 
-![NextcloudPostInstall](/images/Solutions/SolutionsIntegrationsNextcloudPostInstall.png "Nextcloud Post Install")
+{{< trueimage src="/images/Solutions/SolutionsIntegrationsNextcloudPostInstall.png" alt="Nextcloud Post Install" id="Nextcloud Post Install" >}}
 
 Click **POST INSTALL NOTES** to obtain your Nextcloud admin user and  Nextcloud admin password information. 
 Click **MANAGE** to access the Nextcloud login page within your browser.
 
-![NextcloudLogin](/images/Solutions/SolutionsIntegrationsNextcloudLogin.png "Nextcloud Login")
+{{< trueimage src="/images/Solutions/SolutionsIntegrationsNextcloudLogin.png" alt="Nextcloud Login" id="Nextcloud Login" >}}
 
 Enter the credentials from **POST INSTALL NOTES** and click **Log in** to access the Nextcloud Hub.
 
-![NextcloudHub](/images/Solutions/SolutionsIntegrationsNextcloudLogin.png "Nextcloud Hub")
+{{< trueimage src="/images/Solutions/SolutionsIntegrationsNextcloudLogin.png" alt="Nextcloud Hub" id="Nextcloud Hub" >}}
 {{< /expand >}}
 
 {{< expand "Static IP Install" "v" >}}
 Go to **Plugins** and select **Nextcloud**, then click **INSTALL**.
 
-![NextcloudInstall](/images/Solutions/SolutionsIntegrationsNextcloudInstall.png "Nextcloud Install")
+{{< trueimage src="/images/Solutions/SolutionsIntegrationsNextcloudInstall.png" alt="Nextcloud Install" id="Nextcloud Install" >}}
 
 Enter a name in **Jail Name**, then select the **NAT** checkbox to clear it, and then enter an available IP in the **IPv4 Address** field. 
 Select an **IPv4 Netmask** (iX recommends 24), then click **SAVE**.
 
-![NextcloudStatic1](/images/Solutions/NextcloudStatic1.png "Nextcloud Static Setup")
+{{< trueimage src="/images/Solutions/NextcloudStatic1.png" alt="Nextcloud Static Setup" id="Nextcloud Static Setup" >}}
 
 After Nextcloud installs, you must add your Nextcloud IP to your Nextcloud jail trusted domains.
 
@@ -91,7 +91,7 @@ Enter `ee /usr/local/www/nextcloud/config/config.php` to edit your Nextcloud con
 
 Scroll to the `trusted_domains` section and type your Nextcloud IP as a new line item. Use the image below for reference.
 
-![NextcloudTrustedDomain](/images/Solutions/NextcloudTrustedDomain.png "Nextcloud Add Trusted Domain")
+{{< trueimage src="/images/Solutions/NextcloudTrustedDomain.png" alt="Nextcloud Add Trusted Domain" id="Nextcloud Add Trusted Domain" >}}
 
 Type <kdb>CTRL+C</kdb> to close the editor, then type **exit** to close the config file.
 
@@ -100,7 +100,7 @@ Go back to **Plugins** and expand your Nextcloud instance.
 Click **POST INSTALL NOTES** to obtain your Nextcloud admin user and Nextcloud admin password information.
 Click **MANAGE** to access the Nextcloud login page within your browser.
 
-![NextcloudLogin](/images/Solutions/SolutionsIntegrationsNextcloudLogin.png "Nextcloud Login")
+{{< trueimage src="/images/Solutions/SolutionsIntegrationsNextcloudLogin.png" alt="Nextcloud Login" id="Nextcloud Login" >}}
 
 Enter the credentials from **POST INSTALL NOTES** and click **Log in**.  You are directed to the Nextcloud Hub.
 {{< /expand >}}

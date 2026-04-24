@@ -26,7 +26,7 @@ The open-source TrueNAS project welcomes contributions to the project. We also w
 
 Contributions to the TrueNAS open-source projects are made through GitHub and Jira.
 
-The Documentation hub uses [Hugo](https://gohugo.io/) to create the documentation website and the [Geekdoc theme](https://geekdocs.de) for general website styling.
+The Documentation Hub uses [Hugo](https://gohugo.io/) to create the documentation websites.
 Articles are written in a combination of [Markdown](https://daringfireball.net/projects/markdown/syntax) and [HTML](https://www.w3schools.com/html/html_intro.asp) syntax.
 
 ## How Can I Contribute to TrueNAS?
@@ -46,7 +46,6 @@ Please feel free to propose changes and add new content to these articles to hel
 Want to discuss your in-progress changes or other TrueNAS contributions?
 The TrueNAS contributors `#truenas-docs` Slack workspace is available for contributors to discuss their changes and help each other improve the software.
 You can request to join this workspace at `truenas.slack.com`.
-
 
 <div class="noprint">
 

@@ -52,7 +52,7 @@ For the **Variable**, enter **vfs.zfs.l2arc.rebuild_enabled**. Set the **Value**
 We recommend noting in the **Description** that this is the persistent L2ARC activation.
 Make sure **Enabled** is selected and click **SUBMIT**.
 
-![PersistentL2ARCTunable](/images/CORE/System/SystemTunablesL2ARCRebuild.png "Persistent L2ARC Activation")
+{{< trueimage src="/images/CORE/System/SystemTunablesL2ARCRebuild.png" alt="Persistent L2ARC Activation" id="Persistent L2ARC Activation" >}}
 
 {{< expand "CLI Instructions" "v" >}}
 {{< hint type=important >}}

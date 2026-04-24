@@ -255,7 +255,7 @@ The interface suspends after several minutes of inactivity and displays a warnin
 
 In a browser, go to your vCenter Server web interface, log in, and click **Menu > Global Inventory Lists > Manage TrueNAS > + Add host** to add TrueNAS hosts to vCenter.
 
-![AddHost](/images/vCenterPlugin/AddHost.png "Options for Adding Hosts")
+{{< trueimage src="/images/vCenterPlugin/AddHost.png" alt="Options for Adding Hosts" id="Options for Adding Hosts" >}}
 
 Fill in the required information.
 A hostname or IP address can be used for the TrueNAS system.
@@ -263,7 +263,7 @@ Using an API key with TrueNAS releases 25.04 and newer also requires configuring
 For High Availability systems, use the VIP address or hostname to ensure the plugin remains connected in the event of a system failover.
 Click **Add Host** and the TrueNAS hostname or IP address appears in the list of connected systems.
 
-![HostList](/images/vCenterPlugin/HostList.png "Example Showing a Connected Host")
+{{< trueimage src="/images/vCenterPlugin/HostList.png" alt="Example Showing a Connected Host" id="Example Showing a Connected Host" >}}
 
 Right-click a list entry to see options to edit the host user credentials or remove that host from vCenter.
 Click a hostname to see the system management options.
@@ -287,7 +287,7 @@ Names can contain spaces, alphanumeric, `-`, and `.` characters.
 Click **Summary** to view basic information about this system.
 The IP address, installed version of TrueNAS, storage availability, and system service status are shown.
 
-![HostSummary](/images/vCenterPlugin/HostSummary.png "Example Summary")
+{{< trueimage src="/images/vCenterPlugin/HostSummary.png" alt="Example Summary" id="Example Summary" >}}
 
 {{< /tab >}}
 {{< tab "Datastores" >}}
@@ -298,7 +298,7 @@ The vCenter plugin can create two different kinds of datastores on a TrueNAS hos
 
 #### List
 
-![DatastoreList](/images/vCenterPlugin/DatastoreList.png "Datastores List")
+{{< trueimage src="/images/vCenterPlugin/DatastoreList.png" alt="Datastores List" id="Datastores List" >}}
 
 vCenter has a default limit of eight NFS datastores per ESX host.
 See this [VMware article](https://kb.vmware.com/s/article/1020652) about maximum supported volumes for more details.
@@ -310,13 +310,13 @@ The list does not display other types of shares created and managed through the 
 
 Click **+** (Add) to create a new datastore.
 
-![DatastoreCreate](/images/vCenterPlugin/DatastoreCreate.png "Creation Options")
+{{< trueimage src="/images/vCenterPlugin/DatastoreCreate.png" alt="Creation Options" id="Creation Options" >}}
 
 Choose an ESXi host for the datastore or an ESXi cluster to spread the reserved space across multiple systems.
 Clusters can be used as long as a single member of the cluster supports the datastore features.
 Click **Next**.
 
-![DatastoreCreateType](/images/vCenterPlugin/DatastoreCreateType.png "Datastore Types")
+{{< trueimage src="/images/vCenterPlugin/DatastoreCreateType.png" alt="Datastore Types" id="Datastore Types" >}}
 
 Choose the datastore type.
 **VMFS** datastores provide block-level (iSCSI) storage for virtual machines.
@@ -324,7 +324,7 @@ Choose the datastore type.
 Click **Next** to view specific options for each datastore type
 
 {{< expand "VMFS Datastore Configuration" >}}
-![VMFSDatastoreSettings](/images/vCenterPlugin/VMFSDatastoreSettings.png "VMFS Options")
+{{< trueimage src="/images/vCenterPlugin/VMFSDatastoreSettings.png" alt="VMFS Options" id="VMFS Options" >}}
 
 Enter a name for the new datastore.
 Enter a value and choose a unit for the **Datastore Size**.
@@ -351,7 +351,7 @@ One target per port is supported.
 
 {{< /expand >}}
 {{< expand "NFS Datastore Configuration" >}}
-![NFSDataStoreSettings](/images/vCenterPlugin/NFSDatastoreSettings.png "NFS Options")
+{{< trueimage src="/images/vCenterPlugin/NFSDatastoreSettings.png" alt="NFS Options" id="NFS Options" >}}
 
 Enter a name for the new datastore.
 The **Data Path IP** shows the TrueNAS system IP address.
@@ -372,7 +372,7 @@ Click **Refresh** to see the new datastore after creating it.
 Users needing additional space can increase the total size of a VMFS datastore.
 Highlight a VMFS datastore from the list and click **Edit** to extend it.
 
-![DatastoreExtend](/images/vCenterPlugin/DatastoreExtend.png "Extension Options")
+{{< trueimage src="/images/vCenterPlugin/DatastoreExtend.png" alt="Extension Options" id="Extension Options" >}}
 
 The new size must be larger than the current size and less than the total available capacity.
 For best performance, we recommend using less than 80% of the total available size.
@@ -394,7 +394,7 @@ Click **Refresh** after some time to see the cloned datastore.
 An administrator can grant vCenter users specific role-based access to the TrueNAS systems managed by this plugin.
 New vCenter users must be created in **Menu > Administration > Single Sign On > Users and Groups** before RBAC roles can be created.
 
-![RBACRoles](/images/vCenterPlugin/RBACRoles.png "RBAC Roles")
+{{< trueimage src="/images/vCenterPlugin/RBACRoles.png" alt="RBAC Roles" id="RBAC Roles" >}}
 
 {{< truetable >}}
 | Role Name       | User is allowed to:            |

@@ -20,7 +20,7 @@ For step-by-step instructions, see the rest of this article.
 Go to this location: [TrueNAS translation directory](https://github.com/truenas/webui/tree/master/src/assets/i18n).  
 The .json language conversion files are located within the **webui/src/assets/i18n** directory.
 
-![GitHubWebUIDirectory](/images/Contribute/GitHubWebUIDirectory.png "GitHub TrueNAS webui directory")
+{{< trueimage src="/images/Contribute/GitHubWebUIDirectory.png" alt="GitHub TrueNAS webui directory" id="GitHub TrueNAS webui directory" >}}
 
 ### Select the Translation File
 
@@ -29,7 +29,7 @@ More information about 2 letter ISO 639-1 codes located at: [ISO 639-1 Codes](ht
 
 Click the .json filename. The file opens in GitHub's web-based file editor. Click the pencil icon to begin editing the file.  
 
-![GitHubWebUITranslationFile](/images/Contribute/GitHubWebUITranslationFile.png "TrueNAS language translation file")
+{{< trueimage src="/images/Contribute/GitHubWebUITranslationFile.png" alt="TrueNAS language translation file" id="TrueNAS language translation file" >}}
 
 ### Edit the Article
 
@@ -40,24 +40,25 @@ If the last line of the file contains a translation, scroll up (descending numer
 
 Some strings can use [ICU Message Format](https://formatjs.io/docs/core-concepts/icu-syntax/#plural-format) for pluralization. You can move tokens around and adjust them for your language.
 
-![GitHubWebUIEditTranslationFile](/images/Contribute/GitHubWebUIEditTranslationFile.png "TrueNAS edit language translation file")
+{{< trueimage src="/images/Contribute/GitHubWebUIEditTranslationFile.png" alt="TrueNAS edit language translation file" id="TrueNAS edit language translation file" >}}
 
 ### Translate the Text Strings
 
  The string in English that needs translation appears first, enclosed with double quotes. After that there is a colon, followed by a second pair of double quotes. Enter your translation within the second pair of double quotes. Click on the **Preview changes** tab to view your changes as you make them. If you don't want to save your changes click **Cancel changes**.  
 
-![GitHubWebUITranslationEntry](/images/Contribute/GitHubWebUITranslationEntry.png "TrueNAS language translation snippet")
+{{< trueimage src="/images/Contribute/GitHubWebUITranslationEntry.png" alt="TrueNAS language translation snippet" id="TrueNAS language translation snippet" >}}
 
 ### Begin a New Pull Request
 
  Click **Propose changes** to save the file. This creates a new fork of the repository. It also opens a pull request. A pull request sends the translated text strings to TrueNAS for review. Once approved, these translations get merged into the master branch.
 
 Before submitting the pull request, please consider:
- * Do you intend to continue working in the same language file? If so, continue working in the same forked repository & branch. Mark the pull request as draft. A draft pull request cannot merge until you mark it ready for review.  
 
-More information on draft pull requests located at: 
-[GitHub pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests).
- 
-![GitHubWebUIProposeChange](/images/Contribute/GitHubWebUIProposeChange.png "TrueNAS translation pull request")
+* Do you intend to continue working in the same language file? If so, continue working in the same forked repository & branch. Mark the pull request as draft. A draft pull request cannot merge until you mark it ready for review.  
+
+  More information on draft pull requests located at:
+  [GitHub pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests).
+
+{{< trueimage src="/images/Contribute/GitHubWebUIProposeChange.png" alt="TrueNAS translation pull request" id="TrueNAS translation pull request" >}}
 
 * Would you like to submit string translations for a different language file? If so, open a new branch off the original forked repository you created. Begin working on the second language file in this new branch. Complete your changes in this second language file. Merge the second language file back into the branch that has the draft pull request open. This splits up the pull requests by language and can make the approval process go faster.

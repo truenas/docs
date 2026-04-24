@@ -10,7 +10,7 @@ aliases:
 ---
 <div style="float:left;max-width:25%;">
 
-![TrueNASVeeamReady](/images/Veeam/Ready_Repository.png "TrueNAS is Veeam Ready")
+{{< trueimage src="/images/Veeam/Ready_Repository.png" alt="TrueNAS is Veeam Ready" id="TrueNAS is Veeam Ready" >}}
 
 </div>
 
@@ -21,7 +21,7 @@ With the ability to seamlessly scale to petabytes of raw capacity, high-performa
 {{< expand "Qualified Hardware" "v" >}}
 These TrueNAS products are qualified by Veeam:
 
-![VeeamReadyTrueNASProducts](/images/Veeam/VeeamReadyiX.png "TrueNAS Products that are Veeam Ready")
+{{< trueimage src="/images/Veeam/VeeamReadyiX.png" alt="TrueNAS Products that are Veeam Ready" id="TrueNAS Products that are Veeam Ready" >}}
 
 For more information, refer to the [Veeam Ready list](https://www.veeam.com/alliance-partner-integrations-qualifications.html?alliancePartner=ixsystems) filtered for TrueNAS.
 {{< /expand >}}
@@ -257,4 +257,4 @@ Veeam Backup & Replication provides [three tiers of immutability](https://helpce
 
 Using a Veeam Backup & Replication [hardened repository](https://helpcenter.veeam.com/docs/backup/vsphere/hardened_repository.html?ver=120) protects backup files from loss due to malware or unplanned actions. A hardened repository supports immutability and single-use credentials.
 
-![VeeamBackupRepository](/images/Veeam/VeeamBackupRepository.png "Configuring Veeam Backup Repository")
+{{< trueimage src="/images/Veeam/VeeamBackupRepository.png" alt="Configuring Veeam Backup Repository" id="Configuring Veeam Backup Repository" >}}

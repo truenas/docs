@@ -32,7 +32,7 @@ Name a replacement image with the same name as the existing image you are replac
 In the repository, click **Code** and go to the image location in the repository.
 Images are located in the <file>/static/images/</file> directory and in the same folder location as indicated in the image path found in the article text file as part of an article bundle.
 
-[![ImageLocation](/images/Contribute/GitHubImagesLocation.png)](/images/Contribute/GitHubImagesLocation.png)
+{{< trueimage src="/images/Contribute/GitHubImagesLocation.png" alt="ImageLocation" id="ImageLocation" >}}
 
 Click **Upload files** and either drag and drop the new or replacement image into the file upload area or open the file browser to select your image.
 Naming the new image name the same as the old image automatically replaces the old image with the new one in every article that includes it.
@@ -88,11 +88,11 @@ To submit a change or a new article, create a *fork* (local copy) of the main re
 
 To start, click the **Edit Page** link in the top right of the site.
 
-[![ArticletoEdit](/images/Contribute/ArticletoEdit.png)](/images/Contribute/ArticletoEdit.png)
+{{< trueimage src="/images/Contribute/ArticletoEdit.png" alt="ArticletoEdit" id="ArticletoEdit" >}}
 
 To fork the repo to your GitHub account, click the green **Fork this repository** button.
 
-[![ForktheRepository](/images/Contribute/GitHubForktheRepository.png)](/images/Contribute/GitHubForktheRepository.png)
+{{< trueimage src="/images/Contribute/GitHubForktheRepository.png" alt="ForktheRepository" id="ForktheRepository" >}}
 
 {{< expand "Syncing an Existing Fork" "v" >}}
 When you already have a fork of the documentation repository, we recommend you sync your fork before continuing on to make changes. This updates your local copy with changes made to the main repository after you forked it.
@@ -101,39 +101,39 @@ When you already have a fork of the documentation repository, we recommend you s
 3. Set the **base repository** to your fork and the **head repository** to *truenas/documentation*.
    You might need to click **compare across forks** first.
 
-  [![CompareFork](/images/Contribute/GitHubCompareFork.png)](/images/Contribute/GitHubCompareFork.png)
+  {{< trueimage src="/images/Contribute/GitHubCompareFork.png" alt="CompareFork" id="CompareFork" >}}
 
 4. Click **Create pull request** and continue to merge the pull request.
 {{< /expand >}}
 
 Edit the page as needed.
 
-[![EditForkNotice](/images/Contribute/GitHubEditForkNotice.png)](/images/Contribute/GitHubEditForkNotice.png)
+{{< trueimage src="/images/Contribute/GitHubEditForkNotice.png" alt="EditForkNotice" id="EditForkNotice" >}}
 
 When the changes are complete, add a quick overview of the changes made in the** Description** box, and click the green **Commit changes** button.
 
-[![CommitChanges](/images/Contribute/GitHubEditCommitChanges.png)](/images/Contribute/GitHubEditCommitChanges.png)
+{{< trueimage src="/images/Contribute/GitHubEditCommitChanges.png" alt="CommitChanges" id="CommitChanges" >}}
 
 When the page refreshes the changes are complete in your forked repository.
 Now you can request merging these changes to the main repository using a pull request (PR).
 Click on **Pull Requests**.
 
-[![RepositoryFork](/images/Contribute/GitHubRepositoryFork.png)](/images/Contribute/GitHubRepositoryFork.png)
+{{< trueimage src="/images/Contribute/GitHubRepositoryFork.png" alt="RepositoryFork" id="RepositoryFork" >}}
 
 After the **Pull Requests** page opens, click the green **New Pull Request** button.
 
-[![ForkPullRequests](/images/Contribute/GitHubRepositoryForkPullrequests.png)](/images/Contribute/GitHubRepositoryForkPullrequests.png)
+{{< trueimage src="/images/Contribute/GitHubRepositoryForkPullrequests.png" alt="ForkPullRequests" id="ForkPullRequests" >}}
 
 Confirm that the **base repository** is set to **truenas/documentation** and  **base** is set to **master** or the version branch you are changing (i.e., if you are using 24.04, set that as the **base**).
 Set **head repository** to your forked repository, for example, *q5sys/documentation*.
 Set **compare** to **master**, or the version branch if proposing changes to either of those branches.
 Ensure these options are correct, then click the green **Create pull request** button to create the PR.
 
-[![RepositoryComparison](/images/Contribute/GitHubRepositoryComparison.png)](/images/Contribute/GitHubRepositoryComparison.png)
+{{< trueimage src="/images/Contribute/GitHubRepositoryComparison.png" alt="RepositoryComparison" id="RepositoryComparison" >}}
 
 Describe your changes and click the green **Create pull request** button.
 
-[![CreatePullRequest](/images/Contribute/GitHubPullRequestCreate.png)](/images/Contribute/GitHubPullRequestCreate.png)
+{{< trueimage src="/images/Contribute/GitHubPullRequestCreate.png" alt="CreatePullRequest" id="CreatePullRequest" >}}
 
 That is it!
 Other contributors review and merge your changes!
@@ -142,4 +142,4 @@ As part of the review process, automation builds a preview of the docs site with
 When the build completes, a comment appears in the PR that shows the automation result.
 Click on **Show all checks** and **Details** to see a live demo of the site with your changes.
 
-[![PullRequestSummary](/images/Contribute/GitHubPullRequestSummary.png)](/images/Contribute/GitHubPullRequestSummary.png)
+{{< trueimage src="/images/Contribute/GitHubPullRequestSummary.png" alt="PullRequestSummary" id="PullRequestSummary" >}}

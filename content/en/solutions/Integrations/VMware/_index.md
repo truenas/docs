@@ -18,7 +18,7 @@ There are several configuration recommendations and troubleshooting tips when us
 
 [iSCSI](https://www.truenas.com/docs/core/13.0/coretutorials/sharing/iscsi/) IQN is an acronym that stands for “iSCSI Qualified Name”.  It is comprised of the following naming schema with a preamble, node name and unique identifier:
 
-![iSCSIQualifiedName](/images/TrueNASCommon/iSCSIQualifiedName.png "iSCSI Qualified Name Components")
+{{< trueimage src="/images/TrueNASCommon/iSCSIQualifiedName.png" alt="iSCSI Qualified Name Components" id="iSCSI Qualified Name Components" >}}
 
 VMware requires using an IQN in their software iSCSI implementation.
 

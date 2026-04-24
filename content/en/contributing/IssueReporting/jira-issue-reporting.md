@@ -14,13 +14,13 @@ We encourage all users to help us make TrueNAS the best NAS by reporting issues,
 TrueNAS uses [Jira](https://www.atlassian.com/software/jira) to track bugs and develop features.
 You can view public issues without logging in, but you must create an Atlassian account to report bugs.
 
-![TrueNAS Jira Project](/images/Contribute/Jira.png "TrueNAS Jira Project")
+{{< trueimage src="/images/Contribute/Jira.png" alt="TrueNAS Jira Project" id="TrueNAS Jira Project" >}}
 
 ## Submitting Bug Reports In Jira
 
 Go to the [TrueNAS project on Jira](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/issues) and click **Create** in the top bar.
 
-![Create Ticket](/images/Contribute/JiraCreate.png "Create Ticket")
+{{< trueimage src="/images/Contribute/JiraCreate.png" alt="Create Ticket" id="Create Ticket" >}}
 
 Set the **Issue Type** to **Bug**. The form reloads with more fields. Do not select the **Defect** option which is only for internal use.
 
@@ -30,7 +30,7 @@ Enter a short, descriptive title that helps developers find the issue and unders
 
 Enter specific issue details in the **Description** field.
 
-![JiraSummaryDescription](/images/Contribute/JiraSummaryDescription.png "Summary and Description Field")
+{{< trueimage src="/images/Contribute/JiraSummaryDescription.png" alt="Summary and Description Field" id="Summary and Description Field" >}}
 
 Select a TrueNAS release from the **Affects Version** dropdown list. If you cannot locate the version of software installed on the dropdown list, include it in the **Description** field.
 
@@ -65,7 +65,7 @@ In addition to the above information, please also provide:
 
 When finished filling out the all fields (i.e., **Summary**, **Description**, **Affects Version**, etc.), click **Create** at the bottom of the form.
 
-![Submit Ticket](/images/Contribute/JiraCreateBottom.png "Submit Ticket")
+{{< trueimage src="/images/Contribute/JiraCreateBottom.png" alt="Submit Ticket" id="Submit Ticket" >}}
 
 Developers review and update the ticket if/when they need additional information.
 The Jira account receives emails about the ticket status.
@@ -109,7 +109,7 @@ Using the private file attachment tickets keeps issue tickets public so others c
 ### Attaching Files to New Tickets
 Drag and drop public-facing files into the **Attachment** box when creating a new ticket:
 
-![JiraAttachmentNew](/images/Contribute/newjiraattachments.png "NAS Project Bug Creation Form")
+{{< trueimage src="/images/Contribute/newjiraattachments.png" alt="NAS Project Bug Creation Form" id="NAS Project Bug Creation Form" >}}
 
 To protect your privacy, use the link in the system-generated message in your Jira ticket to upload sensitive information to the TrueNAS Private File Attachments area.
 Link your private upload ticket to your Jira issue ticket so developers can locate the file. Files uploaded to this service are only visible to project developers.
