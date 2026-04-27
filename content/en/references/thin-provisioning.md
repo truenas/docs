@@ -41,13 +41,13 @@ When using TrueNAS to present block storage to devices that support TRIM or UNMA
 
 ### Validation Examples
 
-> Windows
-Run the command `fsutil behavior query DisableDeleteNotify` in the command prompt and observe the results. If either filesystem shows that `DisableDeleteNotify` is set to 1, the TRIM functionality is disabled, and should be re-enabled.
+#### Windows
+Run the command {{< cli >}}fsutil behavior query DisableDeleteNotify{{< /cli >}} in the command prompt and observe the results. If either filesystem shows that `DisableDeleteNotify` is set to 1, the TRIM functionality is disabled, and should be re-enabled.
 
-> Linux
-Run `lsblk -D` and verify that the contents of the `DISC-GRAN` and `DISC-MAX` columns are non-zero, indicating the granularity and maximum discard segment.
+#### Linux
+Run {{< cli >}}lsblk -D{{< /cli >}} and verify that the contents of the `DISC-GRAN` and `DISC-MAX` columns are non-zero, indicating the granularity and maximum discard segment.
 
-> VMware
+#### VMware
 Verify in the VMware UI that automatic space reclamation is enabled for your datastore.
 
 You can also use the `esxcli` tools to confirm this by using the NAA ID of your datastore.

@@ -13,13 +13,13 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * **Open Source**: Open-source software is a type of computer software in which source code is released under a license in which the copyright holder grants users the rights to use, study, change, and distribute the software to anyone and for any purpose.
 
-* **Network Attach Storage (NAS)**: Network-attached storage (NAS) is a computer data storage server connected to a computer network providing data access to a heterogeneous group of clients.
+* **Network Attached Storage (NAS)**: Network-attached storage (NAS) is a computer data storage server connected to a computer network providing data access to a heterogeneous group of clients.
 
 * **Storage Area Network (SAN)**: A storage area network (SAN) or storage network is a computer network which provides access to consolidated, block-level data storage. SANs are primarily used to access storage devices, such as disk arrays and tape libraries from servers so that the devices appear to the operating system as direct-attached storage.
 
 * **Software as a Service (SaaS)**: Software as a service (SaaS) is a software licensing and delivery model in which software is licensed on a subscription basis and is centrally hosted. It is sometimes referred to as *on-demand software*.
 
-* **SSD Metadata**: File system metadata that can be stored on SDs for faster performance while large data files can be stored on HDDs for lower costs.
+* **SSD Metadata**: File system metadata that can be stored on SSDs for faster performance while large data files can be stored on HDDs for lower costs.
 
 * **Storage**: Computer data storage is a technology consisting of computer components and recording media that are used to retain digital data.
 
@@ -50,7 +50,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 ## Storage Terminology
 
 * **Block Device**: A block device is a data storage device that supports reading and writing data in fixed-size blocks, sectors, or clusters.
-  These blocks are can vary in size based on formatting.
+  These blocks can vary in size based on formatting.
 
 * **Self-Encrypting Drive (SED)**: A SED (or Self-Encrypting Drive) is a hard drive that automatically and continuously encrypts the data on the drive without any user action.
 
@@ -157,7 +157,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * **IPMI**: The Intelligent Platform Management Interface (IPMI) is a set of computer interface specifications for a computer subsystem that provides management and monitoring capabilities independently of the host system CPU, firmware (BIOS or UEFI) and operating system.
 
-* **NDS**: The Network Information Service (NIS) originally designed by Sun Microsystems is a client–server directory service protocol for distributing system configuration data such as user and host names between computers on a computer network.
+* **NIS**: The Network Information Service (NIS) originally designed by Sun Microsystems is a client–server directory service protocol for distributing system configuration data such as user and host names between computers on a computer network.
 
 * **NTP**: The Network Time Protocol (NTP) is a networking protocol for clock synchronization between computer systems over packet-switched, variable-latency data networks.
 

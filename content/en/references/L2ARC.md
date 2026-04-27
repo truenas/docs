@@ -32,21 +32,13 @@ A cache device failure does not affect the integrity of the pool, but it might i
 
 ### Persistent L2ARC in TrueNAS
 
-By default, the L2ARC cache empties when the system restarts.
-When Persistent L2ARC is enabled, a sysctl repopulates the cache device mapping during the restart process.
-Persistent L2ARC preserves L2ARC performance even after a system restarts.
+When Persistent L2ARC is enabled, a sysctl repopulates the cache device mapping during the restart process, preserving L2ARC performance even after a system restarts.
 
-However, persistent L2ARC for large data pools can drastically slow the restarts process, degrading middleware and web interface performance.
-Because of this, we have disabled persistent L2ARC by default in TrueNAS, but you can manually activate it.
+TrueNAS 24.04 and later enable persistent L2ARC by default. We do not recommend disabling it.
 
-### Activating Persistent L2ARC
+{{< expand "Enabling Persistent L2ARC on Earlier TrueNAS Releases" "v" >}}
+TrueNAS releases before 24.04 have persistent L2ARC disabled by default and require manual activation.
 
-TrueNAS legacy releases earlier than 24.04 have persistent L2ARC disabled by default.
-Users must manually enable this function.
-Refer to the Documentation Hub archive for information on enabling L2ARC persistence related to your system release, or consider upgrading to the latest publicly available TrueNAS release.
-
-{{< tabs "L2ARC" >}}
-{{< tab "TrueNAS 13.0" >}}
 Go to **System > Tunables** and click **ADD**.
 For the **Variable**, enter **vfs.zfs.l2arc.rebuild_enabled**. Set the **Value** to **1** and the **Type** to **sysctl**.
 We recommend noting in the **Description** that this is the persistent L2ARC activation.
@@ -54,18 +46,13 @@ Make sure **Enabled** is selected and click **SUBMIT**.
 
 {{< trueimage src="/images/CORE/System/SystemTunablesL2ARCRebuild.png" alt="Persistent L2ARC Activation" id="Persistent L2ARC Activation" >}}
 
-{{< expand "CLI Instructions" "v" >}}
+Alternatively, in a command line, enter `sysctl vfs.zfs.l2arc.rebuild_enabled=1`.
+When successful, the output reads: `vfs.zfs.l2arc.rebuild_enabled: 0 -> 1`
+
 {{< hint type=important >}}
 TrueNAS does not write settings changed through the CLI to the configuration database. TrueNAS resets them on restarts.
 {{< /hint >}}
-In a command line, enter `sysctl vfs.zfs.l2arc.rebuild_enabled=1`.
-When successful, the output reads: `vfs.zfs.l2arc.rebuild_enabled: 0 -> 1`
 {{< /expand >}}
-{{< /tab >}}
-{{< tab "TrueNAS 24.04 or later" >}}
-TrueNAS enables persistent L2ARC by default. We do not recommend disabling it.
-{{< /tab >}}
-{{< /tabs >}}
 
 ## Device Recommendations
 
@@ -81,11 +68,9 @@ However, we have a few recommendations for L2ARC devices:
   Sequential or streaming workloads need very fast, low-latency L2ARC devices.
   [We recommend Enterprise-grade NVMe devices](https://www.snia.org/sites/default/files/SDC/2019/presentations/File_Systems/McKenzie_Ryan_Best_Practices_for_OpenZFS_L2ARC_in_the_Era_of_NVMe.pdf). L2ARC device capacity depends on how much faster it is than the data storage devices.
 
-
 ## Resources
 
 * "Best Practices for OpenZFS L2ARC in the Era of NVMe" : https://www.snia.org/sites/default/files/SDC/2019/presentations/File_Systems/McKenzie_Ryan_Best_Practices_for_OpenZFS_L2ARC_in_the_Era_of_NVMe.pdf [Talk Video : Best Practices for OpenZFS L2ARC in the Era of NVMe (SDC 2019)](https://www.youtube.com/watch?v=yHgSU6iqrlE)
 * Open ZFS Repository: https://github.com/openzfs/zfs
 * "ARC: A Self-Tuning, Low Overhead Replacement Cache": https://www.usenix.org/conference/fast-03/arc-self-tuning-low-overhead-replacement-cache
 * "ZFS L2ARC": https://www.brendangregg.com/blog/2008-07-22/zfs-l2arc.html
-* "FreeBSD Mastery: Advanced ZFS": https://www.amazon.com/FreeBSD-Mastery-Advanced-ZFS/dp/164235001X
