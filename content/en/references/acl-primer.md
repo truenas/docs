@@ -6,7 +6,8 @@ tags:
  - permissions
 ---
 
-[TrueNAS provides for full Access Control List (ACL) compatibility](https://www.truenas.com/docs/scale/datasets/) between Windows and Linux with NFSv4 ACLs on ZFS and eases the challenges of integrating Unix servers in Windows environments.
+An Access Control List (ACL) is a set of rules that controls which users or processes can access a resource and what operations they can perform on it.
+TrueNAS uses ACLs to manage permissions on datasets and shares, supporting both POSIX and NFSv4 ACL types depending on how your environment is configured.
 
 ## ACL Overview
 

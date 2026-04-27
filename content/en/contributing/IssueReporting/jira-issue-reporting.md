@@ -11,6 +11,7 @@ tags:
 We encourage all users to help us make TrueNAS the best NAS by reporting issues, requesting potentially helpful features, and relaying security vulnerabilities.  
 
 ## Issue Reporting in Jira
+
 TrueNAS uses [Jira](https://www.atlassian.com/software/jira) to track bugs and develop features.
 You can view public issues without logging in, but you must create an Atlassian account to report bugs.
 
@@ -18,21 +19,23 @@ You can view public issues without logging in, but you must create an Atlassian 
 
 ## Submitting Bug Reports In Jira
 
-Go to the [TrueNAS project on Jira](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/issues) and click **Create** in the top bar.
+Go to the [TrueNAS project on Jira](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/issues) and click **+ Create** in the top bar.
 
 {{< trueimage src="/images/Contribute/JiraCreate.png" alt="Create Ticket" id="Create Ticket" >}}
 
-Set the **Issue Type** to **Bug**. The form reloads with more fields. Do not select the **Defect** option which is only for internal use.
+Set the **Work type** to **Bug**. The **Space** field defaults to **TrueNAS (NAS)** and the **Status** field defaults to **Unscreened**.
 
-Developers use most of the fields on bug tickets, but you should fill out the **Summary** and **Description** to provide a usable report and include the **Affects Version** fields.
+Developers use most of the fields on bug tickets, but at minimum fill out the **Summary**, **Components**, **Problem/Justification**, and **Description** fields to provide a usable report.
 
 Enter a short, descriptive title that helps developers find the issue and understand the topic in the **Summary** field.
 
+Use the **Problem/Justification** field to describe the problem you are trying to report.
+
 Enter specific issue details in the **Description** field.
 
-{{< trueimage src="/images/Contribute/JiraSummaryDescription.png" alt="Summary and Description Field" id="Summary and Description Field" >}}
+Select the TrueNAS release you are running from the **Affects Version** dropdown list.
 
-Select a TrueNAS release from the **Affects Version** dropdown list. If you cannot locate the version of software installed on the dropdown list, include it in the **Description** field.
+{{< trueimage src="/images/Contribute/JiraSummaryDescription.png" alt="Summary and Description Field" id="Summary and Description Field" >}}
 
 A good bug report includes these elements:
 
@@ -44,7 +47,7 @@ A good bug report includes these elements:
 
 * A description of what happened while taking the steps listed above.
 
-* The TrueNAS software version you are using, which is found on the main **Dashboard**.
+* The TrueNAS software version you are using, found on the main **Dashboard** in the TrueNAS UI. Enter this in the **Affects Version** field on the ticket.
 
 * The current service configuration if the bug is service-related to help developers replicate your system.
 
@@ -63,7 +66,7 @@ In addition to the above information, please also provide:
 
 * A video if screenshots do not adequately show the issue.
 
-When finished filling out the all fields (i.e., **Summary**, **Description**, **Affects Version**, etc.), click **Create** at the bottom of the form.
+When finished filling out all fields, click **Create** at the bottom of the form.
 
 {{< trueimage src="/images/Contribute/JiraCreateBottom.png" alt="Submit Ticket" id="Submit Ticket" >}}
 
@@ -72,6 +75,7 @@ The Jira account receives emails about the ticket status.
 Developers might request more details as they work to resolve the issue, so check the ticket periodically.
 
 ### Security Issues
+
 See https://security.truenas.com/ for security advisories and software bill of materials for specific TrueNAS releases.
 
 Security issues do not appear on public issue trackers due to their sensitive nature.
@@ -91,22 +95,20 @@ Downloading a debug file in TrueNAS differs from CORE releases.
 
 ### Adding a Debug File to a Jira Ticket
 
-Jira provides a public-facing area for files that do not require privacy.
-If you are not concerned about data privacy, attach the debug, core, log, or other files to the Jira ticket.
-Debug files attached directly to a Jira issue ticket are visible to other users searching and reading Jira issue tickets.
+Screenshots and other images can be attached directly to a Jira ticket.
+However, we do not recommend attaching debug files, core files, or logs directly to a ticket, as these may contain sensitive information such as network configuration or system details.
+Files attached directly to a Jira issue ticket are visible to other users searching and reading Jira tickets.
 
-For users concerned about data privacy, TrueNAS provides a link to a secure file attachment ticket where you can upload files with sensitive information, like a system debug or screenshot of network connections.
+Instead, upload debug files, core files, and logs to the [TrueNAS Private File Attachments](https://ixsystems.atlassian.net/servicedesk/customer/portal/15/group/37/create/153) service.
+Only authorized TrueNAS team members can access files uploaded there.
 
 After submitting a bug report, Jira sends a confirmation email with a link to your Jira issue ticket.
-The Jira issue ticket includes a link to the **TrueNAS Private File Attachments** area where you can upload the debug file and any other images or logs you kept private. 
-Link the private file upload ticket to your Jira issue report before you save the private upload file ticket.
-
-Only authorized individuals can access files attached to private file upload tickets!
-
-Jira tickets with debugs directly attached are marked private, limiting access to only the ticket creator and authorized TrueNAS team members.
-Using the private file attachment tickets keeps issue tickets public so others can see the reports and track progress while still protecting private data.
+The Jira issue ticket also includes a link to the **TrueNAS Private File Attachments** area.
+Link the private file upload ticket to your Jira issue report before saving it, so developers can locate the file.
+Using the private file attachment service keeps issue tickets public so others can see reports and track progress while protecting your data.
 
 ### Attaching Files to New Tickets
+
 Drag and drop public-facing files into the **Attachment** box when creating a new ticket:
 
 {{< trueimage src="/images/Contribute/newjiraattachments.png" alt="NAS Project Bug Creation Form" id="NAS Project Bug Creation Form" >}}
@@ -115,6 +117,7 @@ To protect your privacy, use the link in the system-generated message in your Ji
 Link your private upload ticket to your Jira issue ticket so developers can locate the file. Files uploaded to this service are only visible to project developers.
 
 ### Attaching Files to Existing Tickets
+
 For public-facing files, open the ticket in your browser and either click **Attach**, at the top of the ticket or click the **+**, in the **Attachments** section, to open a local system file browser to select the files.
 You can also drag and drop the file onto the **Attachments** box and add any comments about it.
 
@@ -122,12 +125,14 @@ Upload private files to our secure private upload service located at
 https://ixsystems.atlassian.net/servicedesk/customer/portal/15/group/37/create/153. Files uploaded to this service are only visible to project developers.
 
 ## Obtaining Web Console Logs
+
 Web console logs help diagnose problems with the user interface.
 You can add logs to TrueNAS issues for debugging.
 
 {{< expand "Expand for more information about the web console log." "v" >}}
 
 ### Firefox
+
 Open the web console by clicking <i class="fa fa-bars" aria-hidden="true" title="Menu"></i> **(Menu) > More Tools > Web Developer Tools** (<kbd>Ctrl-Shift-I</kbd>).
 
 In the upper right, set **Persist Logs**.
@@ -142,6 +147,7 @@ Open an editor, paste the clipboard contents, and save to a new <file>console.lo
 After saving the file, open the console with <i class="fa fa-bars" aria-hidden="true" title="Menu"></i> **(Menu) > More Tools > Web Developer Tools** (<kbd>Ctrl-Shift-I</kbd>) and unset *Persist Logs*.
 
 ### Chrome
+
 Open the console by clicking <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> **(Options) > More Tools > Developer tools** (<kbd>Ctrl-Shift-I</kbd>).
 
 Click <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> **(Preferences)** and select **Preserve log** and **Show timestamps**. Close the **Preferences** window.

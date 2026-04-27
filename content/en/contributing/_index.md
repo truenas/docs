@@ -26,9 +26,6 @@ The open-source TrueNAS project welcomes contributions to the project. We also w
 
 Contributions to the TrueNAS open-source projects are made through GitHub and Jira.
 
-The Documentation Hub uses [Hugo](https://gohugo.io/) to create the documentation websites.
-Articles are written in a combination of [Markdown](https://daringfireball.net/projects/markdown/syntax) and [HTML](https://www.w3schools.com/html/html_intro.asp) syntax.
-
 ## How Can I Contribute to TrueNAS?
 
 There are a number of ways members of the TrueNAS community can give back by contributing to TrueNAS and its documentation.

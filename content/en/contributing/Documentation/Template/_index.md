@@ -29,7 +29,7 @@ Optional front matter parameters are:
 ## Article Template
 Feel free to copy this article template example and rework it when writing your articles for this website.
 You can copy the <file>template/</file> directory to provide a starting point for contributing an article or article bundle that includes links to images.
-```
+````
 ---
 title: "Example Article"
 description: "This is a template for any tutorial article on the Documentation Hub website."
@@ -57,7 +57,7 @@ Begin outlining the procedure steps.
 The first step is typically to log in to the system and go to a location like **System > General**.
 Including a screenshot is a good way for the reader to confirm they are in the correct location and to get more context.
 
-{{< trueimage src="/images/SCALE/imagename.png" alt="Image Name Text" id="Image Name Text" >}}
+{{\< trueimage src="/images/SCALE/imagename.png" alt="Image Name Text" id="Image Name Text" >}}
 
 {{\< hint type="danger" >}}
 Danger, information, and warnings admonition boxes include information about common errors that are made during the procedure.
@@ -85,7 +85,6 @@ Some CLI and API command syntax might require the square or curly brackets as pa
 Use inline and multi-line code blocks to define exactly what to type and show an example of the output.
 Entering `ifconfig` shows more information about the network interfaces:
 ```
-```
 root@freenas[~]# ifconfig
 em0: flags=8943<UP,BROADCAST,RUNNING,PROMISC,SIMPLEX,MULTICAST> metric 0 mtu 1500
         options=98<VLAN_MTU,VLAN_HWTAGGING,VLAN_HWCSUM>
@@ -96,13 +95,12 @@ em0: flags=8943<UP,BROADCAST,RUNNING,PROMISC,SIMPLEX,MULTICAST> metric 0 mtu 150
         media: Ethernet autoselect (1000baseT <full-duplex>)
         status: active
 ```
-```
 
 ## Final Steps
 
 Make sure to include any final steps the user can take to confirm they executed the procedure correctly.
 Be specific!
-Using vague terms can mislead or confuse the reader. Do not assume the reader knows what you are talking about. 
+Using vague terms can mislead or confuse the reader. Do not assume the reader knows what you are talking about.
 Instead, directly state what happens. for example:
 "Click *Generate Debug* to compile the system information into a *.tar* file.
 A dialog opens to download the file to your local system."
@@ -112,4 +110,4 @@ This is a good place to put any troubleshooting tips, in case the user is not se
 If a command or setting should produce a specific result, provide that information.
 If the command or setting does not produce the result provide information on what that means and how to correct or resolve the problem.
 
-```
+````

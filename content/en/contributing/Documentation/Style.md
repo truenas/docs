@@ -153,9 +153,6 @@ You can use the `expand` short code as a bullet point list item. the arrow is en
 There are many style elements you can use that are built into the Hugo static site generator.
 This site uses Hugo shortcode syntax for images, internal references, and admonition boxes.
 
-The documentation website also uses the [Docsy](https://github.com/google/docsy) theme.
-This theme has some additional styling elements that can be used to enhance your article.
-See the [Docsy shortcodes guide](https://www.docsy.dev/docs/adding-content/shortcodes/) for a list of built-in reusable content snippets.
 
 {{< expand "Linking to Other Articles on this Website" >}}
 Internal references use the `ref` shortcode to look up a file by name, or the `ref` shortcode to link to another article on the Documentation Hub website:
