@@ -15,14 +15,14 @@ table.inputs {
 
 table.inputs tr { border: none !important; }
 
-table.inputs td,
-table.inputs th {
+table.inputs > * > tr > td,
+table.inputs > * > tr > th {
   border: none;
   background-color: var(--bs-tertiary-bg) !important;
 }
 
-table.inputs tr:nth-child(even),
-table.inputs tr:nth-child(odd) {
+table.inputs > * > tr:nth-child(even),
+table.inputs > * > tr:nth-child(odd) {
   background-color: var(--bs-tertiary-bg) !important;
 }
 
@@ -41,8 +41,12 @@ table.inputs input[type="text"] { max-width: 10em; }
 .results-container::-webkit-scrollbar-track { background: transparent; }
 
 .results-container table.results th,
+#capacity-tabs-container table th {
+  border: none;
+  padding: 0.5rem;
+}
+
 .results-container table.results td,
-#capacity-tabs-container table th,
 #capacity-tabs-container table td {
   border-top: none;
   border-bottom: none;
@@ -80,8 +84,11 @@ table.results {
   color: white !important;
   cursor: default;
   line-height: 0.8em;
-  background-color: var(--bs-secondary-bg);
+  background-color: rgb(34, 89, 125);
 }
+
+.results-container table.results tr:nth-child(2) td:nth-child(2) { border-left: none !important; }
+.results-container table.results tr:nth-child(2) td:last-child   { border-right: none !important; }
 
 .results-container table.results td {
   cursor: pointer;
@@ -90,6 +97,11 @@ table.results {
 
 #capacity-tabs-container #first_ssd {
   border-top: 2px solid white;
+}
+
+.results-container table.results tr:last-child td,
+#capacity-tabs-container table tr:last-child td {
+  border-bottom: 1px solid var(--bs-primary);
 }
 
 table.debug {
@@ -393,10 +405,10 @@ div.draid-grid-table-container::-webkit-scrollbar-track { background: transparen
 /* Dark mode: override Bootstrap's blue-tinted tertiary-bg with neutral grays */
 [data-bs-theme="dark"] {
   table.inputs,
-  table.inputs td,
-  table.inputs th,
-  table.inputs tr:nth-child(even),
-  table.inputs tr:nth-child(odd) {
+  table.inputs > * > tr > td,
+  table.inputs > * > tr > th,
+  table.inputs > * > tr:nth-child(even),
+  table.inputs > * > tr:nth-child(odd) {
     background-color: #333333 !important;
   }
 
