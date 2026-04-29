@@ -55,6 +55,8 @@ timeout = "30s"
     showLightDarkModeMenu = true
     ul_show = 1
 
+    hub_sidebar_links = true
+
     [params.ui.readingtime]
       enable = true
 

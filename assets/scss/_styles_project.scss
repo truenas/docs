@@ -402,6 +402,75 @@ div.draid-grid-table-container::-webkit-scrollbar-track { background: transparen
   }
 }
 
+/* Sidebar tree-root: replace title text with Hub wordmark logo */
+.td-sidebar-link.tree-root span {
+  font-size: 0;
+  display: block;
+  height: 28px;
+  background: url('/images/hub-wordmark-color.svg') no-repeat left center;
+  background-size: auto 100%;
+}
+
+/* Sidebar hub links section */
+.sidebar-hub-links {
+  padding: 0 1rem 1.5rem 1.5rem;
+
+  .sidebar-hub-divider {
+    margin: .75rem 0;
+    border-color: var(--bs-tertiary-color);
+    opacity: 1;
+  }
+
+  .sidebar-hub-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .2rem 0;
+      font-size: .85rem;
+      color: var(--bs-body-color);
+      text-decoration: none;
+
+      &:hover {
+        color: #0095d5;
+        text-decoration: none;
+      }
+    }
+
+    .sidebar-hub-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      fill: #0095d5;
+    }
+
+    .sidebar-hub-icon-img {
+      object-fit: contain;
+      fill: unset;
+    }
+
+    .sidebar-hub-icon-svg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      overflow: hidden;
+
+      svg {
+        min-width: 18px;
+        height: 18px;
+        fill: #0095d5;
+      }
+    }
+  }
+}
+
 /* Dark mode: override Bootstrap's blue-tinted tertiary-bg with neutral grays */
 [data-bs-theme="dark"] {
   table.inputs,

@@ -77,3 +77,6 @@
 {{ else -}}
   {{ partial "sidebar-tree.html" $args }}
 {{- end }}
+{{ if .Site.Params.ui.hub_sidebar_links -}}
+  {{ partial "sidebar-hub-links.html" . }}
+{{- end }}
