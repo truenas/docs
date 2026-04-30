@@ -4,6 +4,7 @@ description: "Best practices and guides for using TrueNAS with other software so
 weight: 27
 aliases:
   - /core/solutions/
+  - /SolutionsPrint/
 cascade:
 - _target:
     path: "/**"
