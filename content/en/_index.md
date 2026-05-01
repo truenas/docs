@@ -64,15 +64,15 @@ Current security advisories, CVE reports, and vulnerability information
 Version recommendations, release schedules, upgrade paths, and download links
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="material:lightbulb" title="Solutions" url="https://www.truenas.com/docs/solutions/" %}}
+{{% blocks/feature icon="material:lightbulb" title="Solutions" url="/solutions/" %}}
 Implementation guides and best practices for common deployment scenarios
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="material:handshake" title="Contributing" url="https://www.truenas.com/docs/contributing/" %}}
+{{% blocks/feature icon="material:handshake" title="Contributing" url="/contributing/" %}}
 Join the community and contribute to TrueNAS documentation and open source projects
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="material:library_books" title="References" url="https://www.truenas.com/docs/references/" %}}
+{{% blocks/feature icon="material:library_books" title="References" url="/references/" %}}
 Technical specifications, glossaries, and supplementary documentation resources
 {{% /blocks/feature %}}
 
