@@ -5,12 +5,6 @@ Updates software_status_config.yaml with latest version recommendations.
 Fetches data from both the legacy CDN (update.sys.truenas.net) for 25.10
 and earlier trains, and the new CDN (auto-public.sys.truenas.net) for 26+.
 Uses cascading profile logic: MISSION_CRITICAL > GENERAL > EARLY_ADOPTER > DEVELOPER
-
-CLEANUP TODO: When 25.04 is no longer a recommended version, remove:
-1. The compressed anchor format branch in version_to_anchor() (pre-25.10)
-2. The 'scalereleasenotes' doc_path branch in get_doc_url_components() (pre-25.10)
-3. TrueNAS-SCALE-Fangtooth from additional_trains in software_status_config.yaml
-4. The version_to_anchor() pre-25.10 comment block
 """
 
 import requests
@@ -20,71 +14,41 @@ import argparse
 from pathlib import Path
 
 def version_to_anchor(version):
-    """Convert version string to documentation anchor.
-
-    - 25.10+ and 26+: anchor is the version string as-is (e.g. "25.10.2.1", "26.0.0")
-    - Pre-25.10: anchor is compressed (periods removed) (e.g. "25.04.2.6" -> "250426")
-
-    The pre-25.10 branch is retained for 25.04 support.
-    Remove when 25.04 is no longer a recommended version (see CLEANUP TODO in module docstring).
-    """
-    version_match = re.match(r'^(\d+)\.(\d+)', version)
-    if not version_match:
-        return version
-
-    major = int(version_match.group(1))
-    minor = int(version_match.group(2))
-
-    if major > 25 or (major == 25 and minor >= 10):
-        # 25.10+ and 26+: use version string as-is
-        return version
-    else:
-        # Pre-25.10: compressed format (remove periods)
-        # Remove when 25.04 is no longer recommended
-        return version.replace('.', '')
+    """Convert version string to documentation anchor (version string as-is)."""
+    return version
 
 def get_doc_url_components(version):
     """Extract URL path version, doc path, and anchor for a release version.
 
     Returns (url_path_version, doc_path, anchor) or None if version cannot be parsed.
 
-    Three version ranges, each with different URL conventions:
-    - 26+:     URL uses major only (e.g. "26"), path is "versionnotes"
-    - 25.10:   URL uses major.minor (e.g. "25.10"), path is "versionnotes"
-    - Pre-25.10: URL uses major.minor, path is "scalereleasenotes", anchor is compressed
-                 TODO: Remove this branch once 25.04 is no longer recommended
+    - 26+:   URL uses major only (e.g. "26"), path is "versionnotes"
+    - 25.10: URL uses major.minor (e.g. "25.10"), path is "versionnotes"
     """
     version_match = re.match(r'^(\d+)\.(\d+)', version)
     if not version_match:
         return None
 
     major = int(version_match.group(1))
-    minor = int(version_match.group(2))
     major_minor = version_match.group(0)
     anchor = version_to_anchor(version)
 
     if major >= 26:
-        # 26+: new versioning scheme (26.0.0, 26.1.0, ...), URL uses major only
         return str(major), 'versionnotes', anchor
-    elif major == 25 and minor >= 10:
-        # 25.10: URL uses major.minor
-        return major_minor, 'versionnotes', anchor
     else:
-        # Pre-25.10: different path and compressed anchor
-        # TODO: Remove once 25.04 is no longer recommended
-        return major_minor, 'scalereleasenotes', anchor
+        return major_minor, 'versionnotes', anchor
 
 
 def parse_version_for_sorting(version):
     """Parse version string into sortable tuple for proper version ordering"""
     # Handle formats like: 25.10.0, 25.10-RC.1, 25.10-BETA.1, 24.10.2.2
-
+    
     # Split on dash to separate main version from suffix
     if '-' in version:
         main_version, suffix = version.split('-', 1)
     else:
         main_version, suffix = version, ''
-
+    
     # Parse main version parts
     version_parts = []
     for part in main_version.split('.'):
@@ -92,11 +56,11 @@ def parse_version_for_sorting(version):
             version_parts.append(int(part))
         except ValueError:
             version_parts.append(0)
-
+    
     # Pad to ensure consistent comparison (e.g., 25.10 vs 25.10.0.1)
     while len(version_parts) < 4:
         version_parts.append(0)
-
+    
     # Handle suffix priority: stable > RC > BETA > others
     suffix_priority = 1000  # Default for stable releases (no suffix)
     if suffix:
@@ -113,7 +77,7 @@ def parse_version_for_sorting(version):
         suffix_num = int(suffix_num_match.group(1)) if suffix_num_match else 0
     else:
         suffix_num = 0
-
+    
     return tuple(version_parts + [suffix_priority, suffix_num])
 
 def find_versions_with_cascade(available_trains, train_releases, profiles_config):
@@ -268,7 +232,7 @@ def main():
         print("DRY-RUN MODE: Will not modify software_status_config.yaml")
         print("="*70 + "\n")
 
-    config_path = Path(__file__).parent.parent / 'data' / 'properties' / 'software_status_config.yaml'
+    config_path = Path(__file__).parent.parent / 'data' / 'software_status_config.yaml'
 
     # Load existing config
     with open(config_path, 'r') as f:
@@ -335,7 +299,7 @@ def main():
                     print(f"  ✗ {train_name}: HTTP {releases_response.status_code}")
             except Exception as e:
                 print(f"  ✗ {train_name}: {e}")
-
+        
         # Step 3: Find best versions for each profile using cascading logic
         print("\nStep 3: Finding best versions with cascading logic...")
         updates_made = []
@@ -417,7 +381,7 @@ def main():
                     print(f"  - Skipped (no sections found in table_data)")
             else:
                 print(f"  ✗ No version found for {profile_name}")
-
+        
         # Step 4: Save updated config
         if updates_made:
             if args.dry_run:
@@ -439,7 +403,7 @@ def main():
                 print(f"\n[DRY-RUN] No updates needed")
             else:
                 print(f"\n- No updates needed")
-
+        
     except Exception as e:
         # Make API failure VERY visible in console output
         print("\n" + "="*70)
