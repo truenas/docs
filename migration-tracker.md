@@ -103,7 +103,9 @@ Pages that have been removed from `/documentation` and moved to `/docs` will nee
 
 3. **Update module to remote branch:**
    ```bash
-   hugo mod get -u github.com/truenas/docs-shared@<branch-name>
+   # No -u: the @<branch-name> already pins what to fetch; -u would additionally
+   # upgrade this module's transitive deps (e.g. docsy) past the go.mod pins.
+   hugo mod get github.com/truenas/docs-shared@<branch-name>
    hugo mod tidy
    ```
 
