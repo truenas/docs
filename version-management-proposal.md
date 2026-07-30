@@ -424,9 +424,12 @@ TrueNAS-Docs-Build-TN27      → tn-27 branch
 #!/bin/bash
 set -e
 
-# Update Hugo modules
-hugo mod get -u
-hugo mod tidy
+# Do NOT run `hugo mod get -u` (or bare `hugo mod get`) in CI: both resolve every
+# module to LATEST and override the go.mod pins. In connect-docs this silently
+# upgraded docsy to the broken v0.16.0 (removed the blocks/cover shortcode) and
+# froze the build. The `hugo` build below auto-fetches the go.mod-pinned versions.
+# Upgrade upstream themes deliberately by bumping go.mod. Keep the internal
+# docs-shared module fresh via its local replace + adjacent branch checkout.
 
 # Build with version-specific baseURL
 hugo --gc --minify --cleanDestinationDir \
@@ -486,8 +489,9 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                    hugo mod get -u
-                    hugo mod tidy
+                    # No `hugo mod get -u` / `hugo mod get`: both upgrade modules past
+                    # the go.mod pins (this pulled the broken docsy v0.16.0 in
+                    # connect-docs). The build auto-fetches the pinned versions.
                     hugo --gc --minify --cleanDestinationDir \
                          --baseURL="${BASE_URL}" \
                          --destination="${DEPLOY_PATH}"

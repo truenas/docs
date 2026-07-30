@@ -54,10 +54,9 @@ https://github.com/gohugoio/hugo/releases/tag/v0.157.0 and install to your PATH.
 # Install Node.js dependencies
 npm install
 
-# Initialize Hugo modules
-hugo mod get
-
-# Start development server
+# Start development server (Hugo auto-fetches the go.mod-pinned modules).
+# Do NOT run `hugo mod get` / `hugo mod get -u` — both upgrade modules past the
+# go.mod pins and can pull a breaking upstream theme release (e.g. docsy v0.16.0).
 hugo serve
 ```
 
