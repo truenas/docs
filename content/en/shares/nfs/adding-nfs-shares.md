@@ -16,16 +16,14 @@ tags:
 Creating a Network File System (NFS) share on TrueNAS makes a lot of data available for anyone with share access.
 Depending on the share configuration, you can restrict users to read or write privileges.
 
-{{< hint type=note >}}
-NFS treats each dataset as its own file system. When creating the NFS share on the server, the specified dataset is the location that the client accesses.
-If you choose a parent dataset as the NFS file share location, the client cannot access any nested or child datasets beneath the parent.
+> [!NOTE]
+> NFS treats each dataset as its own file system. When creating the NFS share on the server, the specified dataset is the location that the client accesses.
+> If you choose a parent dataset as the NFS file share location, the client cannot access any nested or child datasets beneath the parent.
+>
+> If you need to create shares that include child datasets, SMB sharing is an option. Note that Windows NFS Client versions currently support only NFSv2 and NFSv3.
 
-If you need to create shares that include child datasets, SMB sharing is an option. Note that Windows NFS Client versions currently support only NFSv2 and NFSv3.
-{{< /hint >}}
-
-{{< hint type=info title="UDP Protocol and NFS" >}}
-{{< include file="/static/includes/nfs-service-udp-warning.md" >}}
-{{< /hint >}}
+> [!INFO] UDP Protocol and NFS
+> {{< include file="/static/includes/nfs-service-udp-warning.md" >}}
 
 ## Sharing Administrator Access
 
@@ -127,9 +125,8 @@ Toggle **Start Automatically** on if you want NFS to activate when TrueNAS boots
 
 {{<include file="/static/includes/add-column-organizer.md">}}
 
-{{< hint type=note >}}
-The NFS service does not automatically start on boot if all NFS shares are encrypted and locked.
-{{< /hint >}}
+> [!NOTE]
+> The NFS service does not automatically start on boot if all NFS shares are encrypted and locked.
 
 ### Configuring the NFS Service
 
@@ -182,6 +179,5 @@ To change the default permissions, edit the share, open the **Advanced Options**
 
 {{< include file="/static/includes/nfs-update-time.md" >}}
 
-{{< hint type=important >}}
-You must have ESXI 6.7 or later for read/write functionality with NFSv4 shares.
-{{< /hint >}}
+> [!IMPORTANT]
+> You must have ESXI 6.7 or later for read/write functionality with NFSv4 shares.

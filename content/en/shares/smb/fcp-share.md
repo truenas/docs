@@ -17,9 +17,8 @@ tags:
 
 ## About Final Cut Pro Storage Shares
 
-{{< hint type=note >}}
-The **Final Cut Pro Storage Share** purpose is available in TrueNAS 25.10.1 and later.
-{{< /hint >}}
+> [!NOTE]
+> The **Final Cut Pro Storage Share** purpose is available in TrueNAS 25.10.1 and later.
 
 TrueNAS provides the **Final Cut Pro Storage Share** purpose for professional media production workflows.
 This share type automatically enables **Use Apple-style Character Encoding** to translate NTFS illegal characters for proper file handling in Final Cut Pro.
@@ -177,16 +176,15 @@ After mounting the share, verify proper operation:
 
 ## Migrating Existing Media Libraries
 
-{{< hint type=important title="Should You Migrate?" >}}
-If you have an existing Final Cut Pro workflow using a standard SMB share with default settings that works properly, TrueNAS recommends keeping your current configuration. Migration is only necessary if you are experiencing specific compatibility issues or need the character encoding features provided by the **Final Cut Pro Storage Share** preset.
-{{< /hint >}}
+> [!IMPORTANT] Should You Migrate?
+> If you have an existing Final Cut Pro workflow using a standard SMB share with default settings that works properly, TrueNAS recommends keeping your current configuration. Migration is only necessary if you are experiencing specific compatibility issues or need the character encoding features provided by the **Final Cut Pro Storage Share** preset.
 
-{{< hint type=warning title="Migration Considerations" >}}
-Migrating an existing media library from a standard SMB share to a **Final Cut Pro Storage Share** requires careful planning because enabling Apple character encoding might affect existing files:
-
-* Files created without Apple character encoding might display differently or have access issues
-* Existing project files might need to be re-indexed by Final Cut Pro
-* Test thoroughly in a non-production environment before migrating production data
+> [!WARNING] Migration Considerations
+> Migrating an existing media library from a standard SMB share to a **Final Cut Pro Storage Share** requires careful planning because enabling Apple character encoding might affect existing files:
+>
+> * Files created without Apple character encoding might display differently or have access issues
+> * Existing project files might need to be re-indexed by Final Cut Pro
+> * Test thoroughly in a non-production environment before migrating production data
 
 ### Migration Steps
 
@@ -209,4 +207,3 @@ Only proceed with migration if you have confirmed that your current setup is inc
 5. Update Final Cut Pro libraries and project files to point to the new share location.
 
 6. Keep the old share available for a period of time as a backup until you confirm all workflows function correctly with the new share.
-{{< /hint >}}

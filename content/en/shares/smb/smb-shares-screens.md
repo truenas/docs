@@ -129,11 +129,10 @@ All share options listed in the **Purpose** dropdown show these settings.
 
 {{< trueimage src="/images/shares/add-smb-advanced-access-settings.png" alt="SMB Advanced Options Access" id="SMB Advanced Options Access" >}}
 
-{{< hint type=note >}}
-For datasets with **NFSv4** ACL type, SMB clients automatically use access-based enumeration. 
-This means directory listings over SMB only include files and directories for which the client has read permissions. 
-This behavior is enabled by default and matches FreeBSD behavior.
-{{< /hint >}}
+> [!NOTE]
+> For datasets with **NFSv4** ACL type, SMB clients automatically use access-based enumeration. 
+> This means directory listings over SMB only include files and directories for which the client has read permissions. 
+> This behavior is enabled by default and matches FreeBSD behavior.
 
 {{< truetable >}}
 | Setting | Description |
@@ -152,15 +151,14 @@ Hosts Allow and Hosts Deny interaction:
 * **Hosts Allow** empty, **Hosts Deny** populated: All hosts except those in Deny list can access
 * Both populated: Hosts in Allow list can access; hosts not in either list can access; hosts in Deny list cannot access
 
-{{< hint type=note >}}
-Legacy share additional access options:
-
-Shares with **Purpose** set to **Legacy Share** display additional access controls not available in modern presets:
-* **Enable ACL** - Configure custom ACL entries
-* **Allow Guest Access** - Enable anonymous access without credentials
-
-See [Legacy Share Settings](#legacy-share-settings) for complete details on these options.
-{{< /hint >}}
+> [!NOTE]
+> Legacy share additional access options:
+>
+> Shares with **Purpose** set to **Legacy Share** display additional access controls not available in modern presets:
+> * **Enable ACL** - Configure custom ACL entries
+> * **Allow Guest Access** - Enable anonymous access without credentials
+>
+> See [Legacy Share Settings](#legacy-share-settings) for complete details on these options.
 
 #### Audit Logging
 
@@ -264,9 +262,8 @@ We recommend changing **Purpose** to **Private Datasets Share**. Refer to the in
 
 {{< include file="/static/includes/auxiliary-parameters-caution.md" >}}
 
-{{< hint type=note >}}
-VFS module configuration (`catia`, `fruit`, `streams_xattr`) cannot be set through auxiliary parameters. Use the appropriate share purpose preset (Final Cut Pro Storage Share, Time Machine, etc.) instead.
-{{< /hint >}}
+> [!NOTE]
+> VFS module configuration (`catia`, `fruit`, `streams_xattr`) cannot be set through auxiliary parameters. Use the appropriate share purpose preset (Final Cut Pro Storage Share, Time Machine, etc.) instead.
 
 Legacy share unique options:
 

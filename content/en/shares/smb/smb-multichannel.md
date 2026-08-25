@@ -12,9 +12,8 @@ tags:
 
 SMB multichannel allows servers to use multiple network connections simultaneously by combining the bandwidth of several network interface cards (NICs) for better performance.
 
-{{< hint type=important >}}
-SMB multichannel does not function if you combine NICs into a LAGG.
-{{< /hint >}}
+> [!IMPORTANT]
+> SMB multichannel does not function if you combine NICs into a LAGG.
 
 ## Configuring Multiple Network Interfaces
 
@@ -24,9 +23,8 @@ If interfaces share a subnet, the system could fail to initialize multichannel, 
 
 ## Activating Multichannel in TrueNAS
 
-{{< hint type=note >}}
-If you already have clients connected to SMB shares, disconnect them before activating multichannel.
-{{< /hint >}}
+> [!NOTE]
+> If you already have clients connected to SMB shares, disconnect them before activating multichannel.
 
 1. Go to **System > Services** and click the <span class="material-icons">edit</span> edit icon for the SMB service.
 2. Click **Advanced Settings**, then enable **Multichannel**.

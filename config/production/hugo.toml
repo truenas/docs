@@ -21,9 +21,34 @@ timeout = "30s"
 
 # Site params
 [params]
-  version = "nightly"
-  versionLabel = "Development"
+  version = "26"
+  versionLabel = "TrueNAS 26"
   featured_image = "/images/tn-openstorage-logo.png"
+  version_menu = "Versions"
+
+  [[params.versions]]
+    version = "Latest"
+    url = "https://docs.truenas.com/tn/current/"
+
+  [[params.versions]]
+    version = "Nightly"
+    url = "https://docs.truenas.com/tn/nightly/"
+
+  [[params.versions]]
+    version = "26"
+    url = "https://docs.truenas.com/tn/26/"
+
+  [[params.versions]]
+    version = "25.10"
+    url = "https://www.truenas.com/docs/scale/25.10/"
+
+  [[params.versions]]
+    version = "25.04"
+    url = "https://www.truenas.com/docs/scale/25.04/"
+
+  [[params.versions]]
+    version = "Archive"
+    url = "https://www.truenas.com/docs/archive"
 
   [params.search]
     siteName = "TrueNAS Docs Hub"
@@ -42,6 +67,8 @@ timeout = "30s"
     sidebar_search_disable = true
     showLightDarkModeMenu = true
     ul_show = 1
+    versioned_section_links = true
+    hub_sidebar_links = true
 
 # Hugo modules
 [module]

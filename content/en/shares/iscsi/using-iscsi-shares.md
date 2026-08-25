@@ -67,10 +67,9 @@ Now you partition an iSCSI disk.
 
    Use the `fdisk` command defaults when partitioning the disk.
 
-   {{< hint type=note >}}
-   Remember to type <kbd>w</kbd> when finished partitioning the disk.
-   The `w` command tells `fdisk` to save any changes before quitting.
-   {{< /hint >}}
+   > [!NOTE]
+   > Remember to type <kbd>w</kbd> when finished partitioning the disk.
+   > The `w` command tells `fdisk` to save any changes before quitting.
 
    {{< trueimage src="/images/shares/linux-iscsi-filesystem-created.png" alt="Linux ISCSI Filesystem Created" id="Linux ISCSI Filesystem Created" >}}
 

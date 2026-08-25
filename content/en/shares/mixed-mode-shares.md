@@ -18,11 +18,10 @@ A multi-protocol or mixed-mode NFS and SMB share supports both NFS and SMB proto
 Multi-protocol shares allow clients to use either protocol to access the same data.
 This can be useful in environments with a mix of Windows systems and Unix-like systems, especially if some clients lack an SMB client.
 
-{{< hint type=tip >}}
-Carefully consider your environment and access requirements before configuring a multi-protocol share.
-For many applications, a single protocol SMB share provides a better user experience and ease of administration.
-Linux clients can access SMB shares using [`mount.cifs`](https://linux.die.net/man/8/mount.cifs).
-{{< /hint >}}
+> [!TIP]
+> Carefully consider your environment and access requirements before configuring a multi-protocol share.
+> For many applications, a single protocol SMB share provides a better user experience and ease of administration.
+> Linux clients can access SMB shares using [`mount.cifs`](https://linux.die.net/man/8/mount.cifs).
 
 To ensure security and data integrity when using multi-protocol sharing, it is important to properly configure permissions and access controls.
 To maximize security on the NFS side of the multi-protocol share, we recommend using NFSv4 and [Active Directory](#joining-active-directory)(AD) for Kerberos authentication.
@@ -77,9 +76,8 @@ Click **Add SPN** to open the **Add Kerberos SPN Entry** dialog.
 Click **Yes** when prompted to add a service principal name (SPN) entry.
 Enter the AD domain administrator user name and password in **Name** and **Password**.
 
-{{< hint type=tip >}}
-TrueNAS automatically applies SPN credentials if the NFS service is enabled with **Require Kerberos for NFSv4** selected before joining Active Directory.
-{{< /hint >}}
+> [!TIP]
+> TrueNAS automatically applies SPN credentials if the NFS service is enabled with **Require Kerberos for NFSv4** selected before joining Active Directory.
 
 Click **Save**, then start the NFS service.
 
@@ -91,9 +89,8 @@ Each NFS share on the list also has a toggle to enable or disable the service fo
 
 To enable the service from the **System > Services** screen, click the <span class="iconify" data-icon="mdi:play-circle" title="Start Service">Start Service</span> icon to start the service and toggle **Start Automatically** on to start the service when TrueNAS boots.
 
-{{< hint type=note >}}
-The NFS service does not automatically start on boot if all NFS shares are encrypted and locked.
-{{< /hint >}}
+> [!NOTE]
+> The NFS service does not automatically start on boot if all NFS shares are encrypted and locked.
 
 ## Joining Active Directory
 
@@ -109,12 +106,11 @@ Configure a container (group or organizational unit), Kerberos admin, and user a
 
 You can create a share and a dataset from either the **Add Dataset** or **Add SMB** screen.
 
-{{< hint type=info >}}
-The multi-protocol share type is mutually exclusive with AAPL extension support, like Time Machine.
-These extensions require the SMB2/3 lease support, which is no longer available in multi-protocol shares.
-Therefore, the **Multi-Protocol Share** option does not include a Time Machine option. Selecting other Apple protocol options displays warning messages.
-Multi-protocol shares can impact the performance of all SMB shares.
-{{< /hint >}}
+> [!INFO]
+> The multi-protocol share type is mutually exclusive with AAPL extension support, like Time Machine.
+> These extensions require the SMB2/3 lease support, which is no longer available in multi-protocol shares.
+> Therefore, the **Multi-Protocol Share** option does not include a Time Machine option. Selecting other Apple protocol options displays warning messages.
+> Multi-protocol shares can impact the performance of all SMB shares.
 
 ### Using the Add Dataset Screen
 

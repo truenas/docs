@@ -23,12 +23,11 @@ Do not select this option if you want a pure SMB share with no AFP relation.
 
 {{< trueimage src="/images/shares/afp-compatibility-checkbox.png" alt="AFP Compatibility Checkbox" id="AFP Compatibility Checkbox" >}}
 
-{{< hint type=important >}}
-Netatalk service is not present in TrueNAS 21.06 or later.
-AFP shares automatically migrate to SMB shares with the **Legacy AFP Compatibility** option enabled.
-Do not clear the **Legacy AFP Compatibility** checkbox, as it impacts how data is written to and read from shares.
-Any other shares created to access these paths after the migration must also have **Legacy AFP Compatibility** selected.
-{{< /hint >}}
+> [!IMPORTANT]
+> Netatalk service is not present in TrueNAS 21.06 or later.
+> AFP shares automatically migrate to SMB shares with the **Legacy AFP Compatibility** option enabled.
+> Do not clear the **Legacy AFP Compatibility** checkbox, as it impacts how data is written to and read from shares.
+> Any other shares created to access these paths after the migration must also have **Legacy AFP Compatibility** selected.
 
 Once you have [migrated to TrueNAS](# <!-- TODO-REF: MigratingFromCore -->), you can find your migrated AFP configuration in **Shares >** **Windows Shares (SMB)** with the prefix **AFP_**.
 To make the migrated AFP share accessible, start the SMB service.

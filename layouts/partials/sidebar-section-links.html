@@ -1,0 +1,31 @@
+{{/* Static links to the Docs Hub's cross-cutting sections (Solutions,
+     Contributing, References), appended below the version's own page tree
+     and above the sidebar-hub-links divider. Reuses the sidebar tree's own
+     classes (td-sidebar-nav__section-title / td-sidebar-link) so these blend
+     in visually with the real tree above them without any extra CSS.
+
+     No wrapping <div>: docsy's sidebar CSS indents the tree via a direct-child
+     selector (.td-sidebar-nav > .td-sidebar-nav__section { padding-left }),
+     so this <ul> must land as a direct child of <nav id="td-section-nav">
+     once appended, not nested inside a wrapper. */}}
+<ul id="sidebar-section-links" class="td-sidebar-nav__section pe-md-3 ul-0 sidebar-section-links" style="display:none">
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+    <a href="https://docs.truenas.com/solutions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" target="_blank" rel="noopener"><span>Solutions</span></a>
+  </li>
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+    <a href="https://docs.truenas.com/contributing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" target="_blank" rel="noopener"><span>Contributing</span></a>
+  </li>
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+    <a href="https://docs.truenas.com/references/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" target="_blank" rel="noopener"><span>References</span></a>
+  </li>
+</ul>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var links = document.getElementById('sidebar-section-links');
+  var nav = document.getElementById('td-section-nav');
+  if (links && nav) {
+    links.style.display = '';
+    nav.appendChild(links);
+  }
+});
+</script>

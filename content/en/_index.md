@@ -1,6 +1,6 @@
 ---
-title: "TrueNAS 26 Nightly Documentation"
-linkTitle: "TrueNAS 26 (Early)"
+title: "TrueNAS 26 Documentation"
+linkTitle: "TrueNAS 26"
 description: "Development documentation for the next release of TrueNAS."
 type: docs
 layout: "docs"
@@ -18,12 +18,10 @@ cascade:
   type: "docs"
 ---
 
-{{< hint type=warning title="Development Documentation" >}}
-You are viewing development documentation for the future TrueNAS major version 26 (Halfmoon).
-Features and interfaces can change before the next stable release.
-
-For current stable release documentation, [click here](/tn/current/) or choose your version above.
-{{< /hint >}}
+> [!IMPORTANT] TrueNAS Early Release Documentation
+> This content follows TrueNAS 26 releases.
+>
+> Use the Version selector above to view content specific to a stable software release.
 
 {{< include file="/static/includes/26-feature-list.md" >}}
 

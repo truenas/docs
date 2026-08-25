@@ -1,0 +1,27 @@
+{{/* Version drop-down menu, following the Docsy versioning pattern:
+     https://www.docsy.dev/docs/content/versioning/#adding-a-version-drop-down-menu
+     Driven entirely by site params (params.versions / params.version), so no
+     per-version build plumbing is required for this to display.
+     Expected to be called from inside a <li class="nav-item dropdown"> in
+     navbar.html, matching the navbar-theme-toggle partial's pattern, so it
+     picks up the navbar's forced .navbar-nav .nav-link white text. */}}
+{{ $current := lower (.Site.Params.version | default "") }}
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="version-selector-dropdown"
+        type="button"
+        data-bs-toggle="dropdown"
+        data-bs-display="static"
+        aria-expanded="false"
+        aria-label="{{ .Site.Params.version_menu | default "Versions" }}">
+  {{ with .Site.Params.version }}{{ . | title }}{{ else }}Version{{ end }}
+</button>
+<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="version-selector-dropdown">
+  {{ range .Site.Params.versions }}
+  <li>
+    <a class="dropdown-item{{ if eq (lower .version) $current }} active{{ end }}" href="{{ .url }}">
+      {{ .version }}
+      {{ if eq (lower .version) $current }}<span class="visually-hidden"> (current)</span>{{ end }}
+    </a>
+  </li>
+  {{ end }}
+</ul>

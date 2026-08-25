@@ -23,10 +23,9 @@ Enter a new size in **Size for this zvol**, then click **Save**.
 
 {{< trueimage src="/images/datasets/dataset-edit-zvol-listing-size.png" alt="Change the Zvol Size" id="Change the Zvol Size" >}}
 
-{{< hint type=tip >}}
-TrueNAS prevents data loss by not allowing users to reduce the Zvol size.
-TrueNAS also does not allow users to increase the Zvol size past 80% of the pool size.
-{{< /hint >}}
+> [!TIP]
+> TrueNAS prevents data loss by not allowing users to reduce the Zvol size.
+> TrueNAS also does not allow users to increase the Zvol size past 80% of the pool size.
 
 ### File LUNs
 

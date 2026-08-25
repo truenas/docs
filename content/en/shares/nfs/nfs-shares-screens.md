@@ -88,9 +88,8 @@ The <span class="material-icons">more_vert</span> dropdown list at the right of 
 
 The **Add NFS** and **Edit NFS** show the same **Basic Options** and **Advanced Options** settings.
 
-{{< hint type=info title="UDP Protocol and NFS" >}}
-{{< include file="/static/includes/nfs-service-udp-warning.md" >}}
-{{< /hint >}}
+> [!INFO] UDP Protocol and NFS
+> {{< include file="/static/includes/nfs-service-udp-warning.md" >}}
 
 {{< include file="/static/includes/nfs-update-time.md" >}}
 

@@ -11,10 +11,9 @@ tags:
 
 {{< include file="/static/includes/root-level-dataset-share-warning.md" >}}
 
-{{< hint type="info" title="Active Directory and SMB Service" >}}
-Verify your Active Directory connections are working and error-free before adding an SMB share.
-When an SMB share is configured but not working or is in an error state, AD cannot bind, and TrueNAS cannot start the SMB service.
-{{< /hint >}}
+> [!INFO] Active Directory and SMB Service
+> Verify your Active Directory connections are working and error-free before adding an SMB share.
+> When an SMB share is configured but not working or is in an error state, AD cannot bind, and TrueNAS cannot start the SMB service.
 
 Creating an SMB share on your system requires adding the share and then getting it working.
 
@@ -26,17 +25,16 @@ Industry-wide, SMB1 protocol (sometimes referred to as NT1) use is deprecated fo
 
 However, most SMB clients support SMB 2 or 3 protocols even when they are not the default.
 
-{{< hint type=note >}}
-Legacy SMB clients rely on NetBIOS name resolution to discover SMB servers on a network.
-TrueNAS disables the NetBIOS name server (nmbd) by default. Enable it on the **Network > Global Settings** screen if this functionality is required.
-
-Mac OS clients use mDNS to discover SMB servers present on the network. TrueNAS enables the mDNS server (avahi) by default.
-
-Windows clients use [WS-Discovery](https://docs.oasis-open.org/ws-dd/ns/discovery/2009/01) to discover the presence of an SMB server.
-You can disable network discovery by default depending on the Windows client version.
-
-Discoverability through broadcast protocols is a convenience feature and is not required to access an SMB server.
-{{< /hint >}}
+> [!NOTE]
+> Legacy SMB clients rely on NetBIOS name resolution to discover SMB servers on a network.
+> TrueNAS disables the NetBIOS name server (nmbd) by default. Enable it on the **Network > Global Settings** screen if this functionality is required.
+>
+> Mac OS clients use mDNS to discover SMB servers present on the network. TrueNAS enables the mDNS server (avahi) by default.
+>
+> Windows clients use [WS-Discovery](https://docs.oasis-open.org/ws-dd/ns/discovery/2009/01) to discover the presence of an SMB server.
+> You can disable network discovery by default depending on the Windows client version.
+>
+> Discoverability through broadcast protocols is a convenience feature and is not required to access an SMB server.
 
 ## Sharing Administrator Access
 
@@ -60,9 +58,8 @@ A basic SMB share does not need to use the **Advanced Options** settings. Click 
 See [SMB Shares Screens](# <!-- TODO-REF: SMBSharesScreens -->) for all settings and other possible use cases.
 
 {{< expand "Guest Access" "v" >}}
-{{< hint type=warning >}}
-Guest access adds security vulnerabilities and should be avoided.
-{{< /hint >}}
+> [!WARNING]
+> Guest access adds security vulnerabilities and should be avoided.
 
 Guest access allows users to connect to an SMB share without providing credentials.
 In TrueNAS SCALE 25.10 and later, this feature is only available for shares with the **Legacy Share** preset (shares that used **No Preset** in releases before 25.10).
@@ -76,12 +73,11 @@ To enable guest access on a **Legacy Share**:
 
 The privileges granted are the same as those for a guest account.
 
-{{< hint type=warning >}}
-Windows 10 version 1709 and later--and Windows Server 2019 and later--disable guest access by default as a security measure.
-Windows clients require additional configuration to connect to shares with guest access enabled.
-To enable guest access on Windows clients, modify Windows registry settings or Group Policy to allow insecure guest logons.
-See Microsoft documentation for configuration details.
-{{< /hint >}}
+> [!WARNING]
+> Windows 10 version 1709 and later--and Windows Server 2019 and later--disable guest access by default as a security measure.
+> Windows clients require additional configuration to connect to shares with guest access enabled.
+> To enable guest access on Windows clients, modify Windows registry settings or Group Policy to allow insecure guest logons.
+> See Microsoft documentation for configuration details.
 
 For new shares:
 
@@ -119,18 +115,16 @@ See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.
 {{< /expand >}}
 
 {{< expand "Host Allow and Host Deny" "v" >}}
-{{< hint type=note >}}
-Hosts Allow and Hosts Deny settings are available for all share presets except **External Share**.
-{{< /hint >}}
+> [!NOTE]
+> Hosts Allow and Hosts Deny settings are available for all share presets except **External Share**.
 
 Use the **Host Allow** and **Host Deny** options to allow or deny specific host names and IP addresses.
 
 Use the **Hosts Allow** field to enter a list of allowed IP addresses.
 Separate entries by pressing <kbd>Enter</kbd>.
-{{< hint type="Warning" title="Setting Host Allow" >}}
-Entering values in the **Host Allow** restricts access to only the addresses entered into this list!
-This list can break UI access for all other IP or host name entries.
-{{< /hint >}}
+> [!WARNING] Setting Host Allow
+> Entering values in the **Host Allow** restricts access to only the addresses entered into this list!
+> This list can break UI access for all other IP or host name entries.
 You can find a more detailed description with examples [here](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW).
 Use the **Hosts Deny** field to enter a list of denied host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>.
 

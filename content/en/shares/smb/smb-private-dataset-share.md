@@ -10,17 +10,16 @@ tags:
 
 {{< include file="/static/includes/root-level-dataset-share-warning.md" >}}
 
-{{< hint type=important title="Home Share Legacy Feature" >}}
-SMB Home Share is a legacy feature for organizations looking to maintain existing SMB configurations.
-Microsoft deprecated the Home Shares feature in Windows 10 and removed it completely from Windows 11.
-They no longer support Home Shares as of October 2025.
-TrueNAS removed the home share option from the SMB share **Purpose** list in 24.04 (Dragonfish).
-
-The SMB share **Other Options** in pre-25.10 releases includes a home share legacy option, but it is not recommended for new shares.
-It is for organizations still using the legacy home shares option to add a single SMB share to provide a personal directory for every user account.
-Future TrueNAS releases can introduce instability or require configuration changes affecting this legacy feature.
-This option does not show in 25.10 and later releases unless an existing home share is upgraded to 25.10 or later.
-{{< /hint >}}
+> [!IMPORTANT] Home Share Legacy Feature
+> SMB Home Share is a legacy feature for organizations looking to maintain existing SMB configurations.
+> Microsoft deprecated the Home Shares feature in Windows 10 and removed it completely from Windows 11.
+> They no longer support Home Shares as of October 2025.
+> TrueNAS removed the home share option from the SMB share **Purpose** list in 24.04 (Dragonfish).
+>
+> The SMB share **Other Options** in pre-25.10 releases includes a home share legacy option, but it is not recommended for new shares.
+> It is for organizations still using the legacy home shares option to add a single SMB share to provide a personal directory for every user account.
+> Future TrueNAS releases can introduce instability or require configuration changes affecting this legacy feature.
+> This option does not show in 25.10 and later releases unless an existing home share is upgraded to 25.10 or later.
 
 ## Replacing SMB Home Shares
 
@@ -32,14 +31,13 @@ Follow the instructions in the [Adding Private Dataset Shares](#adding-private-d
 {{< expand "What is a private dataset and share?" "v" >}}
 The **Private Dataset Share** option allows creating a private personal directory for a user in the specified dataset, that when correctly configured, provides users with a private folder only they access through an SMB share.
 
-{{< hint type=important title="Private Dataset Share vs. Guest Access" >}}
-A **Private Dataset Share** is not the same as guest access:
-
-* **Private Dataset Share** creates per-user isolated datasets - users must authenticate with credentials
-* **Guest Access** (**Legacy Share** only) allows anonymous access without credentials
-
-If you are looking for guest access functionality, see the [Guest Access](# <!-- TODO-RELREF: /SCALE/SCALETutorials/Shares/SMB/_index.md#guest-access -->) section in the main SMB tutorial.
-{{< /hint >}}
+> [!IMPORTANT] Private Dataset Share vs. Guest Access
+> A **Private Dataset Share** is not the same as guest access:
+>
+> * **Private Dataset Share** creates per-user isolated datasets - users must authenticate with credentials
+> * **Guest Access** (**Legacy Share** only) allows anonymous access without credentials
+>
+> If you are looking for guest access functionality, see the [Guest Access](# <!-- TODO-RELREF: /SCALE/SCALETutorials/Shares/SMB/_index.md#guest-access -->) section in the main SMB tutorial.
 {{< /expand >}}
 
 TrueNAS allows creating one private directory per user, while it still allows creating as many non-private directories as desired or needed.

@@ -77,3 +77,9 @@
 {{ else -}}
   {{ partial "sidebar-tree.html" $args }}
 {{- end }}
+{{ if .Site.Params.ui.versioned_section_links -}}
+  {{ partial "sidebar-section-links.html" . }}
+{{- end }}
+{{ if .Site.Params.ui.hub_sidebar_links -}}
+  {{ partial "sidebar-hub-links.html" . }}
+{{- end }}

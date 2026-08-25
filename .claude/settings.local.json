@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//mnt/c/Users/iXUser/documents/github/docs-shared/**)",
+      "Read(//mnt/c/Users/iXUser/documents/github/documentation/**)"
+    ]
+  }
+}
