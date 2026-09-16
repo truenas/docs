@@ -31,7 +31,7 @@ Complete guides, tutorials, and references for TrueNAS Community Edition and Ent
 Centralized management for multiple TrueNAS systems with health monitoring and remote installation
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="material:storage" title="Products" url="https://www.truenas.com/docs/hardware/" %}}
+{{% blocks/feature icon="material:storage" title="Products" url="/hardware/" %}}
 TrueNAS hardware specifications, datasheets, and product family documentation
 {{% /blocks/feature %}}
 
