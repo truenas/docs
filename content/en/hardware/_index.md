@@ -1,6 +1,7 @@
 ---
 title: "Products"
 weight: 40
+no_list: true
 aliases:
  - /hardware/stencils/
 cascade:
@@ -12,6 +13,7 @@ cascade:
     path: "/**"
     kind: "section"
   type: "docs"
+  no_list: true
 related: false
 ---
 
