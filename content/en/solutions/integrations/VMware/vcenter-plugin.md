@@ -75,7 +75,7 @@ This release expands TrueNAS compatibility to 25.10 and include these changes:
 
 **September 3, 2024**
 
-iXsystems is pleased to release TrueNAS vCenter Plugin version 3.6.0!
+TrueNAS is pleased to release TrueNAS vCenter Plugin version 3.6.0!
 This is a minor release to fix an issue with VMFS datastore management with TrueNAS 24.04 systems that have iSCSI ALUA enabled.
 
 #### Known Issues
@@ -88,7 +88,7 @@ This is a cosmetic issue and the plugin deploys fully.
 {{< expand "3.5.0 (Click to expand)" "v" >}}
 **October 6, 2023**
 
-iXsystems is pleased to release TrueNAS vCenter Plugin version 3.5.0!
+TrueNAS is pleased to release TrueNAS vCenter Plugin version 3.5.0!
 This is a minor release designed to make the plugin compatible with vCenter 7.0 and 8.0 and minor bugfixes.
 
 TrueNAS 13.0 systems are compatible with the 3.5.0 plugin.
@@ -96,7 +96,7 @@ TrueNAS 12.0 deployments connected to an earlier version of this plugin should u
 
 **Changelog**
 
-Individual tickets require an iXsystems Jira login to view.
+Individual tickets require an TrueNAS Jira login to view.
 
 * Plugin compatibility with vCenter 7.0 and 8.0
 * Fix plugin UI behavior when VMFS and NFS datastore types are selected
@@ -109,7 +109,7 @@ Individual tickets require an iXsystems Jira login to view.
   
   **September 2, 2021**
   
-  iXsystems is pleased to release version 3.4.0 of the TrueNAS vCenter plugin. The 3.4.0 plugin has numerous improvements, including:
+  TrueNAS is pleased to release version 3.4.0 of the TrueNAS vCenter plugin. The 3.4.0 plugin has numerous improvements, including:
   
   * Fibre Channel datastore support.
   * Development script rewritten. 
@@ -170,7 +170,7 @@ Individual tickets require an iXsystems Jira login to view.
 
   **November 24, 2020**
   
-  iXsystems is pleased to release version 3.3.0 of the TrueNAS vCenter plugin!
+  TrueNAS is pleased to release version 3.3.0 of the TrueNAS vCenter plugin!
   This is a maintenance release of the plugin, designed to improve functionality and add support for TrueNAS 12.0 host systems. As part of this maintenance release, additional testing resources have been devoted to the plugin and several large-scale improvements have also been identified for future plugin versions.
     
   ### Improvement
@@ -195,7 +195,7 @@ Individual tickets require an iXsystems Jira login to view.
 
   **March 24, 2020**
 
-  iXsystems is pleased to release version 3.2.0 of the TrueNAS vCenter plugin!
+  TrueNAS is pleased to release version 3.2.0 of the TrueNAS vCenter plugin!
   This is the newest release of the plugin, designed to allow managing TrueNAS systems from within VMware vCenter.
   The 3.2.0 plugin has numerous improvements, like iSCSI fixes, communication support, and new vCenter 7.0 support.
   Here are a few other highlights of this release:
@@ -213,7 +213,7 @@ Individual tickets require an iXsystems Jira login to view.
 
   **July 16, 2019**
 
-  iXsystems is pleased to announce the availability of vCenter 3.1.0, a standalone plugin for managing TrueNAS systems within VMware vSphere.
+  TrueNAS is pleased to announce the availability of vCenter 3.1.0, a standalone plugin for managing TrueNAS systems within VMware vSphere.
 
   ## New Features
 

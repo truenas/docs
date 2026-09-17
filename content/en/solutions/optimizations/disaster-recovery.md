@@ -24,7 +24,7 @@ Snapshots and replications can be scheduled to run every few minutes.
 
 {{< trueimage src="/images/CORE/Storage/StorageSnapshotsCloneToDataset.png" alt="Cloning a Snapshot" id="Cloning a Snapshot" >}}
 
-Another benefit of ZFS replication is the capability for the snapshots and referenced data to be stored on systems and pools of different specs or pool configuration. All-flash, high-performance pools can be backed up to lower performance pools with traditional drives and different RAID configurations. Smaller systems can also be backed up to larger central repositories. Companies such as [FirstLink](https://www.ixsystems.com/Firstlink_CaseStudy_PDF) and others use this to help clone edge devices like the TrueNAS Mini systems to a central core TrueNAS in their data center. ZFS replication on TrueNAS ensures data protection regardless of system complexity, size, or location.
+Another benefit of ZFS replication is the capability for the snapshots and referenced data to be stored on systems and pools of different specs or pool configuration. All-flash, high-performance pools can be backed up to lower performance pools with traditional drives and different RAID configurations. Smaller systems can also be backed up to larger central repositories. Companies such as FirstLink and others use this to help clone edge devices like the TrueNAS Mini systems to a central core TrueNAS in their data center. ZFS replication on TrueNAS ensures data protection regardless of system complexity, size, or location.
 {{< /tab >}}
 {{< tab "Rsync" >}}
 ### File-based Recovery – Rsync
@@ -42,7 +42,7 @@ TrueNAS can copy, pull, and sync data to a variety of cloud-based data storage s
 
 {{< trueimage src="/images/Solutions/CloudBackupImage.png" alt="CloudBackupImage" id="CloudBackupImage" >}}
 
-For larger datasets, TrueNAS systems are [more cost-effective](https://www.ixsystems.com/blog/private-cloud-truenas/) long term than cloud offerings, including Amazon AWS. For this reason, using TrueNAS as a backup target for protecting cloud-based data, e.g., from AWS, Dropbox, or Google Drive, is ideal because data stored in TrueNAS will get scrubbed, checked, and retained with an unlimited number of snapshots available.
+For larger datasets, TrueNAS systems are [more cost-effective](https://www.truenas.com/blog/private-cloud-truenas/) long term than cloud offerings, including Amazon AWS. For this reason, using TrueNAS as a backup target for protecting cloud-based data, e.g., from AWS, Dropbox, or Google Drive, is ideal because data stored in TrueNAS will get scrubbed, checked, and retained with an unlimited number of snapshots available.
 
 {{< trueimage src="/images/Solutions/TrueNASBackingUpCloud.png" alt="TrueNASBackingUpCloud" id="TrueNASBackingUpCloud" >}}
 {{< /tab >}}

@@ -4164,6 +4164,23 @@ section.row:has(.feature-card) .container {
   object-fit: contain;
 }
 
+// imagecard's optional icon= alternative to image= (Material Icons Outlined glyph)
+// !important is required here: Google's Material Icons webfont CSS
+// (fonts.googleapis.com/icon?family=Material+Icons) ships its own
+// .material-icons { font-size: 24px; display: inline-block; } and loads
+// AFTER main.min.css in the page head, so at equal specificity it silently
+// wins the cascade over any font-size/display set here without !important.
+.prod-card-icon {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  font-size: 5rem !important;
+  line-height: 1 !important;
+  color: #0095d5;
+}
+
 // Card content styling
 .section-tab-content {
   padding-top: 0.5rem;
@@ -4270,6 +4287,21 @@ section.row:has(.feature-card) .container {
 .prodintro-btn:hover {
   border-color: #71bf44;
   color: #ffffff !important;
+}
+
+// imagecard-lang language dropdown: theme-blue highlight for the hovered/selected
+// option. Native <select> popups have inconsistent cross-browser support for
+// option-level hover styling (:checked is well-supported, :hover less so in some
+// engines) - this covers what's actually controllable via CSS.
+.language-dropdown {
+  accent-color: #0095d5;
+
+  option:checked,
+  option:hover,
+  option:focus {
+    background-color: #0095d5 !important;
+    color: #ffffff !important;
+  }
 }
 
 // TrueTable styling - use TrueNAS blue for borders

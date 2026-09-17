@@ -35,10 +35,10 @@
 
 <a class="section-box" href="{{ $baseLink }}">
   <div class="box-image">
-    <img class="prod-card-img" src="{{ $image }}" aria-label="{{ $title }} Documentation Page">
+    <img class="prod-card-img" src="{{ $image }}" aria-label="{{ $title | plainify }} Documentation Page">
   </div>
   <div class="section-tab-content ixprods">
-    <b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ $title }}</b>
+    <b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ $title | safeHTML }}</b>
     <p>{{ $descr }}</p>
 
     <div class="language-selector" style="margin-top: 1rem; margin-bottom: 1rem;">

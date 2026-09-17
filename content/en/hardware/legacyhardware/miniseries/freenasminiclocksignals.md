@@ -9,7 +9,7 @@ related: false
 
 ## FreeNAS Mini Motherboard Clock Signal Issue
 
-iXsystems is aware of an issue with a component on the motherboard in the second generation FreeNAS Mini and FreeNAS Mini XL. In most cases, your FreeNAS Mini will perform normally and may never be impacted by this issue. However, based on information that we have gathered from our vendors, customers, and our engineering team, a small number of these boards may experience issues after 18 months in operation. If the affected component does fail, the system will fail to boot. For more information about the issue and our plan to address it, please read below.
+TrueNAS is aware of an issue with a component on the motherboard in the second generation FreeNAS Mini and FreeNAS Mini XL. In most cases, your FreeNAS Mini will perform normally and may never be impacted by this issue. However, based on information that we have gathered from our vendors, customers, and our engineering team, a small number of these boards may experience issues after 18 months in operation. If the affected component does fail, the system will fail to boot. For more information about the issue and our plan to address it, please read below.
 
 **Is the data in my FreeNAS Mini safe?**
 
@@ -31,13 +31,13 @@ This issue affects only the second generation of the FreeNAS Mini and FreeNAS Mi
 
 To identify if you have a second generation FreeNAS Mini or a first generation FreeNAS Mini,  use the following information. Second generation FreeNAS Minis will have a FreeNAS badge on the front of the case and a lock immediately to the right. Another way to tell is by looking at the USB ports. The first generation FreeNAS Mini will have front USB ports visible on the front of the machine. On the second generation FreeNAS Mini, the front USB ports are hidden behind the lockable door.
 
-**Will iXsystems replace my FreeNAS Mini motherboard under warranty if I experience this issue? What if my warranty is expired?**
+**Will TrueNAS replace my FreeNAS Mini motherboard under warranty if I experience this issue? What if my warranty is expired?**
 
-iXsystems is proud to stand behind its products. We’re extending the warranty on all second generation FreeNAS Mini motherboards shipped before February 2017 to a total of three (3) years. Any FreeNAS Minis shipped in February and after will have our standard one year warranty and are completely free of this issue.
+TrueNAS is proud to stand behind its products. We’re extending the warranty on all second generation FreeNAS Mini motherboards shipped before February 2017 to a total of three (3) years. Any FreeNAS Minis shipped in February and after will have our standard one year warranty and are completely free of this issue.
 
 **What should I do if I think my FreeNAS Mini has stopped working because of this issue?**
 
-Contact iXsystems Support and we will be glad to assist you!
+Contact TrueNAS Support and we will be glad to assist you!
 
 **How does the return process work and how long does it take?**
 
@@ -45,9 +45,9 @@ We offer an advanced replacement option if you have experienced a failure relate
 
 **What if I didn’t get an answer to my question in this FAQ?**
 
-Contact iXsystems Support and we will be glad to answer your questions!
+Contact TrueNAS Support and we will be glad to answer your questions!
 
-Thank you for your loyalty as an iXsystems customer. We stand behind the FreeNAS Mini and the FreeNAS Mini XL and will continue to support our customers.
+Thank you for your loyalty as an TrueNAS customer. We stand behind the FreeNAS Mini and the FreeNAS Mini XL and will continue to support our customers.
 
 {{< expand "Contacting TrueNAS Enterprise Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}

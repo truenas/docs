@@ -4,7 +4,7 @@ description: "Provides a list of copyrights and trademarks, and related logos re
 weight: 1
 ---
 
-FreeNAS®, TrueNAS®, TrueNAS® SCALE, TrueCommand, and all related logos are registered trademarks of [iXsystems, dba TrueNAS](https://www.ixsystems.com/).
+FreeNAS®, TrueNAS®, TrueNAS® SCALE, TrueCommand, and all related logos are registered trademarks of [iXsystems, dba TrueNAS](https://www.truenas.com/).
 
 **These trademarks and copyrights are owned by their respective Companies or Foundations:**
 
@@ -40,4 +40,4 @@ FreeNAS®, TrueNAS®, TrueNAS® SCALE, TrueCommand, and all related logos are re
 * Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
 * Windows® is a registered trademark of Microsoft Corporation in the United States and other countries.
 
-For more information on copyrights and trademarks see [iXsystems Trademarks](https://www.ixsystems.com/trademarks/).
+For more information on copyrights and trademarks see [TrueNAS Trademarks](https://www.truenas.com/trademarks/).

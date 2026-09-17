@@ -9,7 +9,7 @@ related: false
 
 (*Original Publish Date: September 19, 2017*)
 
-iXsystems has verified a firmware-related issue with the Board Management Controller (BMC) on the ASRock Rack C2750D4I motherboard used in the second generation FreeNAS Mini and FreeNAS Mini XL. In December of 2016, we provided a software fix starting in FreeNAS 9.10.1-U3 that mitigates this issue and protects your board from experiencing damage. ASRock Rack has since provided a [BMC firmware update](https://www.asrockrack.com/general/productdetail.asp?Model=C2750D4I) (Version: 00.30.00) that resolves the issue. For more information about the issue and our plan to address it please read below.
+TrueNAS has verified a firmware-related issue with the Board Management Controller (BMC) on the ASRock Rack C2750D4I motherboard used in the second generation FreeNAS Mini and FreeNAS Mini XL. In December of 2016, we provided a software fix starting in FreeNAS 9.10.1-U3 that mitigates this issue and protects your board from experiencing damage. ASRock Rack has since provided a [BMC firmware update](https://www.asrockrack.com/general/productdetail.asp?Model=C2750D4I) (Version: 00.30.00) that resolves the issue. For more information about the issue and our plan to address it please read below.
 
 ## What exactly is this BMC or “watchdog” issue?
 
@@ -45,13 +45,13 @@ Second generation FreeNAS Minis will have a FreeNAS badge on the front of the ca
 
 Yes. You can view the instructions on how to update your system to the latest [BMC firmware update by IPMI](https://www.asrockrack.com/support/faq.asp?id=6) (Version: 00.30.00).
 
-## Will iXsystems replace my FreeNAS Mini motherboard under warranty if I experience this issue? What if my warranty is expired?**
+## Will TrueNAS replace my FreeNAS Mini motherboard under warranty if I experience this issue? What if my warranty is expired?**
 
-iXsystems is proud to stand behind its products. We’re extending the warranty on all second generation FreeNAS Mini motherboards shipped before February 2017 to a total of three (3) years. Any FreeNAS Minis shipped in February and after will have the BMC firmware update installed that fixes this issue and will have our standard one year warranty.
+TrueNAS is proud to stand behind its products. We’re extending the warranty on all second generation FreeNAS Mini motherboards shipped before February 2017 to a total of three (3) years. Any FreeNAS Minis shipped in February and after will have the BMC firmware update installed that fixes this issue and will have our standard one year warranty.
 
 ## What should I do if I think my FreeNAS Mini has stopped working because of this issue?
 
-Contact iXsystems Customer Support and we will be glad to assist you!
+Contact TrueNAS Customer Support and we will be glad to assist you!
 
 ## How does the return process work and how long does it take?
 
@@ -59,9 +59,9 @@ We offer an advanced replacement option if you have experienced a failure relate
 
 ## What if I didn’t get an answer to my question in this FAQ?
 
-Contact iXsystems Customer Support and we will be glad to assist you!
+Contact TrueNAS Customer Support and we will be glad to assist you!
 
-Thank you for your loyalty as an iXsystems customer. We stand behind the FreeNAS Mini and the FreeNAS Mini XL and will continue to support our customers.
+Thank you for your loyalty as an TrueNAS customer. We stand behind the FreeNAS Mini and the FreeNAS Mini XL and will continue to support our customers.
 
 {{< expand "Contacting TrueNAS Enterprise Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}

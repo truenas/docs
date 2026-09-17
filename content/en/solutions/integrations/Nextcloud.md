@@ -42,7 +42,7 @@ The output confirms the system is connected to the Internet.
 
 TrueNAS organizes plugins into two **Collections**:
 
-* [iXsystems](https://www.ixsystems.com/) maintained plugins
+* [TrueNAS](https://www.truenas.com/) maintained plugins
 * Open source plugins created and maintained by TrueNAS users.
 
 By default, TrueNAS shows the iXsystems-supported plugins.

@@ -42,7 +42,7 @@ descr="Identifications list of TrueNAS M-Series systems network ports." >}}
 descr="BIOS configuration instructions for TrueNAS M-Series systems." >}}
 
 {{< imagecard image="/images/Hardware/MSeries/MSeriesSOV.png" title="Statement of Volatility" link="https://www.truenas.com/docs/files/m-series-sov.pdf"
-descr="iXsystems official Statement of Volatility for M-Series systems." >}}
+descr="Official Statement of Volatility for M-Series systems." >}}
 
 {{< imagecard image="/images/Hardware/MSeries/NVDIMMUpdates.png" title="NVDIMM Updates" link="https://www.truenas.com/docs/files/MSeriesNVDIMMUpdates.pdf"
 descr="Procedure to update M-Series NVDIMMs firmware." >}}

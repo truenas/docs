@@ -40,10 +40,10 @@ descr="TrueNAS identifications list of TrueNAS Mini systems network ports." >}}
 descr="BIOS configuration instructions for TrueNAS Mini X+ and XL+ systems." >}}
 
 {{< imagecard image="/images/Hardware/Minis/MiniX+SOV.png" title="Mini X+ Statement of Volatility" link="https://www.truenas.com/docs/files/MiniX+SOV25011.pdf"
-descr="iXsystems official Statement of Volatility for Mini systems." >}}
+descr="Official Statement of Volatility for Mini systems." >}}
 
 {{< imagecard image="/images/Hardware/Minis/MiniRSOV.png" title="Mini R Statement of Volatility" link="https://www.truenas.com/docs/files/MiniRSOV.pdf"
-descr="iXsystems official Statement of Volatility for Mini R systems." >}}
+descr="Official Statement of Volatility for Mini R systems." >}}
 
 {{< imagecard image="/images/Hardware/Minis/MiniStencil.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/minis_stencil_pack.vssx"
 descr="Download Mini stencils to diagram your TrueNAS hardware configuration." >}}

@@ -1,6 +1,6 @@
 ---
 title: "Notices"
-description: "iXsystems published hardware notices and errata."
+description: "TrueNAS published hardware notices and errata."
 weight: 60
 aliases:
   - /hardware/notices/componentarticles/
@@ -13,7 +13,7 @@ related: false
 
 {{< imagecard image="/images/Hardware/Document.png" title="Product Retirement Announcements" link="/hardware/notices/productretirements/" descr="Official TrueNAS product end of availability (EoA) and end of support life (EoSL) announcements." >}}
 
-{{< imagecard image="/images/ixsystems_logo-logo-full-color-rgb.png" title="RMA Policy" link="https://www.truenas.com/docs/hardware/notices/rmapolicy/" descr="Official iXsystems Return Merchandise Authorization (RMA) policy and other warranty, service, and support coverage." >}}
+{{< imagecard icon="inventory_2" title="RMA Policy" link="https://www.truenas.com/support/enterprise/" descr="Official TrueNAS Return Merchandise Authorization (RMA) policy and other warranty, service, and support coverage." >}}
 
 {{< imagecard image="/images/Hardware/Lock.png" title="IPMI Logins and SB-327" link="/hardware/notices/sb327/" descr="Notice about IPMI login changes for SB-327 compliance." >}}
 

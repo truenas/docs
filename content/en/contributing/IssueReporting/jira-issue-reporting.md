@@ -79,7 +79,7 @@ Developers might request more details as they work to resolve the issue, so chec
 See https://security.truenas.com/ for security advisories and software bill of materials for specific TrueNAS releases.
 
 Security issues do not appear on public issue trackers due to their sensitive nature.
-If you have discovered a suspected security vulnerability in the latest version of a software release, you can [report this directly to the Security Team](mailto:security-officer@ixsystems.com).
+If you have discovered a suspected security vulnerability in the latest version of a software release, you can [report this directly to the Security Team](mailto:security-officer@truenas.com).
 
 ### Downloading a Debug File
 

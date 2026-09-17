@@ -20,6 +20,6 @@ related: false
 
 * <a href="https://www.truenas.com/docs/files/XSeriesNetworkPortIDs.pdf" download>TrueNAS X-Series Network Port IDs</a>: TrueNAS identifications list of TrueNAS X-Series systems network ports.
 
-* <a href="https://www.truenas.com/docs/files/x-series-sov.pdf" download>TrueNAS X-Series Statement of Volatility</a>: iXsystems official Statement of Volatility for X-Series systems.
+* <a href="https://www.truenas.com/docs/files/x-series-sov.pdf" download>TrueNAS X-Series Statement of Volatility</a>: Official Statement of Volatility for X-Series systems.
 
 * <a href="https://www.truenas.com/docs/files/truenasxmodels.vssx" download>TrueNAS X-Series Hardware Stencils</a>: Download X-Series stencils to diagram your TrueNAS hardware configuration.

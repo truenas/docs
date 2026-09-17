@@ -25,7 +25,7 @@ The replacement PSUs with the A06 firmware have a manufacturer firmware identifi
 
 Systems supporting mission-critical workloads should have their PSUs pro-actively replaced. For others, the system administrator can decide based on failure rates, logistical costs, and uptime needs. **All PSU replacements are at zero cost and covered by TrueNAS warranty and support.**
 
-When required, TrueNAS admins should contact [iXsystems support](https://www.ixsystems.com/support/) to schedule the 1300W PSU replacements and discuss any potential challenges with the update to Firmware A06.
+When required, TrueNAS admins should contact [TrueNAS support](https://www.truenas.com/support/) to schedule the 1300W PSU replacements and discuss any potential challenges with the update to Firmware A06.
 
 Here is the PSU replacement process:
 
@@ -36,4 +36,4 @@ Here is the PSU replacement process:
 5. Re-install the power cord.
 6. Once you confirm that the PSU replacement is online (the green LED lights up), follow the same process for the other power supply.
 
-After replacing each PSU, please return the A05 PSUs to iXsystems in the same packaging the replacements arrived in. We provide prepaid shipping information.
+After replacing each PSU, please return the A05 PSUs to TrueNAS in the same packaging the replacements arrived in. We provide prepaid shipping information.
