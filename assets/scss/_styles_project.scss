@@ -453,6 +453,20 @@ div.draid-grid-table-container::-webkit-scrollbar-track { background: transparen
       fill: unset;
     }
 
+    .sidebar-hub-icon-mask {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      background-color: #0095d5;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+    }
+
     .sidebar-hub-icon-svg {
       display: flex;
       align-items: center;

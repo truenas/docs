@@ -48,7 +48,7 @@
     <li>
       <a href="https://www.truenas.com/docs/truecommand/3.0/" target="_blank" rel="noopener">
         {{ with resources.Get "icons/truecommand-icon-black.png" }}
-          <img src="{{ .RelPermalink }}" alt="" class="sidebar-hub-icon sidebar-hub-icon-img">
+          <span class="sidebar-hub-icon sidebar-hub-icon-mask" style="-webkit-mask-image:url('{{ .RelPermalink }}'); mask-image:url('{{ .RelPermalink }}');"></span>
         {{ end }}
         TrueCommand
       </a>
