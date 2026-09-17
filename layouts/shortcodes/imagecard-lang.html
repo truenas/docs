@@ -1,0 +1,59 @@
+{{ $baseLink := .Get "link" }}
+{{ $baseLinkNoExt := strings.TrimSuffix ".pdf" $baseLink }}
+{{ $image := .Get "image" }}
+{{ $title := .Get "title" }}
+{{ $descr := .Get "descr" }}
+
+{{/* EU Languages in alphabetical order with language codes */}}
+{{ $languages := slice
+  (dict "name" "Български" "code" "bg")
+  (dict "name" "Čeština" "code" "cs")
+  (dict "name" "Dansk" "code" "da")
+  (dict "name" "Deutsch" "code" "de")
+  (dict "name" "Eesti" "code" "et")
+  (dict "name" "Ελληνικά" "code" "el")
+  (dict "name" "Español" "code" "es")
+  (dict "name" "Français" "code" "fr")
+  (dict "name" "Hrvatski" "code" "hr")
+  (dict "name" "Íslenska" "code" "is")
+  (dict "name" "Italiano" "code" "it")
+  (dict "name" "Latviešu" "code" "lv")
+  (dict "name" "Lietuvių" "code" "lt")
+  (dict "name" "Lëtzebuergesch" "code" "lb")
+  (dict "name" "Magyar" "code" "hu")
+  (dict "name" "Malti" "code" "mt")
+  (dict "name" "Nederlands" "code" "nl")
+  (dict "name" "Bokmål" "code" "nb")
+  (dict "name" "Polski" "code" "pl")
+  (dict "name" "Português" "code" "pt")
+  (dict "name" "Română" "code" "ro")
+  (dict "name" "Slovenčina" "code" "sk")
+  (dict "name" "Slovenščina" "code" "sl")
+  (dict "name" "Suomi" "code" "fi")
+  (dict "name" "Svenska" "code" "sv")
+}}
+
+<a class="section-box" href="{{ $baseLink }}">
+  <div class="box-image">
+    <img class="prod-card-img" src="{{ $image }}" aria-label="{{ $title }} Documentation Page">
+  </div>
+  <div class="section-tab-content ixprods">
+    <b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ $title }}</b>
+    <p>{{ $descr }}</p>
+
+    <div class="language-selector" style="margin-top: 1rem; margin-bottom: 1rem;">
+      <select
+        id="lang-select-{{ md5 $baseLink }}"
+        class="language-dropdown"
+        onchange="event.preventDefault(); event.stopPropagation(); window.open(this.value, '_blank');"
+        onclick="event.preventDefault(); event.stopPropagation();"
+        style="appearance: none; -webkit-appearance: none; -moz-appearance: none; padding: 0.25rem 2rem 0.25rem 0.5rem; border-radius: 4px; min-width: 200px; cursor: pointer; background-color: #ffffff; color: #212529; border: 1px solid var(--accent-color); background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 12 12%22%3E%3Cpath d=%22M2 4l4 4 4-4%22 stroke=%22%23212529%22 stroke-width=%221.5%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.6rem center; background-size: 12px 12px;">
+        <option value="" disabled selected style="background-color: #ffffff; color: #212529;">Select a language...</option>
+        {{ range $languages }}
+          {{ $langLink := printf "%s-%s.pdf" $baseLinkNoExt .code }}
+          <option value="{{ $langLink }}" style="background-color: #ffffff; color: #212529;">{{ .name }} ({{ .code }})</option>
+        {{ end }}
+      </select>
+    </div>
+  </div>
+</a>
